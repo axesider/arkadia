@@ -11083,7 +11083,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ktos_spec_0</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_fin()</script>
+										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_spec_0()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -11137,7 +11137,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Nie (zastanawiajac sie dlugo|przebierajac w srodkach|silac sie na wirtuozerie|tracac czasu na zbedne manewry) (.+?) z calej sily wali cie na odlew (?P&lt;weapon&gt;.+?), (\w+) ci przy tym (?P&lt;where&gt;.+?)(\. Dobrze wymierzony cios sprawia, ze chwiejesz sie na nogach i robi ci sie ciemno przed oczami\.\.)?\.$</string>
+											<string>^Nie (zastanawiajac sie dlugo|przebierajac w srodkach|silac sie na wirtuozerie|tracac czasu na zbedne manewry) (.+?) z calej sily wali cie na odlew (?P&lt;weapon&gt;.+?), (?P&lt;damage&gt;\w+) ci przy tym (?P&lt;where&gt;.+?)(\. Dobrze wymierzony cios sprawia, ze chwiejesz sie na nogach i robi ci sie ciemno przed oczami\.\.)?\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

@@ -3,7 +3,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_kto
 end
 
 function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_spec()
-    local dmg = matches[6]
+    local dmg = matches["damage"]
     local value = -1
         if dmg == "kaleczac"   then value = 1
     elseif dmg == "obijajac"   then value = 2
@@ -12,7 +12,7 @@ function trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_kto
     elseif dmg == "druzgoczac" then value = 5
     elseif dmg == "miazdzac"   then value = 6
     else
-        cecho("\n        <red>ZGLOS BRAK OPISU SPECA BARBA: <yellow>" .. opis .."<reset>\n")
+        cecho("\n        <red>ZGLOS BRAK OPISU SPECA BARBA: <yellow>" .. dmg .."<reset>\n")
     end
     scripts.gags:gag_own_spec(value, 6)
     if matches[7] then
