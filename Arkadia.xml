@@ -6338,11 +6338,31 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>lodowata\w+ dluga\w+ maczuga\w+</string>
+											<string>lodowata dluga maczug</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>lodowata_0</name>
+											<script>scripts.gags:gag_prefix("unk", "innych_uniki")</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Wykonujesz obszerny zamach lodowata dluga maczuga, usilujac trafic (?P&lt;target&gt;.+?), jednak twoj przeciwnik (spokojnie odskakuje na bok, unikajac tego ciosu|w pore paruje ten cios .*)\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>lodowata</name>
 											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_lodowata_dluga_maczuga()</script>
@@ -6495,8 +6515,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												</regexCodePropertyList>
 											</Trigger>
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-												<name>adamantytowy_5</name>
-												<script>trigger_func_skrypty_ui_gags_moje_ciosy_adamantytowy_mlot(5)</script>
+												<name>adamantytowy_6</name>
+												<script>trigger_func_skrypty_ui_gags_moje_ciosy_adamantytowy_mlot(6)</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -6515,8 +6535,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												</regexCodePropertyList>
 											</Trigger>
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-												<name>adamantytowy_6</name>
-												<script>trigger_func_skrypty_ui_gags_moje_ciosy_adamantytowy_mlot(6)</script>
+												<name>adamantytowy_5</name>
+												<script>trigger_func_skrypty_ui_gags_moje_ciosy_adamantytowy_mlot(5)</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -14334,6 +14354,108 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>^(?P&lt;attacker&gt;.+?) wykorzystujac brak broni u przeciwnika, (?:blyskawicznie|w mgnieniu oka|z wyuczona wprawa) wyprowadza cios .+? mierzac w (?P&lt;target&gt;.+?)\. Wypracowanym uderzeniem trafia (?:go|ja) w .+?, (?P&lt;damage&gt;.*)\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>ktos_spec_1</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_str_ktos_spec_1()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>(^[ &gt;]*[a-zA-Z (),!]+? wykorzystujac brak broni u przeciwnika, .* (ledwie zahaczajac|ledwie sinca).*\.$)</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>ktos_spec_2</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_str_ktos_spec_2()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>(^[ &gt;]*[a-zA-Z (),!]+ wykorzystujac brak broni u przeciwnika, .* (lekko raniac|krwawiace zadrapanie).*\.$)</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>ktos_spec_3</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_str_ktos_spec_3()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>(^[ &gt;]*[a-zA-Z (),!]+ wykorzystujac brak broni u przeciwnika, .*, mocno raniac\.$)</string>
+											<string>(^[ &gt;]*[a-zA-Z (),!]+ wykorzystujac brak broni u przeciwnika, .*dluga, poszarpana rane\.$)</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>ktos_spec_4</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_str_ktos_spec_4()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>(^[ &gt;]*[a-zA-Z (),!]+ wykorzystujac brak broni u przeciwnika, .* (bardzo mocno raniac|gleboka rane z wystajacymi).*\.$)</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>ktos_spec_5</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_str_ktos_spec_5()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>(^[ &gt;]*[a-zA-Z (),!]+ wykorzystujac brak broni u przeciwnika, .* smiertelne.*\.$)</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
