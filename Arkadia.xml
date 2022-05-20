@@ -6160,7 +6160,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Gdy wykonujesz zamach swoja iskrzaca zdobiona bulawa, swist broni wydaje sie brzmiec jak wicher zwiastujacy nadejscie burzy\. Mierzony cios trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), (?P&lt;damage&gt;powaznie) (go|ja) raniac\.$</string>
 												<string>^Przeskakujace z glowicy iskrzacej zdobionej bulawy iskry porazaja (?P&lt;target&gt;.+?), gdy (?P&lt;damage&gt;lekko) muskasz bronia je(j|go) (?P&lt;where&gt;.+?)\.$</string>
 												<string>^Przy akompaniamencie trzeszczacych wyladowan, niezbyt mocno (?P&lt;damage&gt;ranisz) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) lekkim ciosem swojej iskrzacej zdobionej bulawy\.$</string>
-												<string>^Wyprowadzasz mierzony cios swoja iskrzaca zdobiona bulawa i uderzasz (?P&lt;target&gt;.+?), (?P&lt;damage&gt;raniac) (go|ja) w (?P&lt;where&gt;.+?)\. Celnemu trafieniu towarzyszy przeskakujaca z glowicy broni na przeciwnika iskra i akompaniujacy jej gluchy grzmot\.$</string>
+												<string>^Wyprowadzasz mierzony cios swoja iskrzaca zdobiona bulawa i uderzasz (?P&lt;target&gt;.+?), (?P&lt;damage&gt;raniac) (go|ja) w (?P&lt;where&gt;.+?)\. Celnemu trafieniu towarzyszy przeskakujaca z glowicy broni na przeciwni(?:ka|czke) iskra i akompaniujacy jej gluchy grzmot\.$</string>
 												<string>^Gdy unosisz wysoko iskrzaca zdobiona bulawe, wyladowania na na glowicy broni wzmagaja sie jeszcze bardziej\. Korzystajac z nagromadzonej w orezu elektrycznosci, poteznym ciosem (?P&lt;damage&gt;razisz) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?)\.$</string>
 												<string>^Wsrod ogluszajacego huku gromow glowica iskrzacej zdobionej bulawy rozblyska blekitnym swiatlem, a po jej cwiekach zaczyna tanczyc wiazka bialych blyskawic\. Twoja reka wiedziona sila szalejacej burzy unosi sie, a kiedy wskazujesz (?P&lt;target&gt;.+?), blyskawice splataja sie i wystrzeliwuja naprzod, (?P&lt;damage&gt;razac) cel straszliwym piorunem\. Po ciele (.+?) wciaz jeszcze przebiegaja syczace iskry, kiedy ty odzyskujesz pelnie wladzy nad swa reka, szykujac sie do zadania nastepnego ciosu\.$</string>
 											</regexCodeList>
@@ -17099,26 +17099,52 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^[ &gt;]*.* zbierajac sie w sobie uderza .*\.$</string>
-											<string>(^[ &gt;]*Z oszczednego zamachu .* uderza [a-z]* (?!misternym).*\.$)</string>
-											<string>^[ &gt;]*.* w zamieszaniu uderza .*\.$</string>
-											<string>^[ &gt;]*.* z doskoku uderza .*\.$</string>
-											<string>^[ &gt;]*.* z szybkiego doskoku uderza .*\.$</string>
-											<string>^[ &gt;]*.* szybko skladajac sie do ciosu uderza .*\.$</string>
-											<string>^[ &gt;]*.* pewnym ruchem uderza .*\.$</string>
-											<string>^[ &gt;]*.* bez chwili namyslu uderza .*\.$</string>
-											<string>^[ &gt;]*.* dziko hallakujac uderza .*\.$</string>
+											<string>bez chwili namyslu uderza</string>
+											<string>bez wysilku uderza</string>
+											<string>bez zastanowienia uderza</string>
+											<string>blyskawicznie skladajac sie do ciosu uderza</string>
+											<string>blyskawicznie uderza</string>
+											<string>dziko hallakujac uderza</string>
+											<string>korzystajac z zamieszania uderza</string>
+											<string>niezbyt celnie uderza</string>
+											<string>niezbyt dokladnie uderza</string>
+											<string>pewnym ruchem uderza</string>
+											<string>plynnym ruchem uderza</string>
+											<string>robiac szeroki zamach uderza</string>
+											<string>szybko skladajac sie do ciosu uderza</string>
+											<string>w szalenczym porywie uderza</string>
+											<string>w zamieszaniu uderza</string>
+											<string>wrzeszczac na cale gardlo uderza</string>
+											<string>z doskoku uderza</string>
+											<string>z grymasem wysilku uderza</string>
+											<string>z lekkiego wymachu uderza</string>
+											<string>z szybkiego doskoku uderza</string>
+											<string>zaciskajac z wysilku zeby uderza</string>
+											<string>zbierajac sie w sobie uderza</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
-											<integer>1</integer>
-											<integer>1</integer>
-											<integer>1</integer>
-											<integer>1</integer>
-											<integer>1</integer>
-											<integer>1</integer>
-											<integer>1</integer>
-											<integer>1</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>ktos_spec_0</name>
@@ -29474,6 +29500,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Tylko i wylacznie mieszkancy osady moga tam wejsc.</string>
 						<string>Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca, zmuszony jestes wrocic na dol.</string>
 						<string>Straznik ignoruje twoja prosbe.</string>
+						<string>Nie mozesz tam przejsc, gdy stoi tu obsada statku.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -29510,6 +29537,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
+            <integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
