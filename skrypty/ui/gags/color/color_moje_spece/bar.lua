@@ -1,21 +1,23 @@
+function get_barb_damage_value(dmg)
+        if dmg == "kaleczac"   then return 1
+    elseif dmg == "obijajac"   then return 2
+    elseif dmg == "tlukac"     then return 3
+    elseif dmg == "gruchoczac" then return 4
+    elseif dmg == "druzgoczac" then return 5
+    elseif dmg == "miazdzac"   then return 6
+    else
+        return -1
+    end
+end
+
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_spec_0()
     scripts.gags:gag_own_spec(0, 6)
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec()
-    local dmg = matches["damage"]
-    local value = -1
-        if dmg == "kaleczac"   then value = 1
-    elseif dmg == "obijajac"   then value = 2
-    elseif dmg == "tlukac"     then value = 3
-    elseif dmg == "gruchoczac" then value = 4
-    elseif dmg == "druzgoczac" then value = 5
-    elseif dmg == "miazdzac"   then value = 6
-    else
-        cecho("\n        <red>ZGLOS BRAK OPISU SPECA BARBA: <yellow>" .. opis .."<reset>\n")
-    end
+    local value = get_barb_damage_value(matches["damage"])
     scripts.gags:gag_own_spec(value, 6)
-    if matches[7] then
+    if string.len(matches["stun"]) > 0 then
         trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_ogluch()
     end
 end
@@ -26,12 +28,12 @@ end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_granit()
     scripts.gags:gag_prefix("GRA OGL", "moje_spece")
-    ateam:may_setup_paralyzed_name(matches[2])
+    ateam:may_setup_paralyzed_name(matches["target"])
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_spece_bar_ja_spec_ja_ogluch()
     scripts.gags:gag_own_spec("OGL")
-    ateam:may_setup_paralyzed_name(matches[2])
+    ateam:may_setup_paralyzed_name(matches["target"])
 end
 
 

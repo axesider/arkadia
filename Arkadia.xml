@@ -7466,7 +7466,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Bierzesz ogromny zamach swoim gigantycznym granitowym mlotem i uderzasz nim w glowe (.*)\.</string>
+											<string>^Bierzesz ogromny zamach swoim gigantycznym granitowym mlotem i uderzasz nim w glowe (?P&lt;target&gt;.+?)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie go zamroczylo\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -7509,7 +7509,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Nie (zastanawiajac sie dlugo|przebierajac w srodkach|silac sie na wirtuozerie|tracac czasu na zbedne manewry) z calej sily walisz (?P&lt;target&gt;.+?) na odlew (?P&lt;weapon&gt;.+?), (?P&lt;damage&gt;\w+) (?:mu|jej) przy tym (?P&lt;where&gt;.+?)(\. Nieprzyjemne chrzakniecie i metny wzrok przeciwnika swiadcza, ze dobrze wymierzony cios musial trafic w jakies wrazliwe miejsce)?\.$</string>
+											<string>^Nie (zastanawiajac sie dlugo|przebierajac w srodkach|silac sie na wirtuozerie|tracac czasu na zbedne manewry) z calej sily walisz (?P&lt;target&gt;.+?) na odlew (?P&lt;weapon&gt;.+?), (?P&lt;damage&gt;\w+) (?:mu|jej) przy tym (?P&lt;where&gt;.+?)(?P&lt;stun&gt;\. Nieprzyjemne chrzakniecie i metny wzrok przeciwnika swiadcza, ze dobrze wymierzony cios musial trafic w jakies wrazliwe miejsce)?\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -11075,7 +11075,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>.* bierze ogromny zamach swoim gigantycznym granitowym mlotem i wyprowadza potworny cios w glowe (.*)\.</string>
+											<string>^(.+?) bierze ogromny zamach swoim gigantycznym granitowym mlotem i wyprowadza potworny cios w glowe (?P&lt;target&gt;.+?)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie go zamroczylo\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -11117,7 +11117,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Nie (zastanawiajac sie dlugo|przebierajac w srodkach|silac sie na wirtuozerie|tracac czasu na zbedne manewry) (.+?) z calej sily wali (?P&lt;target&gt;.+?) na odlew (?P&lt;weapon&gt;.+?), (\w+) (?:mu|jej) przy tym (?P&lt;where&gt;.+?)(\. Nieprzyjemne chrzakniecie i metny wzrok przeciwnika swiadcza, ze dobrze wymierzony cios musial trafic w jakies wrazliwe miejsce)?\.$</string>
+											<string>^Nie (zastanawiajac sie dlugo|przebierajac w srodkach|silac sie na wirtuozerie|tracac czasu na zbedne manewry) (.+?) z calej sily wali (?P&lt;target&gt;.+?) na odlew (?P&lt;weapon&gt;.+?), (?P&lt;damage&gt;\w+) (?:mu|jej) przy tym (?P&lt;where&gt;.+?)(?P&lt;stun&gt;\. Nieprzyjemne chrzakniecie i metny wzrok przeciwnika swiadcza, ze dobrze wymierzony cios musial trafic w jakies wrazliwe miejsce)?\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -11125,7 +11125,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ktos_spec_mnie</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_ktos_spec()</script>
+										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_bar_ktos_spec_mnie_spec()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -11137,7 +11137,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Nie (zastanawiajac sie dlugo|przebierajac w srodkach|silac sie na wirtuozerie|tracac czasu na zbedne manewry) (.+?) z calej sily wali cie na odlew (?P&lt;weapon&gt;.+?), (?P&lt;damage&gt;\w+) ci przy tym (?P&lt;where&gt;.+?)(\. Dobrze wymierzony cios sprawia, ze chwiejesz sie na nogach i robi ci sie ciemno przed oczami\.\.)?\.$</string>
+											<string>^Nie (zastanawiajac sie dlugo|przebierajac w srodkach|silac sie na wirtuozerie|tracac czasu na zbedne manewry) (.+?) z calej sily wali cie na odlew (?P&lt;weapon&gt;.+?), (?P&lt;damage&gt;\w+) ci przy tym (?P&lt;where&gt;.+?)(?P&lt;stun&gt;\. Dobrze wymierzony cios sprawia, ze chwiejesz sie na nogach i robi ci sie ciemno przed oczami\.\.)?\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
