@@ -365,9 +365,14 @@ Argument:
   * `arg1`: typ wiadomosci
   * `arg2`: tekst wiadomosci
 
+## `weaponBroken`
+
+Event podniesiony kiedy bron dzierzona przez gracza peknie.
+
 ## `killed_action`
 
 Event podniesiony po zabiciu.
 
 Argument:
   * `arg1`: opis zabitego
+
