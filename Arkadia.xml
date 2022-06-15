@@ -5753,7 +5753,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>lekko rani</string>
+												<string>zamaszystym uderzeniem adamantytowego mlota bojowego.</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
@@ -5773,7 +5773,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>raniac</string>
+												<string>potezny cios adamantytowym mlotem bojowym, raniac</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
