@@ -2803,7 +2803,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>opalizujac\w+ runiczn\w+ topor\w+ obosiecz\w+</string>
+										<string>opalizujac\w+ runiczn\w+ topor(|\w+) obosiecz\w+</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
@@ -2857,7 +2857,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Czujesz jak opalizujacy runiczny topor obosieczny zaczyna drgac w twych rekach jakby chcial sie wyrwac i za wszelka cene dosiegnac przeciwnika\. Twoj opalizujacy runiczny topor obosieczny trafia (?P&lt;target&gt;.+?) zaglebiajac sie lekko w je(?:go|j) (?P&lt;where&gt;.+?)\. Posoka powoli splywajaca po ostrzu zdaje sie gotowac\.$</string>
+												<string>^Twoj opalizujacy runiczny topor obosieczny trafia (?P&lt;target&gt;.+?), zaglebiajac sie lekko w je(?:go|j) (?P&lt;where&gt;.+?)\. Posoka powoli splywajaca po ostrzu zdaje sie gotowac\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3078,8 +3078,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Poteznym ciosem opalizujacego runicznego topora obosiecznego trafiasz (?&lt;target&gt;.+?) prosto w (?&lt;where&gt;.+?)\. Krew zalewa mu niewidzace juz nic oczy\. Przeciwnik pada martwy\.$</string>
+												<string>^Poteznym cieciem opalizujacego runicznego topora obosiecznego dosiegasz swego przeciwnika\. Ostrze zaglebia sie w jego (?P&lt;where&gt;.+?), przecinajac miesnie i gruchoczac kosci\. Biale, oslepiajace swiatlo ktore bije od runow zdaje sie dodatkowo ranic\. (?P&lt;target&gt;.+?) zamiera, jego krew bryzga z rozcietego korpusu na wszystkie strony, a po chwili pada na ziemie, dygoczac chwile, po czym nieruchomieje\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
