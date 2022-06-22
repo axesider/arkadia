@@ -2517,166 +2517,18 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<mSoundFile></mSoundFile>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList />
-										<regexCodePropertyList />
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="yes" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>mister 1</name>
-											<script>trigger_func_skrypty_ui_gags_misterny_innych(1)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Z oszczednego zamachu .* uderza .* misternym obosiecznym toporem</string>
-												<string>^Szybkim ciosem jednego ze szpikulcow misternego obosiecznego topora .* uderza</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>mister 2</name>
-											<script>trigger_func_skrypty_ui_gags_misterny_innych(2)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^.* zahacza misternym obosiecznym toporem</string>
-												<string>^.* godzi .* ostrym jak igla szpikulcem sterczacym z misternego obosiecznego topora</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>mister 3</name>
-											<script>trigger_func_skrypty_ui_gags_misterny_innych(3)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^.* z szerokiego zamachu tnie misternym obosiecznym toporem</string>
-												<string>^.* wykorzystuje .* misternego obosieczneg topora .*pozostawiajac gleboka rane\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>mister 4</name>
-											<script>trigger_func_skrypty_ui_gags_misterny_innych(4)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Rozpedzone ostrze dzierzonego przez (?!ciebie).* misternego obosiecznego topora</string>
-												<string>^Naglym pchnieciem .* wbija .* misternego obosiecznego topora .* powodujac paskudny krwotok\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>mister 5</name>
-											<script>trigger_func_skrypty_ui_gags_misterny_innych(5)
-
-</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Przy akompaniamencie oszalamiajacego syku przecinanego powietrza krwawe ostrze dzierzonego przez .* misternego obosiecznego topora</string>
-												<string>.* z impetem wyrzuca przed siebie misterny obosieczny topor</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>mister 6</name>
-											<script>trigger_func_skrypty_ui_gags_misterny_innych(6)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Druzgoczacym atakiem misternego obosiecznego topora</string>
-												<string>^.* zupelnie zaskakuje .* misternego obosiecznego topora .* prawie na wylot!$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-									</TriggerGroup>
-								</TriggerGroup>
-								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-									<name>opalizujacy topor</name>
-									<script></script>
-									<triggerType>0</triggerType>
-									<conditonLineDelta>0</conditonLineDelta>
-									<mStayOpen>0</mStayOpen>
-									<mCommand></mCommand>
-									<packageName></packageName>
-									<mFgColor>#ff0000</mFgColor>
-									<mBgColor>#ffff00</mBgColor>
-									<mSoundFile></mSoundFile>
-									<colorTriggerFgColor>#000000</colorTriggerFgColor>
-									<colorTriggerBgColor>#000000</colorTriggerBgColor>
-									<regexCodeList>
-										<string>opalizujac\w+ runiczn\w+ topor(|\w+) obosiecz\w+</string>
-									</regexCodeList>
-									<regexCodePropertyList>
-										<integer>1</integer>
-									</regexCodePropertyList>
-									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>moje</name>
-										<script></script>
+										<regexCodeList>
+											<string>^[ &gt;]*Wykonujesz zwinny polobrot, ciagnac sztych swego srebrnego wiedzminskiego miecza dwurecznego tuz za soba by uderzyc nim.*</string>
+											<string>^[ &gt;]*Wykonujesz nagle pchniecie swym srebrnym wiedzminskim mieczem dwurecznym, lekko raniac .*\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>ja_rani</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_rani()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -2687,274 +2539,16 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<mSoundFile></mSoundFile>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList />
-										<regexCodePropertyList />
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal spec 1</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal_spec(1)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>Wyprowadzasz potezny zamach opalizujacym runicznym toporem obosiecznym, jednak zle wymierzasz cios i bron zaledwie muska </string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>2</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal spec 2</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal_spec(2)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Twoj opalizujacy runiczny topor obosieczny trafia (?P&lt;target&gt;.+?), zaglebiajac sie lekko w je(?:go|j) (?P&lt;where&gt;.+?)\. Posoka powoli splywajaca po ostrzu zdaje sie gotowac\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal spec 3</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal_spec(3)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>Zamaszystym cieciem opalizujacego runicznego topora obosiecznego trafiasz</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>2</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal spec 4</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal_spec(4)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>Poteznym uderzeniem swojego opalizujacego runicznego topora obosiecznego</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>2</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal spec 5</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal_spec(5)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>Ze swistem twoj opalizujacy runiczny topor obosieczny opada w kierunku </string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>2</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal 1</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal(1)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Muskasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) swoim opalizujacym runicznym toporem obosiecznym\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal 2</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal(2)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) zamaszystym ciosem swojego opalizujacego runicznego topora obosiecznego, kaleczac go\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal 3</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal(3)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Lekko ranisz (?P&lt;target&gt;.+?), trafiajac go w (?P&lt;where&gt;.+?) zamaszystym cieciem swojego opalizujacego runicznego topora obosiecznego\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal 4</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal(4)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Wykonujesz potezny zamach opalizujacym runicznym toporem obosiecznym, raniac (?P&lt;target&gt;.+?) w (?&lt;where&gt;.+?)$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal 5</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal(5)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Wykonujesz zamaszysty cios opalizujacym runicznym toporem obosiecznym, celujac w (?P&lt;target&gt;.+?)\. Ostrze wnika w cialo, pozostawiajac krwawa bruzde\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal 6</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal(6)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Potezne ciecie twojego opalizujacego runicznego topora obosiecznego trafia w (?P&lt;target&gt;.+?), otwierajac krwawiaca rane na je(?:go|j) ciele\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal 7</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal(7)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Bezlitosnie masakrujesz (?&lt;target&gt;.+?) opalizujacym runicznym toporem obosiecznym, trafiajac (go|ja) w (?P&lt;where&gt;.+?)\. Wyglada na to, ze kolejne takie uderzenie bedzie juz ostatnim w tej walce\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>opal fin</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_opal(8)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Poteznym ciosem opalizujacego runicznego topora obosiecznego trafiasz (?&lt;target&gt;.+?) prosto w (?&lt;where&gt;.+?)\. Krew zalewa mu niewidzace juz nic oczy\. Przeciwnik pada martwy\.$</string>
-												<string>^Poteznym cieciem opalizujacego runicznego topora obosiecznego dosiegasz swego przeciwnika\. Ostrze zaglebia sie w jego (?P&lt;where&gt;.+?), przecinajac miesnie i gruchoczac kosci\. Biale, oslepiajace swiatlo ktore bije od runow zdaje sie dodatkowo ranic\. (?P&lt;target&gt;.+?) zamiera, jego krew bryzga z rozcietego korpusu na wszystkie strony, a po chwili pada na ziemie, dygoczac chwile, po czym nieruchomieje\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-									</TriggerGroup>
-									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>innych</name>
-										<script></script>
+										<regexCodeList>
+											<string>^[ &gt;]*Klinga dzierzonego przez ciebie srebrnego wiedzminskiego miecza dwurecznego ze swistem przeszywa powietrze, gdy z wymachu .*</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>ja_powaznie_rani</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_wiedzminski_ja_powaznie_rani()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -5384,33 +4978,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>dwusegmentow(a|ej) maczug[ai]</string>
+											<string>srebrzystym mlotem wojennym</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>dwusegmentowa_0</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa()</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Mordercze ostrza glowicy twej szponiastej dwusegmentowej maczugi ze swistem rozcinaja powietrze, (?P&lt;where_target&gt;.+?) (?P&lt;damage&gt;unika) jednak tego ciosu\.$</string>
-												<string>^Mordercze ostrza glowicy szponiastej dwusegmentowej maczugi (?P&lt;attacker&gt;.+?) ze swistem rozcinaja powietrze, (?P&lt;target&gt;.+?) (?P&lt;damage&gt;unika) jednak tego ciosu\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>gryfi_1</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_gryfi_mlot(1)</script>
@@ -5425,7 +4997,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Z oszczednego zamachu uderzasz glowica szponiastej dwusegmentowej maczugi w (?P&lt;where_target&gt;.+?), nie zadajac jednak (powaznych ran|powazniejszych obrazen)\.$</string>
+												<string>ledwie zahaczajac</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
@@ -5465,7 +5037,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Z powodzeniem trafiasz (?P&lt;target&gt;.+?) celnym ciosem swej szponiastej dwusegmentowej maczugi w (?P&lt;where&gt;.+?), (zadajac nieduze obrazenia|orzac na jego skorze broczaca krwia rane)\.$</string>
+												<string>bolesnie obijajac</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
@@ -5485,7 +5057,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Rozpedzona glowica dzierzonej przez ciebie szponiastej dwusegmentowej maczugi z impetem (?:uderza|wbija sie) w (?P&lt;where_target&gt;.+?), raniac (go|ja)\.$</string>
+												<string>dotkliwie raniac</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
@@ -5505,7 +5077,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Celnie uderzasz szponiasta dwusegmentowa maczuga w (?P&lt;target&gt;.+?), z satysfakcja obserwujac (widoczne obrazenia|jak lukowate ostrza glowicy krwawo wgryzaja sie w (?:jego|jej) cialo)\.$</string>
+												<string>Widzac zawahanie przeciwnika</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>2</integer>
@@ -5525,7 +5097,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Z mocnego rozmachu uderzasz szponiasta dwusegmentowa maczuga w (?P&lt;target&gt;.+?)\. Najezona ostrzami glowica rozrywa krwawa rane na (jego|jej) ciele, paskudnie kaleczac (jej|mu) .*$</string>
+												<string>Kiedy ofiara pada na ziemie</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
@@ -5565,27 +5137,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Brutalnie odrzucasz (?P&lt;target&gt;.+?) od siebie mocarnym ciosem szponiastej dwusegmentowej maczugi, a najezona ostrzami glowica krwawo rozrywa je(?:j|go) (?P&lt;where&gt;.+?), niemalze rzucajac (go|ja) na ziemie\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>doszczetnie_masakrujac</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa()</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Miazdzysz (?P&lt;where_target&gt;.+?) swa szponiasta dwusegmentowa maczuga, a stalowe ostrza masywnej glowicy rozdzieraja straszliwa rane, niemalze doszczetnie (?P&lt;damage&gt;masakrujac) (jego|jej) slaniajace sie cialo\.$</string>
+												<string>ledwie zahaczajac</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
@@ -5605,29 +5157,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Wkladajac w zamach cala swa sile wyprowadzasz potezny cios szponiasta dwusegmentowa maczuga, ktorej glowica grajac zlowrozebnie brzekiem stalowych ogniw zalobna melodie przecina z furkotem powietrze, z morderczym impetem dosiegajac (?P&lt;target&gt;.+?)\. Potwornie zmasakrowane cialo bezwladnie osuwa sie w ciagle rosnaca kaluze krwi\.$</string>
-												<string>^Druzgoczacym zamachem szponiastej dwusegmentowej maczugi powalasz (?P&lt;target&gt;.+?) na ziemie i z ponurym grymasem, bezlitosnie wymierzasz smiertelny cios w je(?:go|j) (?P&lt;where&gt;.+?), raz na zawsze konczac walke\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>dwusegmentowa_inni</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa()</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^(?P&lt;attacker&gt;.+?) z powodzeniem trafia (?P&lt;target&gt;.+?) celnym ciosem swej szponiastej dwusegmentowej maczugi w (?P&lt;where&gt;.+?), orzac na (?:jego|jej|twej) skorze (?P&lt;damage&gt;broczaca) krwia rane\.$</string>
+												<string>nieznacznie tlukac</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
@@ -5949,7 +5479,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>zamaszystym uderzeniem adamantytowego mlota bojowego.</string>
+												<string>bolesnie</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
@@ -5969,7 +5499,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>potezny cios adamantytowym mlotem bojowym, raniac</string>
+												<string>potwornie kaleczac</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
@@ -8953,71 +8483,6 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												</regexCodePropertyList>
 											</Trigger>
 										</TriggerGroup>
-									</TriggerGroup>
-									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>kunsztowny mithrylowy topor bojowy</name>
-										<script></script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>kunsztown\w+ mithrylow\w+</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>mithrylowy_spece</name>
-											<script>local target = "moje_ciosy"
-    local dmg = matches["damage"]
-    local value = -1
-
-        if dmg == "tniesz"    then value = 4
-    elseif dmg == "uskakuje"  then value = 0
-    elseif dmg == "dotyka"    then value = 1
-    elseif dmg == "rabiesz"   then value = 2
-    elseif dmg == "trafia"    then value = 5
-    elseif dmg == "kosci"     then value = 3
-    elseif dmg == "druzgocze" then value = 6
-    end
-
-scripts.gags:gag(value, 6, target)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>^Twoj kunsztowny mithrylowy topor bojowy (?P&lt;damage&gt;dotyka) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) robiac ladna, swieza rane\.$</string>
-												<string>^Dobrze wymierzonym ciosem swego kunsztownego mithrylowego topora bojowego (?P&lt;damage&gt;rabiesz) (?P&lt;where_target&gt;.+?)\.$</string>
-												<string>^Swoim kunsztownym mithrylowym toporem bojowym (?P&lt;damage&gt;tniesz) gleboko (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), a do twych uszu dochodzi zgrzyt ostrza o kosci\.$</string>
-												<string>^Tniesz gleboko swym kunsztownym mithrylowym toporem bojowym w (?P&lt;where_target&gt;.+?) i slyszysz glosny odglos druzgotanych (?P&lt;damage&gt;kosci)\.$</string>
-												<string>^Przy wtorze swistu powietrza (?P&lt;target&gt;.+?) (?P&lt;damage&gt;uskakuje) przed morderczym ciosem twojego kunsztownego mithrylowego topora bojowego\.$</string>
-												<string>^(?P&lt;target&gt;.+?) niemal przewraca sie pod impetem twojego ciosu, gdy twoj kunsztowny mithrylowy topor bojowy (?P&lt;damage&gt;trafia) go w (?P&lt;where&gt;.+?)\.$</string>
-												<string>^Twoj kunsztowny mithrylowy topor bojowy brutalnie (?P&lt;damage&gt;druzgocze) (?P&lt;where_target&gt;.+?) ze smiercionosna sila\. (?P&lt;target&gt;.+?) pada na ziemie jako zmasakrowane i niemal nierozpoznawalne cialo\.$</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>1</integer>
-												<integer>1</integer>
-												<integer>1</integer>
-												<integer>1</integer>
-												<integer>1</integer>
-												<integer>1</integer>
-												<integer>1</integer>
-											</regexCodePropertyList>
-										</Trigger>
 									</TriggerGroup>
 								</TriggerGroup>
 							</TriggerGroup>
