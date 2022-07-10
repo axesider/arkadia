@@ -3605,7 +3605,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Jedynie lekko zahaczasz o \w+ .+? swym czarnoblekitnym pulsujacym morgensternem\.$</string>
+												<string>^Jedynie lekko zahaczasz o (?P&lt;where_target&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3625,7 +3625,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Wykonujesz powolny zamach swym czarnoblekitnym pulsujacym morgensternem\. Uderzenie nie dosiega celu, jedynie snop blekitnych iskier wylatujacych z glowicy trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), zadajac mu nieznaczne obrazenia\.$</string>
+												<string>^Wykonujesz powolny zamach swym czarnoblekitnym pulsujacym morgensternem\. Uderzenie nie dosiega celu, jedynie snop blekitnych iskier wylatujacych z glowicy trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), zadajac (?:jej|mu) nieznaczne obrazenia\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3665,7 +3665,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem, lekko go raniac\.$</string>
+												<string>^Trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem, lekko (?:go|ja) raniac\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3745,7 +3745,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Poteznym ciosem swojego czarnoblekitnego pulsujacego morgensterna trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+), a sila uderzenia miazdzy je(j|go) cialo\.$</string>
+												<string>^Poteznym ciosem swojego czarnoblekitnego pulsujacego morgensterna trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+), a sila uderzenia miazdzy je(?:j|go) cialo\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -4474,10 +4474,12 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Bierzesz potezny zamach krysztalowym swietlistym korbaczem mierzac w (?P&lt;target&gt;.+?), ten jednak cudem unika ciosu swiecacej glowicy\.$</string>
-												<string>^Probujesz zaskoczyc (?P&lt;target&gt;.+?) szybkim ciosem krysztalowego swietlistego korbacza, ten jednak (bez trudu paruje cios|w ostatniej chwili oslania sie) .*\.$</string>
+												<string>^(Probujesz|(?P&lt;attacker&gt;.+? probuje)) zaskoczyc (?P&lt;target&gt;.+?) szybkim ciosem krysztalowego swietlistego korbacza, ten jednak (bez trudu paruje cios|w ostatniej chwili oslania sie) .*\.$</string>
 												<string>^Trafiasz (?P&lt;target&gt;.+?) zamaszystym uderzeniem krysztalowego swietlistego korbacza w (?P&lt;where&gt;.+), jednak caly impet ciosu wyparowany zostaje przez .*\.$</string>
+												<string>^(.+?) potezny zamach krysztalowym swietlistym korbaczem mierzac w (?P&lt;target&gt;.+?), ten jednak cudem unika ciosu swiecacej glowicy\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -4499,8 +4501,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<regexCodeList>
 												<string>^Wyprowadzasz .+ uderzenie krysztalowym swietlistym korbaczem, (?P&lt;damage&gt;ledwie zahaczajac|nieznacznie tlukac|bolesnie obijajac|dotkliwie raniac|bardzo ciezko lomoczac) (?P&lt;target&gt;.+) w (?P&lt;where&gt;.+)\.$</string>
 												<string>^Bierzesz zamach swiecaca glowica krysztalowego swietlistego korbacza, (?P&lt;damage&gt;ledwie zahaczajac|nieznacznie tlukac|bolesnie obijajac|dotkliwie raniac|bardzo ciezko lomoczac) (?P&lt;target&gt;.+) w (?P&lt;where&gt;.+)\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) (:?bierze zamach swiecaca glowica krysztalowego swietlistego korbacza|wyprowadza .+ uderzenie krysztalowym swietlistym korbaczem), (?P&lt;damage&gt;ledwie zahaczajac|nieznacznie tlukac|bolesnie obijajac|dotkliwie raniac|bardzo ciezko lomoczac) (?P&lt;target&gt;.+) w (?P&lt;where&gt;.+)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
@@ -4540,8 +4544,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Zataczasz w powietrzu szerokie kolo glowica krysztalowego swietlistego korbacza i z calej sily uderzasz (?P&lt;target&gt;.+?)\.$</string>
+												<string>^(.+?) zatacza w powietrzu szerokie kolo glowica krysztalowego swietlistego korbacza i z calej sily uderza (?P&lt;target&gt;.+?) i uderza z calej sily krysztalowym swietlistym korbaczem\. Slychac trzask pekajacych kosci, gdy ofiara pada na ziemie\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -7863,6 +7869,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
+													<integer>1</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>mister fin</name>
+												<script>trigger_func_skrypty_ui_gags_misterny_innych(6)</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>^(?P&lt;attacker&gt;.+?) szybkim niczym atak kobry ciosem sterczacego z misternego obosiecznego topora gornego szpikulca z mordercza sila i precyzja trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), momentalniepozbawiajac (?:go|ja) zycia\. Bezwladne cialo wali sie na ziemie, wciaz broczac krwia ze smiertelnej rany\.$</string>
+												</regexCodeList>
+												<regexCodePropertyList>
 													<integer>1</integer>
 												</regexCodePropertyList>
 											</Trigger>
