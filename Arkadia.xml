@@ -3649,7 +3649,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Szybko wyprowadzasz cios i trafiasz (?P&lt;target&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem w (?P&lt;where&gt;.+?), zadajac mu nieznaczne obrazenia\.$</string>
+												<string>^Szybko wyprowadzasz cios i trafiasz (?P&lt;target&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem w (?P&lt;where&gt;.+?), zadajac (?:jej|mu) nieznaczne obrazenia\.$</string>
 												<string>^(?P&lt;attacker&gt;) szybko wyprowadza cios w (?P&lt;taget&gt;) i trafia go swym czarnoblekitnym pulsujacym morgensternem w (?P&lt;where&gt;.+?) zadajac mu nieznaczne obrazenia\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
@@ -7546,7 +7546,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>kunsztown\w+ mithrylow\w+</string>
+											<string>[Kk]unsztown\w+ mithrylow\w+</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -7566,14 +7566,20 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Twoj kunsztowny mithrylowy topor bojowy (?P&lt;damage&gt;dotyka) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) robiac ladna, swieza rane\.$</string>
-												<string>^Dobrze wymierzonym ciosem swego kunsztownego mithrylowego topora bojowego (?P&lt;damage&gt;rabiesz) (?P&lt;where_target&gt;.+?)\.$</string>
-												<string>^Swoim kunsztownym mithrylowym toporem bojowym (?P&lt;damage&gt;tniesz) gleboko (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), a do twych uszu dochodzi zgrzyt ostrza o kosci\.$</string>
+												<string>^Dobrze wymierzonym ciosem swego kunsztownego mithrylowego topora bojowego (?P&lt;damage&gt;rabie)sz (?P&lt;where_target&gt;.+?)\.$</string>
+												<string>^Swoim kunsztownym mithrylowym toporem bojowym (?P&lt;damage&gt;tnie)sz gleboko (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), a do twych uszu dochodzi zgrzyt ostrza o kosci\.$</string>
 												<string>^Tniesz gleboko swym kunsztownym mithrylowym toporem bojowym w (?P&lt;where_target&gt;.+?) i slyszysz glosny odglos druzgotanych (?P&lt;damage&gt;kosci)\.$</string>
 												<string>^Przy wtorze swistu powietrza (?P&lt;target&gt;.+?) (?P&lt;damage&gt;uskakuje) przed morderczym ciosem twojego kunsztownego mithrylowego topora bojowego\.$</string>
 												<string>^(?P&lt;target&gt;.+?) niemal przewraca sie pod impetem twojego ciosu, gdy twoj kunsztowny mithrylowy topor bojowy (?P&lt;damage&gt;trafia) go w (?P&lt;where&gt;.+?)\.$</string>
 												<string>^Twoj kunsztowny mithrylowy topor bojowy brutalnie (?P&lt;damage&gt;druzgocze) (?P&lt;where_target&gt;.+?) ze smiercionosna sila\. (?P&lt;target&gt;.+?) pada na ziemie jako zmasakrowane i niemal nierozpoznawalne cialo\.$</string>
+												<string>^Kunsztowny mithrylowy topor bojowy (?P&lt;attacker&gt;.+?) (?P&lt;damage&gt;dotyka) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) robiac ladna, swieza rane\.$</string>
+												<string>^Swoim kunsztownym mithrylowym toporem bojowym (?P&lt;attacker&gt;.+?) (?P&lt;damage&gt;tnie) gleboko (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), a do twych uszu dochodzi zgrzyt ostrza o kosci\.$</string>
+												<string>^Dobrze wymierzonym ciosem swego kunsztownego mithrylowego topora bojowego (?P&lt;attacker&gt;.+?) (?P&lt;damage&gt;rabie) (?P&lt;where_target&gt;.+?)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -18281,6 +18287,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<string>Chwytasz wielka smolista maczuga i czujesz, jak do twoich dloni przywiera lepka, czarna maz ktora pokrywa te bron na calej powierzchni.</string>
 								<string>Gdy tylko dobywasz czarnoblekitnego pulsujacego morgensterna, runy rozblyskuja srebrzystym swiatlem, a ty czujesz jak bron wibruje w twej dloni. Po chwili to wrazenie ustaje, znaki gasna, jednak caly czas czujesz przeplywajaca przez ciebie energie.</string>
 								<string>Dobywajac koscianej jednorecznej maczugi wykonujesz kilka szybkich ruchow, sprawdzajac jej porecznosc.</string>
+								<string>Dobywajac czarnego smuklego topora zauwazasz rozblyskujace na ostrzu dziwne, zielonkawe znaki.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
@@ -18312,6 +18319,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<integer>2</integer>
 								<integer>1</integer>
 								<integer>0</integer>
+								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>

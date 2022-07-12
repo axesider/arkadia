@@ -1,5 +1,5 @@
 function trigger_func_skrypty_ui_gags_color_moje_ciosy(value)
-    if line:match("opalizujacego runicznego")  then
+    if line:match("opalizujacego runicznego") or line:match("czarnego smuklego topora") then
         return
     end
 
