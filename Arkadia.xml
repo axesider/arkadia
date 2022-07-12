@@ -3606,8 +3606,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Jedynie lekko zahaczasz o (?P&lt;where_target&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem\.$</string>
+												<string>^(?P&lt;attacker&gt;) ledwo zahacza o (?P&lt;where_target&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem\.%</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -3626,8 +3628,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Wykonujesz powolny zamach swym czarnoblekitnym pulsujacym morgensternem\. Uderzenie nie dosiega celu, jedynie snop blekitnych iskier wylatujacych z glowicy trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), zadajac (?:jej|mu) nieznaczne obrazenia\.$</string>
+												<string>^(?P&lt;attacker&gt;) wykonuje powolny zamach swym czarnoblekitnym pulsujacym morgensternem\. Uderzenie nie dosiega celu, jedynie snop blekitnych iskier wylatujacych z glowicy broni trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), zadajac (?:jej|mu) nieznaczne obrazenia\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -3646,9 +3650,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Szybko wyprowadzasz cios i trafiasz (?P&lt;target&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem w (?P&lt;where&gt;.+?), zadajac mu nieznaczne obrazenia\.$</string>
+												<string>^(?P&lt;attacker&gt;) szybko wyprowadza cios w (?P&lt;taget&gt;) i trafia go swym czarnoblekitnym pulsujacym morgensternem w (?P&lt;where&gt;.+?) zadajac mu nieznaczne obrazenia\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
+												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -3686,8 +3692,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Uderzasz (?P&lt;target&gt;.+?) prosto w (?P&lt;where&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem\. Metalowa kula rozblyska ostrym blekitnym swiatlem, gdy nieznacznie zaglebia sie w cialo, zadajac bolesne obrazenia\.$</string>
+												<string>^(?P&lt;attacker&gt;) uderza prosto w (?P&lt;where&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem\. Metalowa kula na koncu broni rozblyska ostrym blekitnym swiatlem, gdy nieznaczniezaglebia sie w cialo, zadajac bolesne obrazenia\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -4524,8 +4532,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Z szerokiego mlynca bierzesz zamach krysztalowym swietlistym korbaczem i uderzasz (?P&lt;target&gt;.+?) swiecaca glowica broni, na chwile pozbawiajac ofiare oddechu\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) z szerokiego mlynca bierze zamach krysztalowym swietlistym korbaczem i uderza (?P&lt;target&gt;.+?) swiecaca glowica broni, na chwile pozbawiajac ofiare oddechu\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -5429,6 +5439,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<regexCodePropertyList>
 											<integer>1</integer>
 										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>rezonujacy_ledwo</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_rezonujacy_mlot(1)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Posiadajace zbyt malo impetu uderzenie twojego rezonujacego krysztalowego mlota ledwie ociera sie o (?P&lt;target&gt;.*)\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>rezonujacy_1</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_rezonujacy_mlot(1)</script>
@@ -23255,7 +23285,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Mozesz podazac traktem na (.*)\. Natomiast (aby|jesli chcesz) zejsc z wytyczonej drogi (wystarczy|musisz|mozesz) udac sie w dowolnym innym kierunku\.</string>
+							<string>^Mozesz podazac traktem na (?P&lt;trakt1&gt;[a-z-]+) albo (?P&lt;trakt2&gt;[a-z-]+)\. Natomiast aby zejsc z wytyczonej drogi wystarczy udac sie w dowolnym innym kierunku\.$</string>
 							<string>Wedrowke przez rozlegle laki mozesz kontynuowac w dowolnie wybranym kierunku.</string>
 							<string>Mozesz stad wyruszyc w dowolnie wybranym kierunku.</string>
 						</regexCodeList>

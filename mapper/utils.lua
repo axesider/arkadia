@@ -201,48 +201,21 @@ function amap:print_log(msg, new_line)
 end
 
 function amap:parse_trigger_exits(text)
-    local sep = string.split(text, ", ")
+    local sep = string.split(text:gsub(",",""), " ")
     local dirs = {}
 
     for k, v in pairs(sep) do
-        local sep_last_i = string.split(v, " i ")
-        local sep_last_lub = string.split(v, " lub ")
-        local sep_last_oraz = string.split(v, " oraz ")
-        local sep_last_albo = string.split(v, " albo na ")
-
-        if #sep_last_i > 1 then
-            for j, l in pairs(sep_last_i) do
-                table.insert(dirs, l)
+        if v == "i" or v == "lub" or v == "oraz" or v == "albo" or v == "na" then else
+            local dir_eng = amap.polish_to_english[v]
+            if amap.long_to_short[dir_eng] then
+                dirs[amap.long_to_short[dir_eng]] = true
+            else
+                dirs[v] = true
             end
-        elseif #sep_last_lub > 1 then
-            for j, l in pairs(sep_last_lub) do
-                table.insert(dirs, l)
-            end
-        elseif #sep_last_oraz > 1 then
-            for j, l in pairs(sep_last_oraz) do
-                table.insert(dirs, l)
-            end
-        elseif #sep_last_albo > 1 then
-            for j, l in pairs(sep_last_albo) do
-                table.insert(dirs, l)
-            end
-        else
-            table.insert(dirs, v)
         end
     end
 
-    local final_dirs = {}
-    for i, dir in pairs(dirs) do
-        if amap.long_to_short[amap.polish_to_english[dir]] then
-            final_dirs[amap.long_to_short[amap.polish_to_english[dir]]] = true
-            --table.insert(final_dirs, amap.long_to_short[amap.polish_to_english[dir]])
-        else
-            final_dirs[dir] = true
-            --table.insert(final_dirs, dir)
-        end
-    end
-
-    return final_dirs
+    return dirs
 end
 
 function amap:log_failed_follow(msg)
