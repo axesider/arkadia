@@ -205,7 +205,7 @@ function amap:parse_trigger_exits(text)
     local dirs = {}
 
     for k, v in pairs(sep) do
-        if v == "i" or v == "lub" or v == "oraz" or v == "albo" or v == "na" then else
+        if v == "" or v == "i" or v == "lub" or v == "oraz" or v == "albo" or v == "na" then else
             local dir_eng = amap.polish_to_english[v]
             if amap.long_to_short[dir_eng] then
                 dirs[amap.long_to_short[dir_eng]] = true
