@@ -129,16 +129,21 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenste
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_fin() scripts.gags:gag_prefix("FIN", "moje_ciosy") end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_iskrzaca_zdobiona_bulawa()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = (matches["target"] == nil or matches["target"] == "cie") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
     local dmg = matches["damage"]
     local value = -1
         if dmg == "lekko" then value = 1
-    elseif dmg == "ranisz" then value = 2
+    elseif dmg == "rani" then value = 2
     elseif dmg == "raniac" then value = 3
     elseif dmg == "powaznie" then value = 4
-    elseif dmg == "razisz" then value = 5
+    elseif dmg == "razi" then value = 5
     elseif dmg == "razac" then value = 6
     else end
-    scripts.gags:gag(value, 6, "moje_ciosy")
+    scripts.gags:gag(value, 6, target)
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_iskrzaca_zdobiona_bulawa_fin()

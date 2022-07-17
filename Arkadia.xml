@@ -4597,14 +4597,20 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<regexCodeList>
 												<string>^Gdy wykonujesz zamach swoja iskrzaca zdobiona bulawa, swist broni wydaje sie brzmiec jak wicher zwiastujacy nadejscie burzy\. Mierzony cios trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), (?P&lt;damage&gt;powaznie) (go|ja) raniac\.$</string>
 												<string>^Przeskakujace z glowicy iskrzacej zdobionej bulawy iskry porazaja (?P&lt;target&gt;.+?), gdy (?P&lt;damage&gt;lekko) muskasz bronia je(j|go) (?P&lt;where&gt;.+?)\.$</string>
-												<string>^Przy akompaniamencie trzeszczacych wyladowan, niezbyt mocno (?P&lt;damage&gt;ranisz) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) lekkim ciosem swojej iskrzacej zdobionej bulawy\.$</string>
+												<string>^Przy akompaniamencie trzeszczacych wyladowan, niezbyt mocno (?P&lt;damage&gt;rani)sz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) lekkim ciosem swojej iskrzacej zdobionej bulawy\.$</string>
 												<string>^Wyprowadzasz mierzony cios swoja iskrzaca zdobiona bulawa i uderzasz (?P&lt;target&gt;.+?), (?P&lt;damage&gt;raniac) (go|ja) w (?P&lt;where&gt;.+?)\. Celnemu trafieniu towarzyszy przeskakujaca z glowicy broni na przeciwni(?:ka|czke) iskra i akompaniujacy jej gluchy grzmot\.$</string>
 												<string>^Gdy unosisz wysoko iskrzaca zdobiona bulawe, wyladowania na na glowicy broni wzmagaja sie jeszcze bardziej\. Korzystajac z nagromadzonej w orezu elektrycznosci, poteznym ciosem (?P&lt;damage&gt;razi)sz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?)\.$</string>
 												<string>^Wsrod ogluszajacego huku gromow glowica iskrzacej zdobionej bulawy rozblyska blekitnym swiatlem, a po jej cwiekach zaczyna tanczyc wiazka bialych blyskawic\. Twoja reka wiedziona sila szalejacej burzy unosi sie, a kiedy wskazujesz (?P&lt;target&gt;.+?), blyskawice splataja sie i wystrzeliwuja naprzod, (?P&lt;damage&gt;razac) cel straszliwym piorunem\. Po ciele (.+?) wciaz jeszcze przebiegaja syczace iskry, kiedy ty odzyskujesz pelnie wladzy nad swa reka, szykujac sie do zadania nastepnego ciosu\.$</string>
-												<string>^(?P&lt;attacker&gt;) wyprowadza mierzony cios iskrzaca zdobiona bulawa i uderza (?P&lt;target&gt;.+?), raniac (go|ja) w (?P&lt;where&gt;.+?)\. Celnemu trafieniu towarzyszy przeskakujaca z glowicy broni na przeciwnika iskra i akompaniujacy jej gluchy grzmot\.$</string>
-												<string>^Gdy (?P&lt;attacker&gt;) unosi wysoko swoja iskrzaca zdobiona bulawe, wyladowania na glowicy broni wzmagaja sie jeszcze bardziej\. Korzystajac z nagromadzonej w orezu elektrycznosci, kobieta poteznym ciosem (?P&lt;damage&gt;razi)(?P&lt;target&gt;) w (?P&lt;where&gt;.+?)\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) wyprowadza mierzony cios iskrzaca zdobiona bulawa i uderza (?P&lt;target&gt;.+?), (?P&lt;damage&gt;raniac) (go|ja) w (?P&lt;where&gt;.+?)\. Celnemu trafieniu towarzyszy przeskakujaca z glowicy broni na przeciwnika iskra i akompaniujacy jej gluchy grzmot\.$</string>
+												<string>^Gdy (?P&lt;attacker&gt;.+?) unosi wysoko swoja iskrzaca zdobiona bulawe, wyladowania na glowicy broni wzmagaja sie jeszcze bardziej\. Korzystajac z nagromadzonej w orezu elektrycznosci, \w+ poteznym ciosem (?P&lt;damage&gt;razi)(?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?)\.$</string>
+												<string>^Przy akompaniamencie trzeszczacych wyladowan, (?P&lt;attacker&gt;.+?) lagodnym ruchem niezbyt mocno (?P&lt;damage&gt;rani) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) ciosem swojej iskrzacej zdobionej bulawy\.$</string>
+												<string>^Przeskakujace z glowicy iskrzacej zdobionej bulawy iskry porazaja (?P&lt;target&gt;.+?), gdy (?P&lt;attacker&gt;.+?) (?P&lt;damage&gt;lekko) muska bronia je(go|j) (?P&lt;where&gt;.+?)\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) wyprowadza mierzony cios iskrzaca zdobiona bulawa i uderza (?P&lt;target&gt;.+?), (?P&lt;damage&gt;raniac) (go|ja) w (?P&lt;where&gt;.+?)\. Celnemu trafieniu towarzyszy przeskakujaca z glowicy broni na przeciwni(?:ka|czke) iskra iakompaniujacy jej gluchy grzmot\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -4630,8 +4636,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Cwieki na glowicy twojej iskrzacej zdobionej bulawy rozblyskuja bialym swiatlem, a wokol (?&lt;target&gt;.+?) zaczynaja tanczyc w powietrzu syczace iskry\. Czujesz, jak magiczny sztorm zaklety w bulawie osiaga apogeum i unosisz bron do zadania ostatniego ciosu\. W reakcji na ten ruch luk ze splecionych blyskawic przeskakuje miedzy glowica maczugi a ofiara, zabijajac ja na miejscu\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) unosi swoja bron, a po iskrzacej zdobionej bulawie zaczynaja pelzac biale blyskawice\. Skierowawszy huczaca glowice ku (?P&lt;target&gt;.+?), .+? pozwala szalejacej niej wewnatrz burzy znalezc ujscie\. Wsrod ogluszajacego huku blyskawic, miedzy bronia a ofiara przeskakuje oslepiajaco bialy luk splecionych piorunow, ktory zabija cel na miejscu\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -23307,7 +23315,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>wyjscia-2</name>
 						<script>trigger_func_mapper_directions_ui_wyjscia_2()</script>
 						<triggerType>0</triggerType>
@@ -23327,7 +23335,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>wyjscia-2_1</name>
 						<script>trigger_func_mapper_directions_ui_wyjscia_2_1()</script>
 						<triggerType>0</triggerType>
