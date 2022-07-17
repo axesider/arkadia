@@ -7616,7 +7616,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>mistern\w+ obosieczn\w+ topor\w+</string>
+											<string>mistern\w+ obosieczn\w+ topor</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -7650,10 +7650,12 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^Z oszczednego zamachu uderzasz swym misternym obosiecznym toporem w .*</string>
-													<string>^Szybkim ciosem jednego ze szpikulcow misternego obos uderzasz w .*, pozostawiajac niewielkie zadrapanie\.$</string>
+													<string>^Z oszczednego zamachu uderzasz swym misternym obosiecznym toporem w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), znaczac ostrze broni kilkoma kroplami krwi\.$</string>
+													<string>^Szybkim ciosem jednego ze szpikulcow misternego obosiecznego topora uderzasz w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), pozostawiajac niewielkie zadrapanie\.$</string>
+													<string>^Z oszczednego zamachu uderzasz swym misternym obosiecznym toporem w (?P&lt;target&gt;.+?), nieznacznie raniac jego (?P&lt;where&gt;.+?)\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
+													<integer>1</integer>
 													<integer>1</integer>
 													<integer>1</integer>
 												</regexCodePropertyList>
@@ -7672,7 +7674,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^Twoj misterny obosieczny topor zahacza o .*</string>
+													<string>^Twoj misterny obosieczny topor zahacza o (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), (?:pozostawiajac plytka, nierowna rane|zadajac nieduze obrazenia)\.$</string>
 													<string>^Ostrym jak sztylet gornym szpikulcem sterczacym ze styliska misternego obosiecznego topora godzisz .*, spuszczajac .* nieco krwi\.</string>
 												</regexCodeList>
 												<regexCodePropertyList>
@@ -7694,7 +7696,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^Z szerokiego zamachu tniesz misternym obosiecznym toporem w .*</string>
+													<string>^Z szerokiego zamachu tniesz misternym obosiecznym toporem w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), (?:a tryskajaca z tej rany krew zrasza ziemie|raniac (:?go|ja))\.$</string>
 													<string>^Korzystajac z nadarzajacej sie okazji, gwaltownym uderzeniem styliska misternego obosiecznego topora wbijasz sterczacy zen szpic w .*, pozostawiajac gleboka rane\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
@@ -7716,8 +7718,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^Rozpedzone ostrze dzierzonego przez ciebie misternego obosiecznego topora bezlitosnie wbija sie w .*</string>
-													<string>^Naglym pchnieciem wbijasz sterczacy z nasady zelezca misternego obosiecznego topora kolec w .*, powodujac paskudny krwotok\.$</string>
+													<string>^Rozpedzone ostrze dzierzonego przez ciebie misternego obosiecznego topora bezlitosnie wbija sie w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), zadajac (?:jej|mu) ciezka rane\.$</string>
+													<string>^Naglym pchnieciem wbijasz sterczacy z nasady zelezca misternego obosiecznego topora kolec w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), powodujac paskudny krwotok\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
@@ -7763,6 +7765,30 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 													<string>^Druzgoczacym atakiem misternego obosiecznego topora brutalnie rozcinasz .*, zatrzymujac ped swej morderczej broni dopiero wtedy, kiedy zbrukane posoka ostrze grzeznie pomiedzy koscmi ofiary .*</string>
 													<string>^Ostrze twego misternego obosiecznego topora rozblyskuje w szalonym pedzie gdy biorac potezny zamach uderzasz nim </string>
 													<string>^Zdradliwe pchniecie ozdobiona siedmiocalowym kolcem rekojescia twego misternego obosiecznego topora zupelnie zaskakuje</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>1</integer>
+													<integer>1</integer>
+													<integer>1</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>mister_fin</name>
+												<script>trigger_func_skrypty_ui_gags_moje_ciosy_misterny_fin()</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>^Szybki niczym atak kobry cios gornego szpikulca sterczacego z twojego misternego obosiecznego topora z mordercza sila trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), momentalnie pozbawiajac go zycia\. Bezwladne cialo pada u twych stop, wciaz jeszcze broczac krwia ze smiertelnej rany\.$</string>
+													<string>^Szybkim wypadem wymijasz (?P&lt;target&gt;.+?) i wykorzystujac rozpedzona mase swego misternego obosiecznego topora bez trudu wyprowadzasz w pedzie dwa smiertelne ciosy\.$</string>
+													<string>^Rzucajac sie do ostatecznego ataku wyprowadzasz straszliwe, pelne sily ciecie swym misternym obosiecznym toporem, ktore z mordercza precyzja smiertelnie godzi (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), ostatecznie konczac boj\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
