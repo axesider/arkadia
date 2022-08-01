@@ -23155,7 +23155,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>wyjscia-2</name>
 						<script>trigger_func_mapper_directions_ui_wyjscia_2()</script>
 						<triggerType>0</triggerType>
