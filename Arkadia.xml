@@ -7587,8 +7587,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Kunsztowny mithrylowy topor bojowy (?P&lt;attacker&gt;.+?) (?P&lt;damage&gt;dotyka) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) robiac ladna, swieza rane\.$</string>
 												<string>^Swoim kunsztownym mithrylowym toporem bojowym (?P&lt;attacker&gt;.+?) (?P&lt;damage&gt;tnie) gleboko (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), a do twych uszu dochodzi zgrzyt ostrza o kosci\.$</string>
 												<string>^Dobrze wymierzonym ciosem swego kunsztownego mithrylowego topora bojowego (?P&lt;attacker&gt;.+?) (?P&lt;damage&gt;rabie) (?P&lt;where_target&gt;.+?)\.$</string>
+												<string>^Kunsztowny mithrylowy topor bojowy (?P&lt;attacker&gt;.+?) brutalnie (?P&lt;damage&gt;druzgocze) (?P&lt;where_target&gt;.+?) ze smiercionosna sila\. (?P&lt;target&gt;.+?) pada na ziemie jako zmasakrowane i niemal nierozpoznawalne cialo\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -7718,7 +7720,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^Rozpedzone ostrze dzierzonego przez ciebie misternego obosiecznego topora bezlitosnie wbija sie w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), (?:zadajac (?:jej|mu) ciezka rane|, ciezko (?:go|ja) raniac)\.$</string>
+													<string>^Rozpedzone ostrze dzierzonego przez ciebie misternego obosiecznego topora bezlitosnie wbija sie w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), (?:zadajac (?:jej|mu) ciezka rane|ciezko (?:go|ja) raniac)\.$</string>
 													<string>^Naglym pchnieciem wbijasz sterczacy z nasady zelezca misternego obosiecznego topora kolec w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), (?:powodujac paskudny krwotok|zadajac powazne obrazenia)\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
@@ -7740,7 +7742,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^Przy akompaniamencie oszalamiajacego syku przecinanego powietrza krwawe ostrze twego misternego obosiecznego topora wrzyna sie w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), odrzucajac (?:go|ja) w tyl niczym szmaciana lalke\.$</string>
+													<string>^Przy akompaniamencie oszalamiajacego syku przecinanego powietrza krwawe ostrze twego misternego obosiecznego topora (?:godzi|wrzyna sie) w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), (?:odrzucajac (?:go|ja) w tyl niczym szmaciana lalke\.|zadajac ogromne obrazenia!)$</string>
 													<string>^Z impetem wyrzucasz przed siebie misterny obosieczny topor, idealnie wymierzajac cios gornego szpica w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), bardzo ciezko (?:go|ja) raniac\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
@@ -7786,7 +7788,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^Szybki niczym atak kobry cios gornego szpikulca sterczacego z twojego misternego obosiecznego topora z mordercza sila trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), momentalnie pozbawiajac go zycia\. Bezwladne cialo pada u twych stop, wciaz jeszcze broczac krwia ze smiertelnej rany\.$</string>
+													<string>^Szybki niczym atak kobry cios gornego szpikulca sterczacego z twojego misternego obosiecznego topora z mordercza sila trafia (?P&lt;target&gt;.+?)(?: w (?P&lt;where&gt;.+?), momentalnie pozbawiajac go zycia\. Bezwladne cialo pada u twych stop, wciaz jeszcze broczac krwia ze smiertelnej rany|, momentalnie konczac walke)\.$</string>
 													<string>^Szybkim wypadem wymijasz (?P&lt;target&gt;.+?) i wykorzystujac rozpedzona mase swego misternego obosiecznego topora bez trudu wyprowadzasz w pedzie dwa smiertelne ciosy\.$</string>
 													<string>^Rzucajac sie do ostatecznego ataku wyprowadzasz straszliwe, pelne sily ciecie swym misternym obosiecznym toporem, ktore z mordercza precyzja smiertelnie godzi (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), ostatecznie konczac boj\.$</string>
 												</regexCodeList>
@@ -7871,7 +7873,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
 													<string>^.* z szerokiego zamachu tnie misternym obosiecznym toporem</string>
-													<string>^.* wykorzystuje .* misternego obosieczneg topora .*pozostawiajac gleboka rane\.$</string>
+													<string>^(?P&lt;attacker&gt;.+?) wykorzystuje blad (?P&lt;target&gt;.+?) i wbija (?:jej|mu) sterczacy z rekojesci misternego obosiecznego topora szpikulec w (?P&lt;where&gt;.+?), pozostawiajac gleboka rane\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
@@ -7960,9 +7962,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^(?P&lt;attacker&gt;.+?) szybkim niczym atak kobry ciosem sterczacego z misternego obosiecznego topora gornego szpikulca z mordercza sila i precyzja trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), momentalniepozbawiajac (?:go|ja) zycia\. Bezwladne cialo wali sie na ziemie, wciaz broczac krwia ze smiertelnej rany\.$</string>
+													<string>^(?P&lt;attacker&gt;.+?) szybkim niczym atak kobry ciosem sterczacego z misternego obosiecznego topora gornego szpikulca z mordercza sila i precyzja trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), momentalnie pozbawiajac (?:go|ja) zycia\. Bezwladne cialo wali sie na ziemie, wciaz broczac krwia ze smiertelnej rany\.$</string>
+													<string>^Konczac atak (?P&lt;attacker&gt;.+?) przykleka na jedno kolano nie ogladajac sie nawet na swa ofiare, ktorej cialem targa nagly skurcz a z otwartych arterii tryska strumien krwi\. Twarz .+? wykrzywia paskudny grymas gdy cialo z gluchymloskotem pada na ziemie\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
+													<integer>1</integer>
 													<integer>1</integer>
 												</regexCodePropertyList>
 											</Trigger>
@@ -9771,90 +9775,6 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<string>^(?P&lt;damage&gt;Powol|Oszczed|Zgrab|Plyn|Blyskawicz)nym (?:(?:polobrotem|ruchem) unikasz ciosu|wypadem (?:w przod|do przodu) atakujesz) (?P&lt;target&gt;.+?)(?:,| korzystajac| i | dzgajac)</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_spec_2</name>
-										<script></script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^(?P&lt;damage&gt;Powol|Oszczed|Zgrab|Plyn|Blyskawicz)nym</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_spec_3</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_kor_ja_spec_3()</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^Zgrabnym (?:ruchem unikasz ciosu|wypadem do przodu) (?P&lt;target&gt;.+?) i korzystajac z (?:dogodnej pozycji rabiesz (?:go|ja) na odlew|zaskoczenia dzgasz (?:go|ja) mocno) sw(?:a|ym) .+?, gleboko (?:rozrywajac|wbijajac sie w) je(?:go|j) cialo\.$</string>
-											<string>^[ &gt;]*Zgrabnym ruchem unikasz ciosu [a-z ]+ i korzystajac z dogodnej pozycji uderzasz go sw(a|ym) [a-z ]+, pozostawiajac powazne rany na (jego|jej) ciele\.$</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_spec_4</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_kor_ja_spec_4()</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^Plynnym (?:ruchem unikasz ciosu|wypadem w przod atakujesz) (?P&lt;target&gt;.+?) i (?:napierajac calym cialem dzgasz|uderzajac ze wszystkich sil tniesz) (?:go|ja) swym .+?, ktory (?:gleboko rozrywa|przechodzi prawie na wylot przez) je(?:go|j) cialo, powodujac ogromne obrazenia\.$</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
-									</Trigger>
-									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ja_spec_5</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_kor_ja_spec_5()</script>
-										<triggerType>0</triggerType>
-										<conditonLineDelta>0</conditonLineDelta>
-										<mStayOpen>0</mStayOpen>
-										<mCommand></mCommand>
-										<packageName></packageName>
-										<mFgColor>#ff0000</mFgColor>
-										<mBgColor>#ffff00</mBgColor>
-										<mSoundFile></mSoundFile>
-										<colorTriggerFgColor>#000000</colorTriggerFgColor>
-										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>^Blyskawicznym (?:polobrotem unikasz ciosu|wypadem do przodu atakujesz) (?P&lt;target&gt;.+?), a twoj(?:|) (?P&lt;bron&gt;.+?), dzierzon(?:a|y) w wyciagnietej rece, (?:zatoczywszy szeroki luk uderza w je(?:go|j) cialo i niemal kompletnie je rozdzierajac, wynurza sie z drugiej strony ciagnac za soba krwawy warkocz smierci|trafia w je(?:go|j) cialo przebijajac je na wylot\. Gwaltownie wyszarpniet(?:a|y) orez z glosnym mlasnieciem wychodzi z ciala ciagnac za soba krwawy warkocz smierci)\.$</string>
-											<string>^[ &gt;]*Blyskawicznym polobrotem unikasz ciosu (?P&lt;target&gt;.+?), a twoj(|a) [a-z ]+, dzierzon[ay] w wyciagnietej rece, zatoczywszy szeroki luk uderza w je(j|go) cialo i niemal kompletnie je masakrujac powala (ja|go) na ziemie\.$</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
@@ -23161,7 +23081,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<regexCodeList>
 							<string>^((Jest|Sa) tutaj .* widoczn(e|ych) wyjsc(|ia|ie):) (.*)\.$</string>
 							<string>^((W) (gestych) (ciemnosciach) dostrzegasz .* (?:wiodacy|rozwidlajacy sie) na) (.*)\.$</string>
-							<string>^((Korytarze) (jaskini) (ciagna) sie na) (.*)\.$</string>
+							<string>^((Korytarze?) (jaskini) ciagn(a|ie) sie na) (.*)\.$</string>
 							<string>^((Trakt) (wiedzie) (na)) ([^.]+)\.$</string>
 							<string>(([tT]rakt) (rozgalezia) (sie)) na (.*)\.$</string>
 							<string>^((Szlak|Sciezka) (prowadzi) (tutaj)) w .* kieru.*: (.*)\.$</string>
