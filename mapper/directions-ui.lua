@@ -31,6 +31,28 @@ function trigger_func_mapper_directions_ui_wyjscia_all_ud()
     amap.directions_ui:handle_exits(dirs)
 end
 
+function trigger_func_mapper_directions_ui_trakty()
+    local dirs = {}
+    if matches["all"] and matches["all"] ~= "" then
+        dirs = { ["n"] = {walk = true}, ["nw"] = {walk = true}, ["w"] = {walk = true}, ["sw"] = {walk = true}, ["s"] = {walk = true}, ["se"] = {walk = true}, ["e"] = {walk = true}, ["ne"] = {walk = true} }
+    end
+    local trakty = matches["trakty"] and amap:parse_trigger_exits(matches["trakty"]) or {}   
+    local zejscia = matches["zejscia"] and amap:parse_trigger_exits(matches["zejscia"]) or {}
+
+    for dir, _ in pairs(trakty) do dirs[dir] = {walk = true, type = "trakt"} end
+    for dir, _ in pairs(zejscia) do dirs[dir] = {walk = true} end
+    if matches["trakt1"] then
+        local trakt = amap.long_to_short[amap.polish_to_english[matches["trakt1"]]]
+        dirs[trakt] = {walk = true, type = "trakt"}
+    end
+    if matches["trakt2"] then
+        local trakt = amap.long_to_short[amap.polish_to_english[matches["trakt2"]]]
+        dirs[trakt] = {walk = true, type = "trakt"}
+    end
+
+    amap_ui_set_dirs_trigger_ex(dirs)
+end
+
 function trigger_func_mapper_directions_ui_wyjscia_2()
     local dirs = amap:parse_trigger_exits(matches[2])
     local dirs2 = amap:parse_trigger_exits(matches[3])

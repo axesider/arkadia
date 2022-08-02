@@ -24,6 +24,95 @@ function amap.ui:reset_special_dirs()
     amap.ui.compass["button_special3"]:setStyleSheet(amap.ui["normal_button"])
 end
 
+amap.ui["Heavy Barb Arrow"] = {
+    ["nw"] = "🢄",
+    ["n"] = "🢁",
+    ["ne"] = "🢅",
+    ["w"] = "🢀",
+    ["e"] = "🢂",
+    ["sw"] = "🢇",
+    ["se"] = "🢆",
+    ["s"] = "🢃",
+    ["d"] = "▼",
+    ["u"] = "▲"
+}
+
+
+compass_styles = {
+    [""]      = {font = amap.ui["dir_to_symbol"], pre = "", post = ""},
+    ["fancy"] = {font = amap.ui["dir_to_fancy_symbol"], pre = "", post = ""},
+    ["trakt"] = {font = amap.ui["Heavy Barb Arrow"], pre = "<p style='color: green'>", post = "</p>" }
+}
+
+function amap_ui_set_dirs_trigger_ex(dirs, leave_as_is)
+    if not amap.ui.active then
+        -- window not shown, nothing to do
+        return
+    end
+
+    if not leave_as_is then
+        amap.ui:reset_dirs()
+    else
+        amap.ui:reset_special_dirs()
+    end
+
+    -- do from dirs here
+    local regular_dirs = {}
+    if dirs then
+        for k, v in pairs(dirs) do
+            -- for each direction, set active
+            local short_dir = nil
+
+            if k == "dol" then
+                short_dir = "down"
+            elseif k == "gore" or k == "gora" then
+                short_dir = "up"
+            elseif amap.long_to_short[k] then
+                short_dir = amap.long_to_short[k]
+            elseif amap.short_to_long[k] then
+                short_dir = k
+            end
+
+            if short_dir then
+                local style = amap.ui.use_simplified_compass and compass_styles[""] or compass_styles["fancy"]
+
+                regular_dirs[short_dir] = true
+                if v.type == "trakt" then style = compass_styles["trakt"] end
+                if v.walk then
+                    amap.ui.compass["button_" .. short_dir]:echo(style.pre.."<center>" .. style.font[short_dir] .. "</center>"..style.post)
+                else
+                    amap.ui.compass["button_" .. short_dir]:echo("<center>\"</center>")
+                end
+            end
+        end
+    end
+
+    local exits = getSpecialExitsSwap(amap.curr.id)
+    local swap = {}
+    for k,v in pairs(exits) do
+        swap[v] = swap[v] or k
+    end
+    local special_dirs = {}
+    if not exits then
+        raiseEvent("amapCompassDrawingDone", regular_dirs, special_dirs)
+        return
+    end
+
+    local id = 1
+    for k, v in pairs(swap) do
+        if not v:starts("script") then
+            special_dirs[v] = true
+            amap.ui:set_special_dir(id, v)
+            id = id + 1
+            if id == 4 then
+                break
+            end
+        end
+    end
+
+    raiseEvent("amapCompassDrawingDone", regular_dirs, special_dirs)    
+end
+
 function amap_ui_set_dirs_trigger(dirs, leave_as_is)
     if not amap.ui.active then
         -- window not shown, nothing to do

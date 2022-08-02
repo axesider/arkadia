@@ -23080,9 +23080,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^((Jest|Sa) tutaj .* widoczn(e|ych) wyjsc(|ia|ie):) (.*)\.$</string>
-							<string>^((W) (gestych) (ciemnosciach) dostrzegasz .* (?:wiodacy|rozwidlajacy sie) na) (.*)\.$</string>
 							<string>^((Korytarze?) (jaskini) ciagn(a|ie) sie na) (.*)\.$</string>
-							<string>^((Trakt) (wiedzie) (na)) ([^.]+)\.$</string>
 							<string>(([tT]rakt) (rozgalezia) (sie)) na (.*)\.$</string>
 							<string>^((Szlak|Sciezka) (prowadzi) (tutaj)) w .* kieru.*: (.*)\.$</string>
 							<string>^((Linia) (brzegowa) (ciagnie)) sie na (.*)\.$</string>
@@ -23095,8 +23093,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>^((Wykopany) (w) (ziemi)) tunel wiedzie w dwoch kierunkach: (.*)\.$</string>
 							<string>^((Mozesz) (sie) (stad)) udac na (.*)\.$</string>
 							<string>^((Mozesz) (skierowac) (lodz)) na (.*)\.$</string>
-							<string>^((Trakt) (jest) (zasypany)) glazami i mozna podazac nim tylko w jednym kierunku, na (.*)\.$</string>
-							<string>^((Mozesz) (podazac) (traktem)) na (.*), w strone fortu\.$</string>
 							<string>^((Mozesz) (stad) (poplynac)) na (.*)\.$</string>
 							<string>^((W) (mroku) (nocy)) dostrzegasz .* widoczne wyjsci.: (.*)\.</string>
 							<string>^((Tunel) (ciagnie) (sie)) na (.*)\.</string>
@@ -23105,10 +23101,6 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>^((Rozpadlina) (ciagnie) (sie)) na (.*)\.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -23145,19 +23137,17 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Mozesz podazac traktem na (?P&lt;trakt1&gt;[a-z-]+) albo (?P&lt;trakt2&gt;[a-z-]+)\. Natomiast aby zejsc z wytyczonej drogi wystarczy udac sie w dowolnym innym kierunku\.$</string>
 							<string>Wedrowke przez rozlegle laki mozesz kontynuowac w dowolnie wybranym kierunku.</string>
 							<string>Mozesz stad wyruszyc w dowolnie wybranym kierunku.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
 							<integer>2</integer>
 							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>wyjscia-2</name>
-						<script>trigger_func_mapper_directions_ui_wyjscia_2()</script>
+						<name>wyjscia-trakty</name>
+						<script>trigger_func_mapper_directions_ui_trakty()</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -23169,29 +23159,21 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Trakt wiedzie na (.+?)\. Mozna jednak z niego zejsc i udac sie na (.*)\.$</string>
+							<string>^Trakt (?:rozgalezia sie|wiedzie) na (?P&lt;trakty&gt;[a-z- ,]+)(?:\. Mozna jednak z niego zejsc i udac sie (?:do|na) (?P&lt;zejscia&gt;.*))?\.$</string>
+							<string>^Mozesz podazac traktem na (?P&lt;trakt1&gt;[a-z-]+) albo (?P&lt;trakt2&gt;[a-z-]+)(?:|\. Natomiast aby zejsc z wytyczonej drogi wystarczy udac sie w (?P&lt;all&gt;dowolny)m innym kierunku|\. Natomiast (?:jesli chcesz|aby) zejsc z wytyczonej drogi (?:musisz|mozesz) udac sie na (?P&lt;zejscia&gt;.*))\.$</string>
+							<string>^Trakt jest zasypany glazami i mozna podazac nim tylko w jednym kierunku, na (?P&lt;trakt1&gt;[a-z-]+)\.$</string>
+							<string>^Mozesz podazac traktem na (?P&lt;trakt1&gt;[a-z-]+) albo na (?P&lt;trakt2&gt;[a-z-]+), w strone fortu\.$</string>
+							<string>^W gestych ciemnosciach dostrzegasz(?: trakt wiodacy|, ze trakt rozgalezia sie) na (?P&lt;trakty&gt;[a-z- ,]+)\.$</string>
+							<string>^Sciezka wiedzie na (?P&lt;trakt1&gt;[a-z-]+) i (?P&lt;trakt2&gt;[a-z-]+)\.$</string>
+							<string>^Sciezka rozgalezia sie na (?P&lt;trakty&gt;[a-z- ,]+)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>wyjscia-2_1</name>
-						<script>trigger_func_mapper_directions_ui_wyjscia_2_1()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^Mozesz podazac traktem na (.+?) albo (.+?)\. Natomiast jesli chcesz zejsc z wytyczonej drogi mozesz udac sie na (.*)\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
