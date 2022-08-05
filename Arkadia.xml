@@ -3285,8 +3285,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<regexCodeList>
 												<string>miazdzac jej witalne organy.</string>
 												<string>cialo ofiary na wylot.</string>
+												<string>niezwyklym koscianym toporem, niemal rozrabujac glowe ofiary na dwoje.</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>0</integer>
 												<integer>0</integer>
 												<integer>0</integer>
 											</regexCodePropertyList>
