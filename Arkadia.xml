@@ -3608,7 +3608,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Jedynie lekko zahaczasz o (?P&lt;where_target&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem\.$</string>
-												<string>^(?P&lt;attacker&gt;) ledwo zahacza o (?P&lt;where_target&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem\.%</string>
+												<string>^(?P&lt;attacker&gt;.+?) ledwo zahacza o (?P&lt;where_target&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3630,7 +3630,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Wykonujesz powolny zamach swym czarnoblekitnym pulsujacym morgensternem\. Uderzenie nie dosiega celu, jedynie snop blekitnych iskier wylatujacych z glowicy trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), zadajac (?:jej|mu) nieznaczne obrazenia\.$</string>
-												<string>^(?P&lt;attacker&gt;) wykonuje powolny zamach swym czarnoblekitnym pulsujacym morgensternem\. Uderzenie nie dosiega celu, jedynie snop blekitnych iskier wylatujacych z glowicy broni trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), zadajac (?:jej|mu) nieznaczne obrazenia\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) wykonuje powolny zamach swym czarnoblekitnym pulsujacym morgensternem\. Uderzenie nie dosiega celu, jedynie snop blekitnych iskier wylatujacych z glowicy broni trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), zadajac (?:jej|mu) nieznaczne obrazenia\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3652,11 +3652,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Szybko wyprowadzasz cios i trafiasz (?P&lt;target&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem w (?P&lt;where&gt;.+?), zadajac (?:jej|mu) nieznaczne obrazenia\.$</string>
-												<string>^(?P&lt;attacker&gt;) szybko wyprowadza cios w (?P&lt;taget&gt;) i trafia go swym czarnoblekitnym pulsujacym morgensternem w (?P&lt;where&gt;.+?) zadajac mu nieznaczne obrazenia\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) szybko wyprowadza cios w (?P&lt;taget&gt;.+?) i trafia go swym czarnoblekitnym pulsujacym morgensternem w (?P&lt;where&gt;.+?) zadajac mu nieznaczne obrazenia\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
-												<integer>0</integer>
+												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -3694,7 +3694,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Uderzasz (?P&lt;target&gt;.+?) prosto w (?P&lt;where&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem\. Metalowa kula rozblyska ostrym blekitnym swiatlem, gdy nieznacznie zaglebia sie w cialo, zadajac bolesne obrazenia\.$</string>
-												<string>^(?P&lt;attacker&gt;) uderza prosto w (?P&lt;where&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem\. Metalowa kula na koncu broni rozblyska ostrym blekitnym swiatlem, gdy nieznaczniezaglebia sie w cialo, zadajac bolesne obrazenia\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) uderza prosto w (?P&lt;where_target&gt;.+?) swym czarnoblekitnym pulsujacym morgensternem\. Metalowa kula na koncu broni rozblyska ostrym blekitnym swiatlem, gdy nieznacznie zaglebia sie w cialo, zadajac bolesne obrazenia\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -3716,8 +3716,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Ranisz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) precyzyjnym ciosem swojego czarnoblekitnego pulsujacego morgensterna\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) rani (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) precyzyjnym ciosem swego czarnoblekitnego pulsujacego morgensterna\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -3736,8 +3738,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Poteznym ciosem swego czarnoblekitnego pulsujacego morgensterna trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?)\. Metalowe kolce bolesnie zaglebiaja sie w je(?:go|j) cialo, pozostawiajac krwawiaca rane\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) poteznym ciosem czarnoblekitnego pulsujacego morgensterna trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?)\. Metalowe kolce wnikaja w je(?:j|go) cialo, pozostawiajac krwawiaca rane\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -3756,8 +3760,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Poteznym ciosem swojego czarnoblekitnego pulsujacego morgensterna trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+), a sila uderzenia miazdzy je(?:j|go) cialo\.$</string>
+												<string>^Potezny cios zadany czarnoblekitnym pulsujacym morgensternem trzymanym przez (?P&lt;attacker&gt;.+?) trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+), miazdzac mu cialo\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -3837,8 +3843,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<regexCodeList>
 												<string>^Z cala sila jaka dysponujesz wykonujesz potezny zamach swym czarnoblekitnym pulsujacym morgensternem\. Od gory uderzasz (?P&lt;target&gt;.+?) trafiajac go prosto w (?P&lt;where&gt;.+?), a bron z latwoscia miazdzy czaszke przeciwnika, ktory pada martwy na ziemie\.$</string>
 												<string>^Wykonujesz potezne uderzenie swym czarnoblekitnym pulsujacym morgensternem i trafiasz centralnie w .+?\. W momencie uderzenia nastepuje oslepiajacy blysk swiatla polaczony z niesamowitym hukiem\. Czujesz smrod palonego ciala, a gdy po chwili spogladasz, widzisz jedynie zweglone cialo, ktore natychmiast upada na ziemie\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) wznosi ku gorze swoj czarnoblekitny pulsujacy morgenstern i z calej sily uderza (?P&lt;target&gt;.+?) prosto w glowe, miazdzac jego czaszke\. Zmasakarowana ofiara natychmiast pada martwa na ziemie\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
@@ -8202,7 +8210,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^Lekko ranisz (?P&lt;target&gt;.+?), trafiajac go w (?P&lt;where&gt;.+?) zamaszystym cieciem swojego opalizujacego runicznego topora obosiecznego\.$</string>
+													<string>^Lekko ranisz (?P&lt;target&gt;.+?), trafiajac (?:go|ja) w (?P&lt;where&gt;.+?) zamaszystym cieciem swojego opalizujacego runicznego topora obosiecznego\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
