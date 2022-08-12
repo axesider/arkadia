@@ -31,8 +31,22 @@ function trigger_func_mapper_directions_ui_wyjscia_all_ud()
     amap.directions_ui:handle_exits(dirs)
 end
 
-function trigger_func_mapper_directions_ui_trakty()
+local brama_dodana = false
+
+function trigger_func_mapper_directions_bramy()
     local dirs = {}
+    if matches["brama"] then
+        local trakt = amap.long_to_short[amap.polish_to_english[matches["brama"]]]
+        local status = matches["brama"] == "Otwarta"
+        dirs[trakt] = {walk = true, type = "brama"}
+    end
+    amap_ui_set_dirs_trigger_ex(dirs)
+    brama_dodana = true
+end
+
+function trigger_func_mapper_directions_ui_trakty()
+    local dirs = brama_dodana and amap.ui.compass.active_dirs or {}
+    brama_dodana = false
     if matches["all"] and matches["all"] ~= "" then
         dirs = { ["n"] = {walk = true}, ["nw"] = {walk = true}, ["w"] = {walk = true}, ["sw"] = {walk = true}, ["s"] = {walk = true}, ["se"] = {walk = true}, ["e"] = {walk = true}, ["ne"] = {walk = true} }
     end
