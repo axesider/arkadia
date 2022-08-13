@@ -104,6 +104,10 @@ function trigger_func_skrypty_misc_gonienie_panika()
     end
 end
 
+function trigger_func_skrypty_misc_gonienie_elfka()
+    misc:enemy_escape_print_arrow(matches[2], "red")
+end
+
 function trigger_func_skrypty_misc_nosi_na_sobie()
     local color = scripts.inv.magics_color
 
@@ -248,7 +252,7 @@ function trigger_func_skrypty_misc_porownanie_wszystkich()
 
     local target = matches[2]
     local desc = matches[3]
-    local res = round(mod[target] * level[desc])
+    local res = mod[target] * level[desc]
     table.insert(scripts.comparing_all.current_compare_results, res)
     deleteLine()
 
@@ -340,3 +344,6 @@ function alias_func_skrypty_misc_porownaj_ze_wszystkimi()
     end
 end
 
+function trigger_sciagnij_kaptur()
+    scripts.utils.bind_functional("sciagnij kaptur")
+end
