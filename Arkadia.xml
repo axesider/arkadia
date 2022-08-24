@@ -7634,8 +7634,12 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Swoim kunsztownym mithrylowym toporem bojowym (?P&lt;attacker&gt;.+?) (?P&lt;damage&gt;tnie) gleboko (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), a do twych uszu dochodzi zgrzyt ostrza o kosci\.$</string>
 												<string>^Dobrze wymierzonym ciosem swego kunsztownego mithrylowego topora bojowego (?P&lt;attacker&gt;.+?) (?P&lt;damage&gt;rabie) (?P&lt;where_target&gt;.+?)\.$</string>
 												<string>^Kunsztowny mithrylowy topor bojowy (?P&lt;attacker&gt;.+?) brutalnie (?P&lt;damage&gt;druzgocze) (?P&lt;where_target&gt;.+?) ze smiercionosna sila\. (?P&lt;target&gt;.+?) pada na ziemie jako zmasakrowane i niemal nierozpoznawalne cialo\.$</string>
+												<string>^Przeprowadzasz ciezkie uderzenie swoim kunsztownym mithrylowym toporem bojowym trafiajac (?P&lt;target&gt;.+?) w (?P&lt;where_target&gt;.+?)\.$</string>
+												<string>^Robisz szeroki zamach swoim kunsztownym mithrylowym toporem bojowym i widzisz jak przecinajac ze swistem powietrze (?'damage'rani) on (?'target'.+?) w (?'where_target'.+?)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
