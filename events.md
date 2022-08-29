@@ -284,9 +284,9 @@ Argumenty:
 ## `hidden_state`
 
 Argumenty:
-  * `arg1`: czas liczony od ukrycia
+  * `arg1`: status ukrycia
 
-Event podniesiony po ukryciu sie
+Event podniesiony kiedy zmienia sie status ukrycia
 
 ---
 
@@ -302,7 +302,7 @@ Argumenty:
 ## `guard_state`
 
 Argumenty:
-  * `arg1`: czas liczony od zaslony
+  * `arg1`: status zaslony (czas pozostaly lub OK)
 
 Event podniesiony kiedy zmienia sie status uzycia zaslony
 
@@ -311,7 +311,7 @@ Event podniesiony kiedy zmienia sie status uzycia zaslony
 ## `order_state`
 
 Argumenty:
-  * `arg1`: czas liczony od wydania rozkazu
+  * `arg1`: status rozkazu (czas pozostaly lub OK)
 
 Event podniesiony kiedy zmienia sie status wydania rozkazu
 
@@ -368,11 +368,3 @@ Argument:
 ## `weaponBroken`
 
 Event podniesiony kiedy bron dzierzona przez gracza peknie.
-
-## `killed_action`
-
-Event podniesiony po zabiciu.
-
-Argument:
-  * `arg1`: opis zabitego
-
