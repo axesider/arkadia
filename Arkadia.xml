@@ -7704,7 +7704,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<regexCodeList>
 													<string>^Z oszczednego zamachu uderzasz swym misternym obosiecznym toporem w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), znaczac ostrze broni kilkoma kroplami krwi\.$</string>
 													<string>^Szybkim ciosem jednego ze szpikulcow misternego obosiecznego topora uderzasz w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), pozostawiajac niewielkie zadrapanie\.$</string>
-													<string>^Z oszczednego zamachu uderzasz swym misternym obosiecznym toporem w (?P&lt;target&gt;.+?), nieznacznie raniac jego (?P&lt;where&gt;.+?)\.$</string>
+													<string>^Z oszczednego zamachu uderzasz swym misternym obosiecznym toporem w (?P&lt;target&gt;.+?), nieznacznie raniac je(go|j) (?P&lt;where&gt;.+?)\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
@@ -8014,8 +8014,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<regexCodeList>
 													<string>^(?P&lt;attacker&gt;.+?) szybkim niczym atak kobry ciosem sterczacego z misternego obosiecznego topora gornego szpikulca z mordercza sila i precyzja trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), momentalnie pozbawiajac (?:go|ja) zycia\. Bezwladne cialo wali sie na ziemie, wciaz broczac krwia ze smiertelnej rany\.$</string>
 													<string>^Konczac atak (?P&lt;attacker&gt;.+?) przykleka na jedno kolano nie ogladajac sie nawet na swa ofiare, ktorej cialem targa nagly skurcz a z otwartych arterii tryska strumien krwi\. Twarz .+? wykrzywia paskudny grymas gdy cialo z gluchymloskotem pada na ziemie\.$</string>
+													<string>^Rzucajac sie do ostatecznego ataku (?P&lt;attacker&gt;.+?) wyprowadza straszliwe, pelne sily ciecie swym misternym obosiecznym toporem, ktore z mordercza precyzja smiertelnie godzi (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), ostatecznie konczac boj\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
+													<integer>1</integer>
 													<integer>1</integer>
 													<integer>1</integer>
 												</regexCodePropertyList>
