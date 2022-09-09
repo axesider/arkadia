@@ -4794,10 +4794,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>lodowata\w+ dluga\w+ maczuga\w+</string>
+											<string>lodowata dluga maczug</string>
 										</regexCodeList>
 										<regexCodePropertyList>
-											<integer>1</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>lodowata</name>
@@ -4814,8 +4814,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Dostrzegajac dogodna okazje do ataku, rzucasz sie do przodu i wykonujesz szybki zamach lodowata dluga maczuga\. Twa bron trafia zaskoczon(?:ego|a) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), (?P&lt;damage&gt;.*)\.$</string>
+												<string>^Dostrzegajac dogodna okazje do ataku, (?P&lt;attacker&gt;.+?) rzuca sie do przodu i wykonuje szybki zamach lodowata dluga maczuga\. Je(j|go) bron trafia zaskoczon(?:ego|a) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), (?P&lt;damage&gt;.*)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -4834,6 +4836,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Korzystajac z tego, ze (?P&lt;target&gt;.+?) ledwo trzyma sie na nogach, unosisz lodowata dluga maczuge wysoko nad glowe, by zadac cios, ktory zakonczy te walke\. Czujesz jak w reakcji na twe mysli bron zaczyna promieniowac odczuwalnym chlodem\. Szybkim, ukosnym ruchem reki opuszczasz orez, uderzajac przeciwni(?:czke|ka) w .+\. W chwili gdy bron dotyka ciala przeciwnika magiczne zimno otula twe serce, pozbawiajac cie litosci\. Z mordercza precyzja ponawiasz ciosy, wybierajac najbardziej wrazliwe czesci ciala ofiary i zaprzestajac natarcia dopiero wtedy, gdy twoj wrog zupelnie przestaje sie ruszac\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>lodowata_0</name>
+											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_lodowata_dluga_maczuga()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>(?P&lt;attacker&gt;.+?) wykonuje obszerny zamach lodowata dluga maczuga, usilujac trafic (?P&lt;target&gt;.+?), jednak \w+ w pore odkrywa zamiary przeciwnika i spokojnie odskakuje na bok, (?P&lt;damage&gt;unik)ajac tego ciosu\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -7450,6 +7472,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>archaiczny_0</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_archaiczny_topor(0)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>Bierzesz plynny zamach swoim </string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>2</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>archaiczny_1</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_archaiczny_topor(1)</script>
 											<triggerType>0</triggerType>
@@ -7816,7 +7858,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<regexCodeList>
 													<string>^Druzgoczacym atakiem misternego obosiecznego topora brutalnie rozcinasz (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?), zatrzymujac ped swej morderczej broni dopiero wtedy, kiedy zbrukane posoka ostrze grzeznie pomiedzy koscmi ofiary\.$</string>
 													<string>^Ostrze twego misternego obosiecznego topora rozblyskuje w szalonym pedzie gdy biorac potezny zamach uderzasz nim w (?P&lt;where&gt;.+?) (?P&lt;target&gt;.+?)\.$</string>
-													<string>^Zdradliwe pchniecie ozdobiona siedmiocalowym kolcem rekojescia twego misternego obosiecznego topora zupelnie zaskakuje (?P&lt;target&gt;.+?), pozwalajac ci przebic je(:?go|j) (?P&lt;where&gt;.+?) prawie na wylot!$</string>
+													<string>^Zdradliwe pchniecie ozdobiona siedmiocalowym kolcem rekojescia twego misternego obosiecznego topora zupelnie zaskakuje (?P&lt;target&gt;.+?), pozwalajac ci (tym ciosem praktycznie wygrac walke|przebic je(:?go|j) (?P&lt;where&gt;.+?) prawie na wylot!)$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
@@ -12969,7 +13011,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Niezgrabnym ruchem (?P&lt;attacker&gt;\w+(?: \w+ \w+|)) unika (?:twego ciosu|ciosu (?P&lt;target&gt;.+?)), a jego (?:wyrzucon(?:y|a) w bok .+?,|.+?, wyrzucony w bok) bardziej dla utrzymania rownowagi niz zadania ciosu, przecina tylko powietrze\.$</string>
+											<string>^Niezgrabnym ruchem (?P&lt;attacker&gt;\w+(?: \w+ \w+|)) unika (?:twego ciosu|ciosu (?P&lt;target&gt;.+?)), a je(?:go|j) (?:wyrzucon(?:y|a) w bok .+?,|.+?, wyrzucony w bok) bardziej dla utrzymania rownowagi niz zadania ciosu, przecina tylko powietrze\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
