@@ -142,7 +142,7 @@ function herbs:print_db(ver)
             end
             local amount_tmp = "    " .. tostring(amount)
             local name_str = string.sub(k .. "                      ", 0, 24)
-            local usage_str = string.sub(herbs.herbs_details[k]["details"] .. "                                                                 ", 0, 64)
+            local usage_str = herbs.herbs_details[k]["details"]
             cecho("\n<grey>  " .. string.sub(amount_tmp, #amount_tmp - 2, #amount_tmp) .. " | ")
             if ver and ver == "2" then
                 cecho(name_str)
@@ -185,7 +185,7 @@ function herbs:get_printable_bag(herbs_arr)
         end
 
         local name_str = string.sub(v["name"] .. "                      ", 0, 24)
-        local usage_str = string.sub(herbs.herbs_details[v["name"]]["details"] .. "                                                                 ", 0, 64)
+        local usage_str = herbs.herbs_details[v["name"]]["details"]
 
         ret_str = ret_str .. "\n<grey>  " .. amount_str .. " | " .. name_str .. " | " .. usage_str
     end

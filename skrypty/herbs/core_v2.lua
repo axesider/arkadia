@@ -77,10 +77,10 @@ function herbs:v2_do_print(window, compact)
             for i, j in pairs(v) do
                 amount = amount + herbs.db[i][herb_id]["amount"]
             end
-            local amount_tmp = "    " .. tostring(amount)
+            local amount_tmp = tostring(amount)
             local name_str = string.sub(herb_id .. "                     ", 0, 23)
-            local usage_str = string.sub(herbs.herbs_details[herb_id]["details"] .. "                                                                 ", 0, 64)
-            cecho(window,"<grey>  " .. string.sub(amount_tmp, #amount_tmp - 2, #amount_tmp) .. " | ")
+            local usage_str = herbs.herbs_details[herb_id]["details"]
+            cecho(window,"<grey>" .. string.rep(" ", 6 - #amount_tmp) .. amount_tmp .. " | ")
             local clickable_herb_data = herbs:get_clickable_herb_data(herb_id)
             cechoPopup(window, name_str, clickable_herb_data["herb_actions"], clickable_herb_data["herb_hints"], true)
             cecho(window, " | ")
