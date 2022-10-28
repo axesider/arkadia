@@ -5,7 +5,7 @@ function trigger_func_skrypty_ui_gags_moje_ciosy_misterny(value)
 end
 
 function trigger_func_skrypty_ui_gags_moje_ciosy_misterny_fin()
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+    scripts.gags:gag_prefix(scripts.gags.fin_prefix, "moje_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_misterny_innych(value)
@@ -24,19 +24,17 @@ function trigger_func_skrypty_ui_gags_moje_ciosy_opal(value)
 end
 
 function trigger_func_skrypty_ui_gags_moje_ciosy_opal_fin(value)
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+    scripts.gags:gag_prefix(scripts.gags.fin_prefix, "moje_ciosy")
 end
 
 
 function trigger_func_skrypty_ui_gags_opal_innych(value)
-    local target = matches["target"]
-    target = (target == "ciebie" or target == "cie" or target == "ci") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    local target = scripts.gags:who_hits_attacker_target()
     scripts.gags:gag(value, 7, target)
 end
 
 function trigger_func_skrypty_ui_gags_opal_spec_innych(value)
-    local target = matches["target"]
-    target = (target == "ciebie" or target == "cie" or target == "ci")  and "innych_ciosy_we_mnie" or "innych_ciosy"
+    local target = scripts.gags:who_hits_attacker_target()
     scripts.gags:gag(value, 5, target)
 end
 
@@ -78,21 +76,31 @@ function trigger_func_skrypty_ui_gags_ciosy_jasniejace_bronie(value)
     scripts.gags:gag(value, 7, target)
 end
 
+-- czarnoblekitny pulsujacy morgenstern
+
+function trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(value)
+    scripts.gags:attacker_target(value)
+end
+
+function trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern_fin()
+    scripts.gags:attacker_target_fin()
+end
+
 -- Finishery
 
 function trigger_func_skrypty_ui_gags_moje_ciosy_bron_fin()
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+    scripts.gags:gag_prefix(scripts.gags.fin_prefix, "moje_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_innych_ciosy_bron_fin()
-    scripts.gags:gag_prefix("FIN", "innych_ciosy")
+    scripts.gags:gag_prefix(scripts.gags.fin_prefix, "innych_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_ciosy_bron_fin()
     if scripts.gags:is_type("combat.avatar") then
-        scripts.gags:gag_prefix("FIN", "moje_ciosy")
+        scripts.gags:gag_prefix(scripts.gags.fin_prefix, "moje_ciosy")
     else
-        scripts.gags:gag_prefix("FIN", "innych_ciosy")
+        scripts.gags:gag_prefix(scripts.gags.fin_prefix, "innych_ciosy")
     end
 
 end

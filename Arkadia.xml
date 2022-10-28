@@ -3631,7 +3631,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_1</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_1()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(1)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -3653,7 +3653,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_2</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_2()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(1)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -3675,7 +3675,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_3</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_3()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(1)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -3697,7 +3697,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_4</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_4()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(2)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -3717,7 +3717,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_5</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_5()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(2)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -3739,7 +3739,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_6</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_6()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(3)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -3761,7 +3761,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_7</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_7()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(3)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -3783,7 +3783,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_8</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_8()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(5)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -3805,7 +3805,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_9</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_9()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(6)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -3825,7 +3825,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_10</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_10()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(4)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -3845,7 +3845,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_11</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_11()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern(5)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -3865,7 +3865,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>pulsujacy_fin</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_fin()</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_czarnoblekitny_pulsujacy_morgenstern_fin()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -5712,8 +5712,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>glosnym swistem powietrze</string>
+												<string> dzga tylko powietrze.</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>0</integer>
 												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -12344,8 +12346,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<regexCodeList />
 									<regexCodePropertyList />
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ktos_spec</name>
-										<script></script>
+										<name>leg_ktos_spec</name>
+										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_leg_ktos_spec()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -12357,179 +12359,13 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>(^[ &gt;]*.* zdecydowanie napiera bokiem na.*)</string>
-											<string>(^[ &gt;]*Nie tracac dystansu do .* cofa .*)</string>
-											<string>(^[ &gt;]*.* przesuwa sie nieznacznie w bok, obchodzac (|cie )powoli.*)</string>
-											<string>^Nie tracac do ciebie dystansu, .* cofa .*</string>
+											<string>(?P&lt;attacker&gt;\w+(?: \w+ \w+)?) (?:podbiega do|przesuwa sie nieznacznie w bok, obchodzac powoli|zdecydowanie napiera bokiem na) (?P&lt;target&gt;.+?)(?:, | i).*\. (?P&lt;damage&gt;\w+).*\.$</string>
+											<string>^Nie tracac dystansu do (?P&lt;target&gt;.+?), (?P&lt;attacker&gt;.+?) cofa .*\. (?P&lt;damage&gt;\w+) .*\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
 											<integer>1</integer>
-											<integer>1</integer>
-											<integer>1</integer>
 										</regexCodePropertyList>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>ktos_spec_0</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_leg_ktos_spec_ktos_spec_0()</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>przecinajac tylko powietrze</string>
-												<string>nie czyniac najmniejszej krzywdy</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>0</integer>
-												<integer>0</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>ktos_spec_1</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_leg_ktos_spec_ktos_spec_1()</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>powodujac tylko ledwo zauwazalne obrazenia</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>0</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>ktos_spec_2</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_leg_ktos_spec_ktos_spec_2()</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>powodujac tylko nieznaczne obrazenia</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>0</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>ktos_spec_3</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_leg_ktos_spec_ktos_spec_3()</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>powodujac niemale obrazenia</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>0</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>ktos_spec_4</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_leg_ktos_spec_ktos_spec_4()</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>powodujac liczne i glebokie obrazenia</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>0</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>ktos_spec_5</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_leg_ktos_spec_ktos_spec_5()</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>powodujac rozlegle obrazenia</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>0</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>ktos_spec_6</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_leg_ktos_spec_ktos_spec_6()</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>powodujac prawieze smiertelne obrazenia</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>0</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>ktos_spec_7</name>
-											<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_leg_ktos_spec_ktos_spec_7()</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>w jednym momencie konczac walke</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>0</integer>
-											</regexCodePropertyList>
-										</Trigger>
 									</Trigger>
 								</TriggerGroup>
 								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -12998,7 +12834,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<regexCodeList />
 									<regexCodePropertyList />
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ktos_spec_0</name>
+										<name>kor_ktos_spec_0</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_kor_ktos_spec_0()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
@@ -13018,7 +12854,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										</regexCodePropertyList>
 									</Trigger>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>ktos_spec_1</name>
+										<name>kor_ktos_spec_1</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_innych_spece_kor_ktos_spec()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
