@@ -1,4 +1,5 @@
 function trigger_func_skrypty_ui_gags_color_color_innych_spece_leg_ktos_spec()
+    local target = scripts.gags:who_hits_attacker_target()
     local dmg = matches["damage"]
     local value = -1
         if dmg == "Cios" then value = 0
@@ -8,7 +9,9 @@ function trigger_func_skrypty_ui_gags_color_color_innych_spece_leg_ktos_spec()
     elseif dmg == "Potezny" then value = 4
     elseif dmg == "Mocny" then value = 5
     elseif dmg == "Bezlitosny" then value = 6
+    elseif dmg == "Widzisz" then 
+        scripts.gags:gag_prefix("FAN "..scripts.gags.fin_prefix, target)
     end
 
-    scripts.gags:gag_spec("LEG", value, 6, "innych_spece")
+    scripts.gags:gag_spec("LEG", value, 6, target)
 end
