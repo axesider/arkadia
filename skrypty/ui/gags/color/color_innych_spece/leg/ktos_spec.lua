@@ -9,8 +9,10 @@ function trigger_func_skrypty_ui_gags_color_color_innych_spece_leg_ktos_spec()
     elseif dmg == "Potezny" then value = 4
     elseif dmg == "Mocny" then value = 5
     elseif dmg == "Bezlitosny" then value = 6
+    elseif dmg == "Morderczy" then value = 6
     elseif dmg == "Widzisz" then 
-        scripts.gags:gag_prefix("FAN "..scripts.gags.fin_prefix, target)
+        scripts.gags:gag_prefix("LEG "..scripts.gags.fin_prefix, target)
+        return
     end
 
     scripts.gags:gag_spec("LEG", value, 6, target)

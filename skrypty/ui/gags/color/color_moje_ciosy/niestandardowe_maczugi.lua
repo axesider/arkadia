@@ -30,8 +30,18 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa()
     local dmg = matches["damage"]
     local value = -1
         if dmg == "unika" or dmg == "nie zadajac" then value = 0    
+    elseif dmg == "oszczednego" then value = 1
+    elseif dmg == "z impetem" then value = 2
+    elseif dmg == "celnie" then value = 2
+    elseif dmg == "kaleczac" then value = 2
+    elseif dmg == "mocarnym" then value = 2
+    elseif dmg == "niezgrabny" then value = 1
     elseif dmg == "broczaca" then value = 4
+    elseif dmg == "miazdzy" then value = 5
+    
     elseif dmg == "masakrujac" then value = 5
+    else
+        cecho("Dodaj '" ..  dmg.."'")
     end
     scripts.gags:attacker_target(value)
 end
