@@ -8332,7 +8332,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^Trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) zamaszystym ciosem swojego opalizujacego runicznego topora obosiecznego, kaleczac go\.$</string>
+													<string>^Trafiasz (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) zamaszystym ciosem swojego opalizujacego runicznego topora obosiecznego, kaleczac (?:go|ja)\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
@@ -12867,9 +12867,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^(.+?) bierze potezny zamach i wyprowadza .* cios, ktory ma cie zmasakrowac\. Ku twojej uldze jego bron mija cie nawet przez chwile ci nie zagrazajac\. Uswiadamiasz sobie jednak, ze nastepnym razem mozesz nie miec tyle szczescia!$</string>
+											<string>^(.+?) bierze potezny zamach i wyprowadza .+? cios, ktory ma cie zmasakrowac\. Ku twojej uldze jego bron mija cie nawet przez chwile ci nie zagrazajac\. Uswiadamiasz sobie jednak, ze nastepnym razem mozesz nie miec tyle szczescia!$</string>
+											<string>^(.+?) bierze potezny zamach i wyprowadza .+? cios, ktory ma zmasakrowac (?P&lt;target&gt;.+?)\. Jednak je(?:go|j) bron (malo nie wypadajac (?:jej|mu) z reki, mija cel o dobre pol metra|nieznacznie mija cel|jakims cudem mija cel), nie czyniac przeciwnikowi najmniejszej krzywdy\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>1</integer>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
