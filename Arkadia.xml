@@ -9904,7 +9904,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Niezgrabnym (?:ruchem unikasz ciosu|wypadem do przodu probujesz zaskoczyc) (?P&lt;target&gt;.+?), a(?:le|) twoj(?:|a) (?P&lt;bron&gt;.+?), wyrzucon(?:a|y) (?:przed siebie, dzga|w bok, bardziej dla utrzymania rownowagi niz zadania ciosu, przecina) tylko powietrze\.$</string>
+											<string>^Niezgrabnym (?:ruchem unikasz ciosu|wypadem do przodu probujesz zaskoczyc) (?P&lt;target&gt;.+?), a(?:le|) twoj(?:|a) (?P&lt;bron&gt;.+?), wyrzucon(?:a|y) (?:przed siebie, dzga|w bok,? bardziej dla utrzymania rownowagi niz zadania ciosu, przecina) tylko powietrze\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -12867,8 +12867,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^(.+?) bierze potezny zamach i wyprowadza .+? cios, ktory ma cie zmasakrowac\. Ku twojej uldze jego bron mija cie nawet przez chwile ci nie zagrazajac\. Uswiadamiasz sobie jednak, ze nastepnym razem mozesz nie miec tyle szczescia!$</string>
-											<string>^(.+?) bierze potezny zamach i wyprowadza .+? cios, ktory ma zmasakrowac (?P&lt;target&gt;.+?)\. Jednak je(?:go|j) bron (malo nie wypadajac (?:jej|mu) z reki, mija cel o dobre pol metra|nieznacznie mija cel|jakims cudem mija cel), nie czyniac przeciwnikowi najmniejszej krzywdy\.$</string>
+											<string>^(.+?) bierze potezny zamach i wyprowadza .+? cios, ktory ma cie zmasakrowac\. Ku twojej uldze je(go|j) bron mija cie nawet przez chwile ci nie zagrazajac\. Uswiadamiasz sobie jednak, ze nastepnym razem mozesz nie miec tyle szczescia!$</string>
+											<string>^(.+?) bierze potezny zamach i wyprowadza .+? cios, ktory ma zmasakrowac (?P&lt;target&gt;.+?)\. Jednak je(?:go|j) bron (malo nie wypadajac (?:jej|mu) z reki, mija cel o dobre pol metra|nieznacznie mija cel|jakims cudem mija cel|mija cel w sporej odleglosci), nie czyniac przeciwni(?:czce|kowi) najmniejszej krzywdy\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
