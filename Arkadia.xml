@@ -12326,9 +12326,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>(?P&lt;attacker&gt;\w+(?: \w+ \w+)?) (?:podbiega do|przesuwa sie nieznacznie w bok, obchodzac powoli|zdecydowanie napiera bokiem na) (?P&lt;target&gt;.+?)(?:, | i).*\. (?P&lt;damage&gt;\w+).*\.$</string>
-											<string>^Nie tracac dystansu do (?P&lt;target&gt;.+?), (?P&lt;attacker&gt;.+?) cofa .*\. (?P&lt;damage&gt;\w+) .*\.$</string>
+											<string>^Nie tracac (?:do ciebie dystansu|dystansu do (?P&lt;target&gt;.+?)), (?P&lt;attacker&gt;.+?) cofa .*\. (?P&lt;damage&gt;\w+) .*\.$</string>
+											<string>^(?P&lt;attacker&gt;\w+(?: \w+ \w+)?) (?:podbiega do ciebie|przesuwa sie nieznacznie w bok, obchodzac cie powoli|zdecydowanie napiera bokiem na ciebie)(?:, | i).*\. (?P&lt;damage&gt;\w+).*\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
 										</regexCodePropertyList>
