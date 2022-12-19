@@ -6010,6 +6010,30 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>arlekiny_0</name>
+											<script>--Usmiechajac sie szyderczo, Dhorw rzuca sie do ataku na dostojnego lysego partyzant, by uderzyc z calej sily smuklym demonicznym mieczem. Jego cios trafia przeciwnika w ciemny zdobiony napiersnik, wywolujac fontanne iskier.
+--Dhorw zamierza sie smuklym zmiennoksztaltnym mieczem na dostojnego lysego partyzant, lecz udaje sie mu sparowac cios poreczna zdobiona partyzana.
+trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>Usmiechajac sie szyderczo, </string>
+												<string>zamierza sie </string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>2</integer>
+												<integer>0</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>arlekiny_1</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_arlekiny(1)</script>
 											<triggerType>0</triggerType>
@@ -10833,7 +10857,21 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<regexCodePropertyList />
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_0</name>
-										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_0()</script>
+										<script>    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "mija" or dmg == "unika" or dmg == "nieskoordynowany" then value = 0
+    elseif dmg == "nieznaczne" or dmg == "drasniecie" then value = 2
+    elseif dmg == "wbijasz" or dmg == "bolesny" then value = 3
+    elseif dmg == "bolesna" or dmg == "krwawa" then value = 4
+    elseif dmg == "krwawiaca" or dmg == "ranisz" then value = 5
+    elseif dmg == "zaglebiasz" or dmg == "tryska krew" then value = 6
+    elseif dmg == "przypadasz" then value = 7
+    elseif dmg == "osuwa" or dmg == "zachodzac" or dmg == "wbijasz" then
+        scripts.gags:gag_own_spec(scripts.gags.fin_prefix)
+        return
+    end
+  --scripts.gags:gag(value, 8, "moje_ciosy")
+  scripts.gags:gag_own_spec(value, 8)</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -10845,13 +10883,53 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^[ &gt;]*Sprezasz sie do skoku probujac .*, lecz tracisz koncentracje i twoj niecelny cios mija cel o wlos\.$</string>
+											<string>^Sprezasz sie do skoku probujac ugodzic (?'target'.+?) swym (?'weapon'.+?), lecz tracisz koncentracje i twoj niecelny cios (?'damage'mija) cel o wlos\.$</string>
+											<string>^Wykorzystujac dogodna sytuacje rzucasz sie na (?'target'.+?), pragnac pchnac (?:go|ja) (?'weapon'.+?), jednak twoj (?'damage'nieskoordynowany) ruch nie jest w stanie nikogo zaskoczyc\.$</string>
+											<string>^Zamierzasz sie na (?'target'.+?) swym (?'weapon'.+?), jednak on(|a) z latwoscia (?'damage'unika) twojego ciosu\.$</string>
+											<string>^Wykonujesz szybki wypad by trafic (?'target'.+?) swym (?'weapon'.+?) pozostawiajac na je(?:go|j) ciele (?'damage'nieznaczne) drasniecie\.$</string>
+											<string>^Odskakujesz do tylu, a (?'weapon'.+?), ktory trzymasz w rece, zatacza szeroki luk by ostatecznie trafic (?'target'.+?), zadajac jednak tylko (?'damage'nieznaczne) obrazenia\.$</string>
+											<string>^Obracajac w reku (?'weapon'.+?) wykonujesz nagly zwod i trafiasz (?'target'.+?) pozostawiajac tylko (?'damage'nieznaczne) obrazenia\.$</string>
+											<string>^Wykorzystujac chwilowa dekoncentracje (?'target'.+?), wbijasz swoj (?'weapon'.+?) w je(go|j) cialo pozostawiajac lekkie (?'damage'drasniecie)\.$</string>
+											<string>^Wykorzystujac dogodna chwile doskakujesz do (?'target'.+?), a twoj (?'weapon'.+?) zostawia po sobie tylko lekkie (?'damage'drasniecie)\.$</string>
+											<string>^Korzystajac z nieuwagi (?'target'.+?) klujesz je(?:go|j) cialo (?'weapon'.+?) zostawiajac tylko lekkie (?'damage'drasniecie)\.$</string>
+											<string>^Wykonujesz pare oszczednych unikow starajac sie zmeczyc (?'target'.+?) i gdy t(?:a|en) przystaje na chwile by zlapac oddech, (?'damage'wbijasz) swoj (?'weapon'.+?)\.$</string>
+											<string>^Poziomym cieciem swojego (?'weapon'.+?) godzisz w (?'target'.+?), trafiajac w (?'where'.+?) i wywolujac (?'damage'bolesny) grymas na .*\.$</string>
+											<string>^Uwaznie sledzisz ruchy (?'target'.+?) i trafiajac (go|ja) w (?'where'.+?) swym (?'weapon'.+?) zostawiasz (?'damage'bolesna) rane\.$</string>
+											<string>^Wypatrujac luke w obronie (?'target'.+?) blyskawicznie skracasz dystans i trafiasz (?:go|ja) w (?'where'.+?), a twoj (?'weapon'.+?) zostawia po sobie (?'damage'krwawa) bruzde\.$</string>
+											<string>^Blyskawicznie wyrzucasz przed siebie reke dzierzaca (?'weapon'.+?), trafiajac (?'target'.+?) w (?'where'.+?)\. Ofiara krzywi sie z bolu, a ty wyszarpujesz szybko swa bron, pozostawiajac (?'damage'krwawiaca) rane\.$</string>
+											<string>^Wykorzystujac dekoncentracje i oslabienie (?'target'.+?), silnym kopnieciem podcinasz (?:go|ja), rownoczesnie wyrzucajac do przodu swa reke z (?'weapon'.+?)\. Przeciwnik traci rownowage i (?'damage'osuwa) sie na twa bron.*$</string>
+											<string>^Zaciskasz mocniej palce na (?'weapon'.+?) i paskudnie (?'damage'ranisz) (?'target'.+?), trafiajac (?:go|ja) w (?'where'.*)\.$</string>
+											<string>^Celujac w (?'where_target'.+?) (?'damage'zaglebiasz) (?'weapon'.+?) az po rekojesc, a gdy wyciagasz go z rany zauwazasz, ze cala jest czerwona od krwi\.$</string>
+											<string>^Zwinnym, kocim ruchem (?'damage'przypadasz) do ziemi, by nagle doskoczyc do (?'target'.+?) i .*\.$</string>
+											<string>^Zrecznym ruchem parujesz cios (?'target'.+?), rownoczesnie (?'damage'zachodzac) .*$</string>
+											<string>^Unikajac uderzenia (?'target'.+?) blyskawicznie doskakujesz do nie(?:go|j) i (?'damage'wbijasz) az po rekojesc swoj (?'weapon'.+?) w je(?:go|j) cialo\..*$</string>
+											<string>^Wyprowadzasz szybkie pchniecie (?P&lt;weapon&gt;.+?) i wbijasz go az po rekojesc w (?P&lt;where_target&gt;.+?)\. Wyszarpujesz swa bron, a z potwornej rany momentalnie (?P&lt;damage&gt;tryska krew)\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_1</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_1()</script>
 										<triggerType>0</triggerType>
@@ -10871,7 +10949,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_2</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_2()</script>
 										<triggerType>0</triggerType>
@@ -10891,7 +10969,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_3</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_3()</script>
 										<triggerType>0</triggerType>
@@ -10911,7 +10989,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_4</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_4()</script>
 										<triggerType>0</triggerType>
@@ -10931,7 +11009,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_5</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_5()</script>
 										<triggerType>0</triggerType>
@@ -10951,7 +11029,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_6</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_6()</script>
 										<triggerType>0</triggerType>
@@ -10971,7 +11049,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_7</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_7()</script>
 										<triggerType>0</triggerType>
@@ -10991,7 +11069,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_8</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_8()</script>
 										<triggerType>0</triggerType>
@@ -11011,7 +11089,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_9</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_9()</script>
 										<triggerType>0</triggerType>
@@ -11031,7 +11109,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_10</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_10()</script>
 										<triggerType>0</triggerType>
@@ -11051,7 +11129,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_11</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_11()</script>
 										<triggerType>0</triggerType>
@@ -11071,7 +11149,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_12</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_12()</script>
 										<triggerType>0</triggerType>
@@ -11091,7 +11169,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_13</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_13()</script>
 										<triggerType>0</triggerType>
@@ -11111,7 +11189,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_14</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_14()</script>
 										<triggerType>0</triggerType>
@@ -11171,7 +11249,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_17</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_17()</script>
 										<triggerType>0</triggerType>
@@ -11211,7 +11289,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_19</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_19()</script>
 										<triggerType>0</triggerType>
@@ -11251,7 +11329,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_21</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_21()</script>
 										<triggerType>0</triggerType>
@@ -11271,7 +11349,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_22</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_22()</script>
 										<triggerType>0</triggerType>
@@ -11291,7 +11369,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
-									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>ja_spec_23</name>
 										<script>trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec_23()</script>
 										<triggerType>0</triggerType>
@@ -12780,7 +12858,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>^(.+?) bierze potezny zamach i wyprowadza .+? cios, ktory ma cie zmasakrowac\. Ku twojej uldze je(go|j) bron mija cie nawet przez chwile ci nie zagrazajac\. Uswiadamiasz sobie jednak, ze nastepnym razem mozesz nie miec tyle szczescia!$</string>
-											<string>^(.+?) bierze potezny zamach i wyprowadza .+? cios, ktory ma zmasakrowac (?P&lt;target&gt;.+?)\. Jednak je(?:go|j) bron (malo nie wypadajac (?:jej|mu) z reki, mija cel o dobre pol metra|nieznacznie mija cel|jakims cudem mija cel|mija cel w sporej odleglosci), nie czyniac przeciwni(?:czce|kowi) najmniejszej krzywdy\.$</string>
+											<string>^(.+?) bierze potezny zamach i wyprowadza .+? cios, ktory ma zmasakrowac (?P&lt;target&gt;.+?)\. Jednak je(?:go|j) bron (malo nie wypadajac (?:jej|mu) z reki, mija cel o dobre pol metra|nieznacznie mija cel|mija cel|jakims cudem mija cel|mija cel w sporej odleglosci), nie czyniac przeciwni(?:czce|kowi) najmniejszej krzywdy\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
