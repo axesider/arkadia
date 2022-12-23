@@ -494,7 +494,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<regexCodeList>
 							<string>^Wykonujesz kilka probnych wymachow</string>
 							<string>^Fachowym okiem spogladasz</string>
-							<string>^Dokladnie obracasz w dloniach</string>
+							<string>Dokladnie obracasz w dloniach</string>
 							<string>^Fachowym okiem osoby, ktora z doswiadczenia wie, jak wazna</string>
 							<string>^Przygladasz sie krytycznie .*, sprawdzajac palcem .* stan\.$</string>
 							<string>^Przejezdzajac palcem po ostrzu .*, sprawdzasz .* stan\.$</string>
@@ -502,7 +502,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<regexCodePropertyList>
 							<integer>1</integer>
 							<integer>1</integer>
-							<integer>1</integer>
+							<integer>2</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -521,7 +521,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^(?:.*) jest (.*)$</string>
+								<string>^(?:.*) (?:jest|sa) (.*)$</string>
 								<string>^[ &gt;]*Wyglada na to, ze (?:sa|jest) ([a-z .]+)$</string>
 								<string>^(?:.*) (wymaga natychmiastowej konserwacji\.)</string>
 								<string>^(?:.*) (moze peknac w kazdej chwili\.)</string>
@@ -8657,6 +8657,246 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 										</TriggerGroup>
 									</TriggerGroup>
 								</TriggerGroup>
+								<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+									<name>sztylety</name>
+									<script></script>
+									<triggerType>0</triggerType>
+									<conditonLineDelta>0</conditonLineDelta>
+									<mStayOpen>0</mStayOpen>
+									<mCommand></mCommand>
+									<packageName></packageName>
+									<mFgColor>#ff0000</mFgColor>
+									<mBgColor>#ffff00</mBgColor>
+									<mSoundFile></mSoundFile>
+									<colorTriggerFgColor>#000000</colorTriggerFgColor>
+									<colorTriggerBgColor>#000000</colorTriggerBgColor>
+									<regexCodeList />
+									<regexCodePropertyList />
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>sztylety_1os</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>return scripts.gags:is_type("combat.avatar")</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>4</integer>
+										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>polyskujacy zdobiony sztylet</name>
+											<script>local target = "moje_ciosy"
+local dmg = matches["damage"]
+local value = -1
+    if dmg == "mija" then value = 0
+elseif dmg == "muskajac"  then value = 1
+elseif dmg == "raniac"  then value = 2
+elseif dmg == "trafiasz" then value = 3
+elseif dmg == "zaglebiajac" then value = 4
+elseif dmg == "powazne" then value = 5
+elseif dmg == "zaglebiajac" then value = 6
+elseif dmg == "celne" then
+      return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
+end
+scripts.gags:gag(value, 6, target)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Trafiasz (?'target'.+?) w (?'where'.+?) trzymanym w rece sztyletem, (.+?) (?:go|ja) (?'damage'.*)\.$</string>
+												<string>^Probujesz trafic (?'target'.+?) trzymanym w rece polyskujacym zdobionym sztyletem, ale twoj cios nieznacznie (?'damage'mija) cel\.$</string>
+												<string>^Blyskawicznym ruchem wyrzucasz przed siebie trzymajaca zdobiony sztylet reke, (?'damage'raniac) (?'target'.+?) ta dziwna bronia w (?'where'.+?)\.$</string>
+												<string>^Wkladajac w pchniecie cala swoja sile blyskawicznym ruchem wbijasz sztylet w cialo (?'target'.+?)\. Uswiadamiasz sobie, jak (?'damage'celne) bylo twoje uderzenie dopiero w chwili, gdy nieruchome juz cialo osuwa sie na ziemie\. Jakby cieszac sie z wlasnie zadanej smierci klejnoty zdobiace bron rozblyskuja na chwile silniejszym swiatlem\.$</string>
+												<string>^Wykorzystujac luke w obronie przeciwnika przyskakujesz do (?'target'.+?) i z rozmachem (?'damage'trafiasz) (?:go|ja) w (?'where'.+?) trzymanym w rece sztyletem\.$</string>
+												<string>^Szybkim zwodem dezorientujesz (?'target'.+?) po czym blyskawicznie uderzasz (?:go|ja) zdobionym sztyletem w (?'where'.+?), zadajac (?'damage'powazne) obrazenia\.$</string>
+												<string>^Wykonujesz szybki polobrot i wyprowadzasz cios, ktorego (?'target'.+?) nie jest w stanie ani uniknac, ani sparowac\. Ostrze sztyletu trafia w (?'where'.+?) przeciwnika, ('damage'zaglebiajac) sie w ciele\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>stalowe smocze pazury</name>
+											<script>local dbFunc = debug.getinfo(1)
+display(dbFunc)
+local target = "moje_ciosy"
+local dmg = matches["damage"]
+local value = -1
+    if dmg == "wyparowuje" then value = 0
+elseif dmg == "lekko" then value = 1
+elseif dmg == "celnie"  then value = 2
+elseif dmg == "bolesny" then value = 3
+elseif dmg == "paskudna" then value = 4
+elseif dmg == "tniesz" or dmg == "ciezko" then value = 5
+elseif dmg == "gleboko" then value = 6
+elseif dmg == "." then
+      return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
+end
+scripts.gags:gag(value, 6, target)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Doskakujesz do (?'target'.+?) i z grymasem na twarzy blyskawicznie (?'damage'tniesz) (go|ja) swymi stalowymi smoczymi pazurami w (?'where'.*)\.$</string>
+												<string>^Nagle skrecasz swe cialo i wezowym ruchem omijasz zaslone (?'target'.+?)\. Jedynie swist powietrza zdradza zadany z blyskawiczna szybkoscia cios, gdy stalowe smocze pazury rania (?'damage'gleboko) (.+?) w (?'where'.*)\.$</string>
+												<string>^Odchylasz sie nieco w tyl i z zimnym usmiechem na ustach wyprowadzasz swymi stalowymi smoczymi pazurami zaskakujace ciecie od dolu, (?'damage'lekko) zahaczajac (?'target'.+?) w (?'where'.*)\.$</string>
+												<string>^Ostrza stalowych smoczych pazurow z jazgotem zsuwaja sie po (.+?), gdy (?'target'.+?) (?'damage'wyparowuje) twoj cios\.$</string>
+												<string>^Wykonujesz blyskawiczny obrot wyrzucajac w przod swoja uzbrojona w stalowe smocze pazury dlon\. Blysk zimnej stali przecina powietrze, gdy (?'damage'lekko) ranisz (?'target'.+?) w (?'where'.*)\.$</string>
+												<string>^Wykonujesz blyskawiczny obrot wyrzucajac w przod swoja uzbrojona w stalowe smocze pazury dlon\. Blysk zimnej stali przecina powietrze, a ostrza wbijaja sie  w (?'where_target'.+?) pozostawiajac (?'damage'paskudna) szrame\.$</string>
+												<string>^Poziomym cieciem swoich stalowych smoczych pazurow godzisz w (?'target'.+?), trafiajac w (?'where'.+?) i wywolujac (?'damage'bolesny) grymas na jego twarzy\.$</string>
+												<string>^Wykonujesz plynny polobrot dla zmylenia (?'target'.+?), zyskujac tym samym czas niezbedny do zadania bardziej precyzyjnego ciosu\. Poziomym cieciem swoichstalowych smoczych pazurow godzisz w ni(a|ego), (?'damage'celnie) trafiajac w (?'where'.*)\.$</string>
+												<string>^Wyczekujesz odpowiedniej chwili, a gdy (?'target'.+?) rzuca sie do ataku, w ostatnim momencie unikasz je(?:go|j) ciosu i silnym kopnieciem wytracasz (?:go|ja) z rownowagi\.Nie czekajac, az dojdzie do siebie, wyprowadzasz szybkie pchniecie stalowymi smoczymi pazurami i bardzo (?'damage'ciezko) ranisz swego przeciwnika\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>lodowy lsniacy sztylet</name>
+											<script>local target = "moje_ciosy"
+local dmg = matches["damage"]
+local value = -1
+    if dmg == "mija"  then value = 0
+elseif dmg == "jedynie nieznaczne" or dmg == "zmrozona" or dmg == "smuge"  then value = 1
+elseif dmg == "jedynie nieduze" or dmg == "szrame"  then value = 2
+elseif dmg == "znaczne" or dmg == "rozcina" then value = 3
+elseif dmg == "bolesne" or dmg == "grymas" then value = 4
+elseif dmg == "bardzo rozlegle" or dmg == "strumien" then value = 5
+elseif dmg == "potworne" or dmg == "szkarlatna" or dmg == "powazne" or dmg == "powazna rane" then value = 6
+elseif dmg == "blyskawicznie" then
+      return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
+end
+scripts.gags:gag(value, 6, target)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Blyskawiczne pchniecie twoim lodowym lsniacym sztyletem w (?P&lt;where_target&gt;.+?) pozostawia po sobie buchajaca krwia, (?'damage'powazna rane)\. W powietrzu unosza sie smuzki bialej pary, powstajacej gdy ciepla posoka miesza sie z lodowatym ostrzem twej zabojczej broni\.$</string>
+												<string>^Przed oczyma staje ci obraz snieznej burzy, gdy wbijasz swoj lodowy lsniacy sztylet gleboko w (?'where_target'.+?)\. Na ciele przeciwnika krysztalki lodu mieszaja sie ze (?'damage'szkarlatna) krwia saczaca sie z rany\.$</string>
+												<string>^Rozpedzony lodowy lsniacy sztylet wbija sie plytko w (?P&lt;where_target&gt;.+?), pozostawiajac po sobie niewielka, lekko (?'damage'zmrozona) rane\.$</string>
+												<string>^Skrzace sie ostrze twojego lodowego lsniacego sztyletu samym tylko czubkiem trafia w (?P&lt;where_target&gt;.+?), pozostawiajac na je(?:go|j) skorze niewielka (?'damage'szrame)\.$</string>
+												<string>^Twoj lodowy lsniacy sztylet ze swistem przeslizguje sie tuz obok (?'target'.+?) ciagnac za soba cieniutka (?'damage'smuge) bialych krysztalkow lodu\.$</string>
+												<string>^Wycie mroznego wichru dalekiej polnocy dzwieczy ci w uszach, gdy twoj lodowy lsniacy sztylet rozcina (?'where_target'.+?)\. Twarz przeciwni(?:ka|czki) wykrzywia (?'damage'grymas) bolu, gdy fala obezwladniajacego chlodu przeplywa przez je(?:go|j) cialo\.$</string>
+												<string>^Wykorzystujac nieudolnosc i oslabienie swego przeciwnika, (?'damage'blyskawicznie) wyrzucasz reke dzierzaca lodowy lsniacy sztylet w jego kierunku i wbijasz smukle, mrozne ostrze az po sama garde\. Z ust (?'target'.+?) wydobywa sie niemal bezglosny jek, gdy obezwladniajace zimno popycha go w ramiona smierci\.$</string>
+												<string>^Wzbierajaca w ostrzu twojego lodowego lsniacego sztyletu fala chlodu przenika na wskros cialo (?'target'.+?), gdy wbijasz mu swa potezna bron prosto w (?'where'.+?)\. Z otwartej w ten sposob rany wyplywa (?'damage'strumien) jaskrawoczerwonej krwi\.$</string>
+												<string>^Z sila snieznej lawiny wbijasz swoj lodowy lsniacy sztylet w (?P&lt;where_target&gt;.+?)\. Mrozne ostrze wnika gleboko, a rozchodzace sie z niego fale chlodu zadaja (?P&lt;damage&gt;.*) obrazenia\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>sztylety_3os</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>return not scripts.gags:is_type("combat.avatar")</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>4</integer>
+										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>lodowy lsniacy sztylet</name>
+											<script>local target = getTargetFromMatches()
+local dmg = matches["damage"]
+local value = -1
+    if dmg == "mija"  then value = 0
+elseif dmg == "jedynie nieznaczne" or dmg == "zmrozona" or dmg == "smuge"  then value = 1
+elseif dmg == "jedynie nieduze" or dmg == "szrame"  then value = 2
+elseif dmg == "znaczne" or dmg == "rozcina" then value = 3
+elseif dmg == "bolesne" or dmg == "grymas" then value = 4
+elseif dmg == "bardzo rozlegle" or dmg == "strumien" then value = 5
+elseif dmg == "potworne" or dmg == "szkarlatna" or dmg == "powazne" or dmg == "powazna rane" then value = 6
+elseif dmg == "blyskawicznie" then
+      return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
+end
+scripts.gags:gag(value, 6, target)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^(?'attacker'.+?) z sila snieznej lawiny wbija swoj lodowy lsniacy sztylet w (?P&lt;where_target&gt;.+?)\. Mrozne ostrze wnika gleboko, a rozchodzace sie z niego fale chlodu zadaja (?P&lt;damage&gt;.*) obrazenia\.$</string>
+												<string>^Przeciagle wycie upiornych wilkow polnocy rozbrzmiewa w twych uszach, gdy spowity mrozna energia lodowy lsniacy sztylet ((?P&lt;attacker&gt;.+?) )?(?P&lt;damage&gt;mija) (?P&lt;target&gt;.+?) o wlos\.$</string>
+												<string>^Skrzace sie ostrze lodowego lsniacego sztyletu (?P&lt;attacker&gt;.+?) samym tylko czubkiem trafia w (?P&lt;where_target&gt;.+?), pozostawiajac na je(?:go|j) skorze niewielka (?'damage'szrame)\.$</string>
+												<string>^Wycie mroznego wichru dalekiej polnocy dzwieczy ci w uszach, gdy lodowy lsniacy sztylet (?P&lt;attacker&gt;.+?) (?P&lt;damage&gt;rozcina) (?P&lt;where_target&gt;.+?)\. Twarz zranionego wykrzywia grymas bolu, gdy niebieskawa fala chlodu rozplywa sie po jego ciele\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</Trigger>
+								</TriggerGroup>
 							</TriggerGroup>
 							<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>color_moje_ciosy</name>
@@ -10870,32 +11110,34 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>^Blyskawicznie wyrzucasz przed siebie reke dzierzaca (?'weapon'.+?), trafiajac (?'target'.+?) w (?'where'.+?)\. Ofiara krzywi sie z bolu, a ty wyszarpujesz szybko swa bron, pozostawiajac (?'damage'krwawiaca) rane\.$</string>
-											<string>^Celujac w (?'where_target'.+?) (?'damage'zaglebiasz) (?'weapon'.+?) az po rekojesc, a gdy wyciagasz go z rany zauwazasz, ze cala jest czerwona od krwi\.$</string>
+											<string>^Celujac w (?'where_target'.+?) (?'damage'zaglebiasz) (?'weapon'.+?) az po rekojesc, a gdy wyciagasz (?:go|je) z rany zauwazasz, ze cala jest czerwona od krwi\.$</string>
 											<string>^Korzystajac z nieuwagi (?'target'.+?) klujesz je(?:go|j) cialo (?'weapon'.+?) zostawiajac tylko lekkie (?'damage'drasniecie)\.$</string>
 											<string>^Mruzysz oczy, nie spuszczajac ani na chwile wzroku z (?'target'.+?), a gdy ten przygotowuje sie do zadania ciosu, blyskawicznie wyrzucasz przed siebie reke dzierzaca (?'weapon'.+?), trafiajac go w (?'where'.+?)\. Ofiara chwieje sie przez chwile, a ty wyszarpujesz szybko swa bron, pozostawiajac po ciosie (?'damage'rozlegle) obrazenia\.$</string>
 											<string>^Obracajac w reku (?'weapon'.+?) wykonujesz nagly zwod i trafiasz (?'target'.+?) pozostawiajac tylko (?'damage'nieznaczne) obrazenia\.$</string>
-											<string>^Odskakujesz do tylu, a (?'weapon'.+?), ktory trzymasz w rece, zatacza szeroki luk by ostatecznie trafic (?'target'.+?), zadajac jednak tylko (?'damage'nieznaczne) obrazenia\.$</string>
+											<string>^Odskakujesz do tylu, a (?'weapon'.+?), ktor[ey] trzymasz w rece, zatacza(ja)? szeroki luk by ostatecznie trafic (?'target'.+?), zadajac jednak tylko (?'damage'nieznaczne) obrazenia\.$</string>
 											<string>^Poziomym cieciem swojego (?'weapon'.+?) godzisz w (?'target'.+?), trafiajac w (?'where'.+?) i wywolujac (?'damage'bolesny) grymas na .*\.$</string>
-											<string>^Sprezasz sie do skoku probujac ugodzic (?'target'.+?) swym (?'weapon'.+?), lecz tracisz koncentracje i twoj niecelny cios (?'damage'mija) cel o wlos\.$</string>
+											<string>^Sprezasz sie do skoku probujac ugodzic (?'target'.+?) swymi? (?'weapon'.+?), lecz tracisz koncentracje i twoj niecelny cios (?'damage'mija) cel o wlos\.$</string>
 											<string>^Unikajac uderzenia (?'target'.+?) blyskawicznie (?'damage'doskakujesz) do nie(?:go|j) i .*$</string>
-											<string>^Uwaznie sledzisz ruchy (?'target'.+?) i trafiajac (go|ja) w (?'where'.+?) swym (?'weapon'.+?) zostawiasz (?'damage'bolesna) rane\.$</string>
-											<string>^Uwaznie sledzisz ruchy (?'target'.+?), a gdy ten na chwile odslania sie, doskakujesz don i trafiasz go w (?'where'.+?) swym (?'weapon'.+?), zadajac (?'damage'znaczne) obrazenia\.$</string>
-											<string>^Wykonujesz pare oszczednych unikow starajac sie zmeczyc (?'target'.+?) i gdy t(?:a|en) przystaje na chwile by zlapac oddech, (?'damage'wbijasz) swoj (?'weapon'.+?)\.$</string>
-											<string>^Wykonujesz szybki wypad by trafic (?'target'.+?) swym (?'weapon'.+?) pozostawiajac na je(?:go|j) ciele (?'damage'nieznaczne) drasniecie\.$</string>
-											<string>^Wykorzystujac chwilowa dekoncentracje (?'target'.+?), wbijasz swoj (?'weapon'.+?) w je(go|j) cialo pozostawiajac lekkie (?'damage'drasniecie)\.$</string>
+											<string>^Uwaznie sledzisz ruchy (?'target'.+?) i trafiajac (go|ja) w (?'where'.+?) swymi? (?'weapon'.+?) zostawiasz (?'damage'bolesna) rane\.$</string>
+											<string>^Uwaznie sledzisz ruchy (?'target'.+?), a gdy ten na chwile odslania sie, doskakujesz don i trafiasz go w (?'where'.+?) swymi? (?'weapon'.+?), zadajac (?'damage'znaczne) obrazenia\.$</string>
+											<string>^Wykonujesz pare oszczednych unikow starajac sie zmeczyc (?'target'.+?) i gdy t(?:a|en) przystaje na chwile by zlapac oddech, (?'damage'wbijasz) swoje? (?'weapon'.+?)\.$</string>
+											<string>^Wykonujesz szybki wypad by trafic (?'target'.+?) swymi? (?'weapon'.+?) pozostawiajac na je(?:go|j) ciele (?'damage'nieznaczne) drasniecie\.$</string>
+											<string>^Wykorzystujac chwilowa dekoncentracje (?'target'.+?), wbijasz swoje? (?'weapon'.+?) w je(go|j) cialo pozostawiajac lekkie (?'damage'drasniecie)\.$</string>
 											<string>^Wykorzystujac dekoncentracje i oslabienie (?'target'.+?), silnym kopnieciem podcinasz (?:go|ja), rownoczesnie wyrzucajac do przodu swa reke z (?'weapon'.+?)\. Przeciwnik traci rownowage i (?'damage'osuwa) sie na twa bron.*$</string>
-											<string>^Wykorzystujac dogodna chwile doskakujesz do (?'target'.+?), (a|ale udaje mu sie w pore zorientowac i) twoj (?'weapon'.+?) zostawia po sobie tylko lekkie (?'damage'drasniecie)\.$</string>
+											<string>^Wykorzystujac dogodna chwile doskakujesz do (?'target'.+?), (a|ale udaje mu sie w pore zorientowac i) twoje? (?'weapon'.+?) zostawia po sobie tylko lekkie (?'damage'drasniecie)\.$</string>
 											<string>^Wykorzystujac dogodna sytuacje rzucasz sie na (?'target'.+?), pragnac pchnac (?:go|ja) (?'weapon'.+?), jednak twoj (?'damage'nieskoordynowany) ruch nie jest w stanie nikogo zaskoczyc\.$</string>
-											<string>^Wypatrujac luke w obronie (?'target'.+?) blyskawicznie skracasz dystans i trafiasz (?:go|ja) w (?'where'.+?), a twoj (?'weapon'.+?) zostawia po sobie (?'damage'krwawa) bruzde\.$</string>
-											<string>^Wyprowadzasz szybkie pchniecie (?'weapon'.+?) i wbijasz go az po rekojesc w (?'where_target'.+?)\. Wyszarpujesz swa bron, a z potwornej rany momentalnie (?'damage'tryska krew)\.$</string>
+											<string>^Wypatrujac luke w obronie (?'target'.+?) blyskawicznie skracasz dystans i trafiasz (?:go|ja) w (?'where'.+?), a twoje? (?'weapon'.+?) zostawia po sobie (?'damage'krwawa) bruzde\.$</string>
+											<string>^Wyprowadzasz szybkie pchniecie (?'weapon'.+?) i wbijasz (?:go|je) az po rekojesc w (?'where_target'.+?)\. Wyszarpujesz swa bron, a z potwornej rany momentalnie (?'damage'tryska krew)\.$</string>
 											<string>^Zaciskasz mocniej palce na (?'weapon'.+?) i paskudnie (?'damage'ranisz) (?'target'.+?), trafiajac (?:go|ja) w (?'where'.*)\.$</string>
 											<string>^Zaciskasz mocniej palce na (?'weapon'.+?) i z naglego doskoku dopadasz do (?'target'.+?), trafiajac (?:go|ja) w (?'where'.*)\..*(?'damage'powazne) obrazenia\.$</string>
-											<string>^Zamierzasz sie na (?'target'.+?) swym (?'weapon'.+?), jednak on(|a) z latwoscia (?'damage'unika) twojego ciosu\.$</string>
+											<string>^Zamierzasz sie na (?'target'.+?) swymi? (?'weapon'.+?), jednak on(|a) z latwoscia (?'damage'unika) twojego ciosu\.$</string>
 											<string>^Zrecznym ruchem parujesz cios (?'target'.+?), rownoczesnie (?'damage'zachodzac) .*$</string>
 											<string>^Zwinnym, kocim ruchem (?'damage'przypadasz) do ziemi, by nagle doskoczyc do (?'target'.+?) i .*\.$</string>
 											<string>^Zwinnie uchylasz sie przed ciosem (?'target'.+?) i wykorzystujac jego chwilowo odwrocona uwage szybkim ruchem wyprowadzasz swym (?'weapon'.+?)pchniecie, celujac w (?'where'.+?) przeciwnika\. Bron celnie trafia, wytracajac przeciwnika z rownowagi i zadajac mu (?'damage'bardzo powazne) obrazenia\.$</string>
+											<string>^Wykonujesz szybki, zwodniczy ruch i patrzac zimno w oczy (?'target'.+?) zadajesz niespodziewany dla ofiary cios ktory ostatecznie (?:go|ja) (?'damage'masakruje)\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
