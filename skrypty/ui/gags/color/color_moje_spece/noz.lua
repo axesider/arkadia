@@ -8,7 +8,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_spece_noz_ja_spec()
     elseif dmg == "krwawiaca" or dmg == "ranisz" or dmg=="powazne" then value = 4
     elseif dmg == "zaglebiasz" or dmg == "tryska krew" then value = 5
     elseif dmg == "przypadasz" or dmg == "rozlegle" or dmg == "bardzo powazne" then value = 6
-    elseif dmg == "osuwa" or dmg == "zachodzac" or dmg == "doskakujesz" then
+    elseif dmg == "osuwa" or dmg == "zachodzac" or dmg == "doskakujesz" or dmg == "masakruje" then
         scripts.gags:gag_own_spec(scripts.gags.fin_prefix)
         return
     end
