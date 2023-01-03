@@ -58,7 +58,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_krysztalowy_swietli
     if matches["attacker"] then
         target = matches["target"] == "cie" and "innych_ciosy_we_mnie" or "innych_ciosy"
     end
-    scripts.gags:gag_prefix("FIN", target)
+    scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
 end
 
 
@@ -88,7 +88,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_3(
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_4() scripts.gags:gag(4, 7, "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_5() scripts.gags:gag(5, 7, "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_6() scripts.gags:gag(6, 7, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_fin() scripts.gags:gag_prefix("JA FIN", "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_fin() scripts.gags:gag_prefix("JA "..scripts.gags.fin_prefix, "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_runiczny_korbacz_spec() scripts.gags:gag_prefix("BRON SPEC", "moje_spece") end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_0() scripts.gags:gag(0, 6, "moje_ciosy") end
@@ -98,7 +98,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenste
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_4() scripts.gags:gag(4, 6, "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_5() scripts.gags:gag(5, 6, "moje_ciosy") end
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_6() scripts.gags:gag(6, 6, "moje_ciosy") end
-function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_fin() scripts.gags:gag_prefix("FIN", "moje_ciosy") end
+function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_pulsujacy_morgenstern_fin() scripts.gags:gag_prefix(scripts.gags.fin_prefix, "moje_ciosy") end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_iskrzaca_zdobiona_bulawa()
     local target = "moje_ciosy"
@@ -119,7 +119,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_iskrzaca_zdobiona_b
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_iskrzaca_zdobiona_bulawa_fin()
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+    scripts.gags:gag_prefix(scripts.gags.fin_prefix, "moje_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_starozytne_kosciane_berlo()
@@ -136,7 +136,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_starozytne_kosciane
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_starozytne_kosciane_berlo_fin()
-    scripts.gags:gag_prefix("FIN", "moje_ciosy")
+    scripts.gags:gag_prefix(scripts.gags.fin_prefix, "moje_ciosy")
 end
 
 function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_starozytne_kosciane_berlo_spec()

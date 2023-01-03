@@ -29,6 +29,7 @@ function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_kordelas()
     local dmg = matches["damage"]
     local value = -1
         if dmg == "trafiajac" then value = 1
+    elseif dmg == "raniac"  then value = 2
     elseif dmg == "zamach" then value = 3
     elseif dmg == "powaznie" then value = 4
     elseif dmg == "bardzo ciezko" then value = 5
@@ -41,7 +42,8 @@ function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_kordelas_1os()
     local target = "moje_ciosy"
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "wyparowany" or dmg == "oslania sie" or dmg == "paruje" then value = 0
+    
+        if dmg == "nie wyrzadza"  then value = 0
     elseif dmg == "Uderzasz"  then value = 1
     elseif dmg == "raniac"  then value = 2
     elseif dmg == "ranisz" then value = 3
@@ -92,6 +94,8 @@ function trigger_func_skrypty_ui_gags_ciosy_polyskujacy_zdobiony_sztylet_1os()
     scripts.gags:gag(value, 6, target)
 end
 
+-- Snieznobialy lsniacy sztylet 
+
 -- Stalowe smocze pazury
 
 function trigger_func_skrypty_ui_gags_ciosy_stalowe_smocze_pazury_1os()
@@ -109,4 +113,19 @@ function trigger_func_skrypty_ui_gags_ciosy_stalowe_smocze_pazury_1os()
         return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
     end
     scripts.gags:gag(value, 6, target)
+end
+
+-- Tileanskie sprezynowe stiletto
+
+function trigger_func_skrypty_ui_gags_ciosy_tileanskie_sprezynowe_stiletto_1os()
+    local target = "moje_ciosy"
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "obrazen." then value = 1
+    elseif dmg == "rany!"  then value = 2
+    elseif dmg == "krew!"  then value = 3
+    elseif dmg == "trzewiach!"  then value = 4
+    elseif dmg == "przeciwnikowi!" then value = 5
+    end
+    scripts.gags:gag_spec("STILLETTO ", value, 5, target)
 end

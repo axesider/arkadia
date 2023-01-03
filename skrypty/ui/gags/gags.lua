@@ -44,17 +44,17 @@ function scripts.gags:gag_prefix(gag_prefix, kind)
     prefix(str_replace)
     if selectString(str_replace, 1) > -1 then
         fg(scripts.gag_colors[kind])
-        
-        -- debug start
-        local i = 2
-        local hint = ""
-        repeat
-            local dbFunc = debug.getinfo(i)
-            hint = hint .. (dbFunc.name or dbFunc.short_src or dbFunc.short or "") .. " "
-            i = i + 1
-        until i > 4
-        setLink(function() end, hint)
-        -- debug end
+
+        if scripts.debug then
+            local i = 2
+            local hint = ""
+            repeat
+       	        local dbFunc = debug.getinfo(i)
+                hint = hint .. (dbFunc.name or dbFunc.short_src or dbFunc.short or "") .. " "
+                i = i + 1
+            until i > 4
+            setLink(function() end, hint)
+        end
     end
     resetFormat()
 end
