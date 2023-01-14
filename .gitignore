@@ -1,4 +1,5 @@
 .idea
+*.bak
 *.iml
 *.DS_Store
 .vscode/*

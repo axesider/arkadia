@@ -38,7 +38,7 @@ function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_kordelas()
     scripts.gags:gag(value, 6, target)
 end
 
-function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_kordelas_1os()
+function trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_kordelas_moje()
     local target = "moje_ciosy"
     local dmg = matches["damage"]
     local value = -1
@@ -58,7 +58,7 @@ end
 
 -- Lodowy lsniacy sztylet
 
-function trigger_func_skrypty_ui_gags_ciosy_lodowy_lsniacy_sztylet_1os()
+function trigger_func_skrypty_ui_gags_ciosy_lodowy_lsniacy_sztylet_moje()
     local target = "moje_ciosy"
     local dmg = matches["damage"]
     local value = -1
@@ -77,7 +77,7 @@ end
 
 -- Polyskujacy zdobiony sztylet
 
-function trigger_func_skrypty_ui_gags_ciosy_polyskujacy_zdobiony_sztylet_1os()
+function trigger_func_skrypty_ui_gags_ciosy_polyskujacy_zdobiony_sztylet_moje()
     local target = "moje_ciosy"
     local dmg = matches["damage"]
     local value = -1
@@ -95,10 +95,23 @@ function trigger_func_skrypty_ui_gags_ciosy_polyskujacy_zdobiony_sztylet_1os()
 end
 
 -- Snieznobialy lsniacy sztylet 
+function trigger_func_skrypty_ui_gags_ciosy_nieznobialy_lsniacy_sztylet_moje()
+    local target = "moje_ciosy"
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "nie udaje" or dmg == "zadnych" then value = 0
+    elseif dmg == "niewielka" then value = 1
+    elseif dmg == "powazna" then value = 2
+    elseif dmg == "wbijajac" then value = 3
+    elseif dmg == "idealne" then
+        return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
+    end
+    scripts.gags:gag(value, 5, target)
+end
 
 -- Stalowe smocze pazury
 
-function trigger_func_skrypty_ui_gags_ciosy_stalowe_smocze_pazury_1os()
+function trigger_func_skrypty_ui_gags_ciosy_stalowe_smocze_pazury_moje()
     local target = "moje_ciosy"
     local dmg = matches["damage"]
     local value = -1
@@ -117,7 +130,7 @@ end
 
 -- Tileanskie sprezynowe stiletto
 
-function trigger_func_skrypty_ui_gags_ciosy_tileanskie_sprezynowe_stiletto_1os()
+function trigger_func_skrypty_ui_gags_ciosy_tileanskie_sprezynowe_stiletto_moje()
     local target = "moje_ciosy"
     local dmg = matches["damage"]
     local value = -1

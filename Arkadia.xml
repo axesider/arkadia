@@ -3339,7 +3339,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<regexCodeList>
 												<string>miazdzac jej witalne organy.</string>
 												<string>cialo ofiary na wylot.</string>
-												<string>niemal rozrabujac glowe ofiary na dwoje.</string>
+												<string>, niemal rozrabujac glowe ofiary na dwoje.</string>
 												<string>ofiary w krwawa miazge.</string>
 											</regexCodeList>
 											<regexCodePropertyList>
@@ -6068,18 +6068,66 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>smukl\w+ demoniczn\w+ miec\w+</string>
-											<string>smukl\w+ zmiennoksztaltn\w+ miec\w+</string>
+											<string>smukl\w+ (demoniczn|zmiennoksztaltn)\w+ miec</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
-											<integer>1</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>smukly_miecz</name>
+											<script>    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = matches["target"] == "cie" and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "" then value = 0
+    elseif dmg == "ledwo musnac" then value = 1
+    elseif dmg == "lekko zaciac"  then value = 2
+    elseif dmg == "mocno" then value = 3
+    elseif dmg == "krwawiaca" then value = 4
+    elseif dmg == "ciezko rani" then value = 5
+    elseif dmg == "rozlegla" then value = 6
+    elseif dmg == "zakanczajac" then return trigger_func_skrypty_ui_gags_ciosy_bron_fin()
+    end
+
+trigger_func_skrypty_ui_gags_ciosy_arlekiny(value)
+</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^W dzikim, nieokielznanym tancu (?'attacker'.+?) rusza do ataku na (?P&lt;target&gt;.+?), by szerokim cieciem smuklego (?:demonicznego|zmiennoksztaltnego) miecza (?'damage'ledwo musnac) (?:cie|go|ja) w (?P&lt;where&gt;.*)\.$</string>
+												<string>^Poruszajac sie niczym duch, (?'attacker'.+?) podbiega do (?P&lt;target&gt;.+?) i podcina (?:cie|go|ja) noga, by (?'damage'lekko zaciac) smuklym (?:demonicznym|zmiennoksztaltnym) mieczem w (?P&lt;where&gt;.*)\.$</string>
+												<string>^(?'attacker'.+?) wykonuje szybki krok do przodu, ktory zupelnie (?:cie )?zaskakuje(?: je(?:go|j) przeciwni(?:czke|ka))?\. Wykorzystujac powstala okazje \w+ blyskawicznym wypadem trafia (?P&lt;target&gt;.+?) smuklym (?:demonicznym|zmiennoksztaltnym) mieczem w (?P&lt;where&gt;.+?) tak (?'damage'mocno), ze za ostrzem ciagnie sie krwawa smuga\.$</string>
+												<string>^Z dzikim blyskiem w oku (?'attacker'.+?) nurkuje pod ciosem (?P&lt;target&gt;.+?) i odpycha (?:go|ja) barkiem do tylu\. Gdy przeciwni(?:czka|k) traci rownowage, \w+? tnie (?:go|ja) smuklym (?:demonicznym|zmiennoksztaltnym) mieczem w (?P&lt;where&gt;.+?), pozostawiajac (?'damage'krwawiaca) rane\.$</string>
+												<string>^(?'attacker'.+?) unosi smukly (?:demoniczny|zmiennoksztaltny) miecz nad glowe i wykonuje nim potezne ciecie z gory, ktore (?'damage'ciezko rani) (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.*)\.$</string>
+												<string>^(?'attacker'.+?) bez trudu unika uderzenia (?P&lt;target&gt;.+?) i odskakuje od nie(?:go|j) ze smiechem\. Obserwujac uwaznie jak przeciwni(?:czka|k) ponawia probe ataku, \w+? z niezwykla zrecznoscia nurkuje pod ciosem, by wbic swoj smukly (?:demoniczny|zmiennoksztaltny) miecz w je(?:go|j) (?P&lt;where&gt;.+?), pozostawiajac (?'damage'rozlegla) rane\.$</string>
+												<string>^(?'attacker'.+?) markuje kilka uderzen swymi smuklymi mieczami, zmuszajac (?P&lt;target&gt;.+?) do odsloniecia sie\. Wykorzystujac powstala okazje \w+? jednym, silnym ruchem wbija smukly (?:demoniczny|zmiennoksztaltny) miecz w cialo przeciwni(?:czki|ka) az po rekojesc, (?'damage'zakanczajac) tym walke\.$</string>
+												<string>^(?'damage')Usmiechajac sie szyderczo, (?'attacker'.+?) rzuca sie do ataku na (?P&lt;target&gt;.+?), by uderzyc z calej sily smuklym (?:demonicznym|zmiennoksztaltnym) mieczem\. Je(?:go|j) cios trafia przeciwni(?:czke|ka) w .+?, wywolujac fontanne iskier\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>arlekiny_0</name>
-											<script>--Usmiechajac sie szyderczo, Dhorw rzuca sie do ataku na dostojnego lysego partyzant, by uderzyc z calej sily smuklym demonicznym mieczem. Jego cios trafia przeciwnika w ciemny zdobiony napiersnik, wywolujac fontanne iskier.
---Dhorw zamierza sie smuklym zmiennoksztaltnym mieczem na dostojnego lysego partyzant, lecz udaje sie mu sparowac cios poreczna zdobiona partyzana.
-trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
+											<script>trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -6092,14 +6140,14 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>Usmiechajac sie szyderczo, </string>
-												<string>zamierza sie </string>
+												<string>^(?'attacker'.+?) zamierza sie smuklym (demonicznym|zmiennoksztaltnym) mieczem na (?P&lt;target&gt;.+?), lecz udaje (?:ci sie sparowac je(?:go|j)|sie (?:jej|mu) sparowac) cios .*\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>2</integer>
 												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>arlekiny_1</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_arlekiny(1)</script>
 											<triggerType>0</triggerType>
@@ -6119,7 +6167,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 												<integer>2</integer>
 											</regexCodePropertyList>
 										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>arlekiny_2</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_arlekiny(2)</script>
 											<triggerType>0</triggerType>
@@ -6139,7 +6187,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 												<integer>2</integer>
 											</regexCodePropertyList>
 										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>arlekiny_3</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_arlekiny(3)</script>
 											<triggerType>0</triggerType>
@@ -6159,7 +6207,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>arlekiny_4</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_arlekiny(4)</script>
 											<triggerType>0</triggerType>
@@ -6179,7 +6227,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 												<integer>2</integer>
 											</regexCodePropertyList>
 										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>arlekiny_5</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_arlekiny(5)</script>
 											<triggerType>0</triggerType>
@@ -6199,7 +6247,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>arlekiny_6</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_arlekiny(6)</script>
 											<triggerType>0</triggerType>
@@ -6219,7 +6267,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>arlekiny_fin</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_bron_fin()</script>
 											<triggerType>0</triggerType>
@@ -6830,8 +6878,10 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>rozognione plomieniem smugi</string>
+												<string>wykonujac zamach uderza</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>0</integer>
 												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -9091,8 +9141,38 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 									<regexCodeList />
 									<regexCodePropertyList />
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>snieznobialy_lsniacy_sztylet</name>
+										<script>trigger_func_skrypty_ui_gags_ciosy_nieznobialy_lsniacy_sztylet_moje()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^(?'attacker'.+?) trafia snieznobialym lsniacym sztyletem w (?P&lt;where_target&gt;.+?) pozostawiajac (?'damage'niewielka) rane\.$</string>
+											<string>^(?'attacker'.+?) wyprowadza szybkie pchniecie swoim snieznobialym lsniacym sztyletem mierzac w (?P&lt;where_target&gt;.+?) jednak (?'damage'nie udaje) (?:jej|mu) sie trafic\.$</string>
+											<string>^(?'attacker'.+?) trafia swoim snieznobialym lsniacym sztyletem w (?'where_target'.+?), jednak nie zadaje (?:mu|jej) (?'damage'zadnych) obrazen\.$</string>
+											<string>^(?'attacker'.+?) mocnym pchnieciem snieznobialym lsniacym sztyletem trafia (?'target'.+?) w (?'where'.+?) zadajac (?:jej|mu) (?'damage'powazna) rane\.$</string>
+											<string>^(?'attacker'.+?) wyprowadza szybkie pchniecie snieznobialym lsniacym sztyletem i trafia (?'target'.+?) w (?'where'.+?), (?'damage'wbijajac) (?:jej|mu) go az po rekojesc\.$</string>
+											<string>^(?'attacker'.+?) wyprowadza (?'damage'idealne) pchniecie snieznobialym lsniacym sztyletem trafiajac (?'target'.+?) w (?'where'.+?)\. Krew szeroko tryska z rany\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>lodowy_lsniacy_sztylet</name>
-										<script>trigger_func_skrypty_ui_gags_ciosy_lodowy_lsniacy_sztylet_1os()</script>
+										<script>trigger_func_skrypty_ui_gags_ciosy_lodowy_lsniacy_sztylet_moje()</script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
 										<mStayOpen>0</mStayOpen>
@@ -9155,8 +9235,8 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 												<integer>4</integer>
 											</regexCodePropertyList>
 											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-												<name>czarny_smukly_kordelas_1os</name>
-												<script>trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_kordelas_1os()</script>
+												<name>czarny_smukly_kordelas_moje</name>
+												<script>trigger_func_skrypty_ui_gags_ciosy_czarny_smukly_kordelas_moje()</script>
 												<triggerType>0</triggerType>
 												<conditonLineDelta>0</conditonLineDelta>
 												<mStayOpen>0</mStayOpen>
@@ -9258,7 +9338,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>antyczty_sztylet_moje</name>
+											<name>antyczny_sztylet_moje</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_antyczny_sztylet()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
@@ -9303,7 +9383,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 										</Trigger>
 									</TriggerGroup>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-										<name>sztylety_1os</name>
+										<name>sztylety_moje</name>
 										<script></script>
 										<triggerType>0</triggerType>
 										<conditonLineDelta>0</conditonLineDelta>
@@ -9322,8 +9402,8 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 											<integer>4</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>lodowy_lsniacy_sztylet_1os</name>
-											<script>trigger_func_skrypty_ui_gags_ciosy_lodowy_lsniacy_sztylet_1os()</script>
+											<name>lodowy_lsniacy_sztylet_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_lodowy_lsniacy_sztylet_moje()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -9358,8 +9438,8 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>polyskujacy_zdobiony_sztylet_1os</name>
-											<script>trigger_func_skrypty_ui_gags_ciosy_polyskujacy_zdobiony_sztylet_1os()</script>
+											<name>polyskujacy_zdobiony_sztylet_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_polyskujacy_zdobiony_sztylet_moje()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -9377,7 +9457,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 												<string>^Wkladajac w pchniecie cala swoja sile blyskawicznym ruchem wbijasz sztylet w cialo (?'target'.+?)\. Uswiadamiasz sobie, jak (?'damage'celne) bylo twoje uderzenie dopiero w chwili, gdy nieruchome juz cialo osuwa sie na ziemie\. Jakby cieszac sie z wlasnie zadanej smierci klejnoty zdobiace bron rozblyskuja na chwile silniejszym swiatlem\.$</string>
 												<string>^Wykorzystujac luke w obronie przeciwnika przyskakujesz do (?'target'.+?) i z rozmachem (?'damage'trafiasz) (?:go|ja) w (?'where'.+?) trzymanym w rece sztyletem\.$</string>
 												<string>^Szybkim zwodem dezorientujesz (?'target'.+?) po czym blyskawicznie uderzasz (?:go|ja) zdobionym sztyletem w (?'where'.+?), zadajac (?'damage'powazne) obrazenia\.$</string>
-												<string>^Wykonujesz szybki polobrot i wyprowadzasz cios, ktorego (?'target'.+?) nie jest w stanie ani uniknac, ani sparowac\. Ostrze sztyletu trafia w (?'where'.+?) przeciwnika, ('damage'zaglebiajac) sie w ciele\.$</string>
+												<string>^Wykonujesz szybki polobrot i wyprowadzasz cios, ktorego (?'target'.+?) nie jest w stanie ani uniknac, ani sparowac\. Ostrze sztyletu trafia w (?'where'.+?) przeciwnika, (?'damage'zaglebiajac) sie w ciele\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -9390,22 +9470,8 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>snieznobialy_lsniacy_sztylet_1os</name>
-											<script>    local target = "moje_ciosy"
-    local dmg = matches["damage"]
-    local value = -1
-        if dmg == "nie udaje" or dmg == "zadnych" then value = 0
-    elseif dmg == "niewielka" then value = 1
-    elseif dmg == ""  then value = 2
-    elseif dmg == "" then value = 3
-    elseif dmg == "powazna" then value = 2
-    elseif dmg == "wbijajac" then value = 3
-    elseif dmg == "" then value = 6
-    elseif dmg == "idealne" then
-        return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
-    end
-    scripts.gags:gag(value, 5, target)
-</script>
+											<name>snieznobialy_lsniacy_sztylet_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_nieznobialy_lsniacy_sztylet_moje()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -9420,7 +9486,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 												<string>^Trafiasz snieznobialym lsniacym sztyletem w (?P&lt;where_target&gt;.+?) pozostawiajac (?'damage'niewielka) rane\.$</string>
 												<string>^Wyprowadzasz szybkie pchniecie swoim snieznobialym lsniacym sztyletem mierzac w (?P&lt;where_target&gt;.+?), jednak (?'damage'nie udaje) ci sie (?:go|jej) trafic\.$</string>
 												<string>^Trafiasz (?'target'.+?) swoim snieznobialym lsniacym sztyletem w (?'where'.+?), jednak nie zadajesz (?:mu|jej) (?'damage'zadnych) obrazen\.$</string>
-												<string>^Mocnym pchnieciem snieznobialym lsniacym sztyletem trafiasz (?'target'.+?) w (?'where'.+?) zadajac mu (?'damage'powazna) rane\.$</string>
+												<string>^Mocnym pchnieciem snieznobialym lsniacym sztyletem trafiasz (?'target'.+?) w (?'where'.+?) zadajac (?:jej|mu) (?'damage'powazna) rane\.$</string>
 												<string>^Wyprowadzasz szybkie pchniecie snieznobialym lsniacym sztyletem i trafiasz (?'target'.+?) w (?'where'.+?), (?'damage'wbijajac) (?:jej|mu) go az po rekojesc\.$</string>
 												<string>^Twoje (?'damage'idealne) pchniecie snieznobialym lsniacym sztyletem trafia (?'target'.+?) w (?'where'.+?)\. Krew szeroko tryska z rany\.$</string>
 											</regexCodeList>
@@ -9434,8 +9500,8 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>stalowe_smocze_pazury_1os</name>
-											<script>trigger_func_skrypty_ui_gags_ciosy_stalowe_smocze_pazury_1os()</script>
+											<name>stalowe_smocze_pazury_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_stalowe_smocze_pazury_moje()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -9470,19 +9536,8 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>tileanskie_sprezynowe_stiletto_1os</name>
-											<script>local target = "moje_ciosy"
-local dmg = matches["damage"]
-local value = -1
-    if dmg == "obrazen." then value = 1
-elseif dmg == "rany!"  then value = 3
-elseif dmg == "krew!"  then value = 3
-elseif dmg == "trzewiach!"  then value = 4
-elseif dmg == "przeciwnikowi!" then value = 5
-elseif dmg == "" then
-      return scripts.gags:gag_prefix("STILLETTO"..scripts.gags.fin_prefix, target)
-end
-scripts.gags:gag_spec("STILLETTO "..dmg, value, 4, target)</script>
+											<name>tileanskie_sprezynowe_stiletto_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_tileanskie_sprezynowe_stiletto_moje()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -15550,8 +15605,10 @@ scripts.gags:gag_spec("STILLETTO "..dmg, value, 4, target)</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>lecz</string>
+												<string>unik</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>0</integer>
 												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -18389,7 +18446,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<string>Dobywajac czarnego smuklego </string>
 								<string>Gdy dobywasz lodowego lsniacego sztyletu fala obezwladniajacego chlodu przeplywa przez twe cialo. Przymykasz oczy starajac sie zawladnac ta potezna bronia i po chwili czujesz, ze jestes jej panem.</string>
 								<string>Zdecydowanym ruchem zapinasz opaske na swym przedramieniu. Szybkie szarpniecie reki sprawia, ze skryte dotad ostrza stalowych smoczych pazurow wysuwaja sie z metalicznym szczekiem.</string>
-								<string>Nieznacznym, wprawnym poruszeniem nadgarstka wydobywasz z rekaw</string>
+								<string>Nieznacznym, wprawnym poruszeniem nadgarstk</string>
+								<string>Z trudem dobywasz snieznobialego lsniacego sztyletu, gdy przed oczami przebiegaja ci obrazy krwi, smierci i zniszczenia. Twoje cialo ogarnia niesamowity chlod.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
@@ -18421,6 +18479,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<integer>2</integer>
 								<integer>1</integer>
 								<integer>0</integer>
+								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>
 								<integer>2</integer>

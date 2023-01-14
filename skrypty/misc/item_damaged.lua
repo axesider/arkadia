@@ -14,6 +14,7 @@ misc["item_damaged_desc"] = {
     ["w dobrym stanie."] = "[6/7]",
     ["liczne walki wyryly na niej swoje pietno."] = "[5/7]",
     ["liczne walki wyryly na nim swoje pietno."] = "[5/7]",
+    ["liczne walki wyryly na nich swoje pietno."] = "[5/7]",
     ["w zlym stanie."] = "[4/7]",
     ["w bardzo zlym stanie."] = "[3/7]",
     ["wymaga natychmiastowej konserwacji."] = "[2/7]",
