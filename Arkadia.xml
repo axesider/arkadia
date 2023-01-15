@@ -6125,7 +6125,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(value)
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>arlekiny_0</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_arlekiny(0)</script>
 											<triggerType>0</triggerType>
@@ -9353,8 +9353,10 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(value)
 											<regexCodeList>
 												<string>^(?:Jak gdyby kierowane wlasna wola, o|O)strze twojego antycznego zdobionego sztyletu trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), pozostawiajac na je(?:go|j) ciele (?P&lt;damage&gt;.+)\.$</string>
 												<string>^(?:Jak gdyby kierowane wlasna wola, o|O)strze antycznego zdobionego sztyletu dzierzonego przez (?P&lt;attacker&gt;.+?) trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) pozostawiajac na je(?:go|j) ciele (?P&lt;damage&gt;.+)\.$</string>
+												<string>^Ostrze twojego  antycznego zdobionego sztyletu trafia (?'target'.+?), nie czyniac (?:mu|jej) (?'damage'zadnej) krzywdy\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
@@ -9521,7 +9523,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(value)
 												<string>^Wykonujesz blyskawiczny obrot wyrzucajac w przod swoja uzbrojona w stalowe smocze pazury dlon\. Blysk zimnej stali przecina powietrze, a ostrza wbijaja sie  w (?'where_target'.+?) pozostawiajac (?'damage'paskudna) szrame\.$</string>
 												<string>^Poziomym cieciem swoich stalowych smoczych pazurow godzisz w (?'target'.+?), trafiajac w (?'where'.+?) i wywolujac (?'damage'bolesny) grymas na jego twarzy\.$</string>
 												<string>^Wykonujesz plynny polobrot dla zmylenia (?'target'.+?), zyskujac tym samym czas niezbedny do zadania bardziej precyzyjnego ciosu\. Poziomym cieciem swoichstalowych smoczych pazurow godzisz w ni(a|ego), (?'damage'celnie) trafiajac w (?'where'.*)\.$</string>
-												<string>^Wyczekujesz odpowiedniej chwili, a gdy (?'target'.+?) rzuca sie do ataku, w ostatnim momencie unikasz je(?:go|j) ciosu i silnym kopnieciem wytracasz (?:go|ja) z rownowagi\.Nie czekajac, az dojdzie do siebie, wyprowadzasz szybkie pchniecie stalowymi smoczymi pazurami i bardzo (?'damage'ciezko) ranisz swego przeciwnika\.$</string>
+												<string>^Wyczekujesz odpowiedniej chwili, a gdy (?'target'.+?) rzuca sie do ataku, w ostatnim momencie unikasz je(?:go|j) ciosu i silnym kopnieciem wytracasz (?:go|ja|je) z rownowagi\.Nie czekajac, az dojdzie do siebie, wyprowadzasz szybkie pchniecie stalowymi smoczymi pazurami i bardzo (?'damage'ciezko) ranisz swego przeciwnika\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -11782,8 +11784,8 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(value)
 											<string>^Poziomym cieciem swoje(?:go|j) (?'weapon'.+?) godzisz w (?'target'.+?), trafiajac w (?'where'.+?) i wywolujac (?'damage'bolesny) grymas na .*\.$</string>
 											<string>^Sprezasz sie do skoku probujac ugodzic (?'target'.+?) sw(a|ym|ymi) (?'weapon'.+?), lecz tracisz koncentracje i twoj niecelny cios (?'damage'mija) cel o wlos\.$</string>
 											<string>^Unikajac uderzenia (?'target'.+?) blyskawicznie (?'damage'doskakujesz) do nie(?:go|j) i .*$</string>
-											<string>^Uwaznie sledzisz ruchy (?'target'.+?) i trafiajac (go|ja) w (?'where'.+?) sw(a|ym|ymi) (?'weapon'.+?) zostawiasz (?'damage'bolesna) rane\.$</string>
-											<string>^Uwaznie sledzisz ruchy (?'target'.+?), a gdy ten na chwile odslania sie, doskakujesz don i trafiasz go w (?'where'.+?) sw(a|ym|ymi) (?'weapon'.+?), zadajac (?'damage'znaczne) obrazenia\.$</string>
+											<string>^Uwaznie sledzisz ruchy (?'target'.+?) i trafiajac (?:go|ja) w (?'where'.+?) sw(a|ym|ymi) (?'weapon'.+?) zostawiasz (?'damage'bolesna) rane\.$</string>
+											<string>^Uwaznie sledzisz ruchy (?'target'.+?), a gdy t(?:a|en|o) na chwile odslania sie, doskakujesz don i trafiasz go w (?'where'.+?) sw(a|ym|ymi) (?'weapon'.+?), zadajac (?'damage'znaczne) obrazenia\.$</string>
 											<string>^Wykonujesz pare oszczednych unikow starajac sie zmeczyc (?'target'.+?) i gdy t(?:a|en) przystaje na chwile by zlapac oddech, (?'damage'wbijasz) swoj(|a|e) (?'weapon'.+?)\.$</string>
 											<string>^Wykonujesz szybki wypad by trafic (?'target'.+?) sw(a|ym|ymi)? (?'weapon'.+?) pozostawiajac na je(?:go|j) ciele (?'damage'nieznaczne) drasniecie\.$</string>
 											<string>^Wykorzystujac chwilowa dekoncentracje (?'target'.+?), wbijasz swoj(|a|e) (?'weapon'.+?) w je(go|j) cialo pozostawiajac lekkie (?'damage'drasniecie)\.$</string>
@@ -11794,7 +11796,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(value)
 											<string>^Wyprowadzasz szybkie pchniecie (?'weapon'.+?) i wbijasz (?:go|je|ja) az po rekojesc w (?'where_target'.+?)\. Wyszarpujesz swa bron, a z potwornej rany momentalnie (?'damage'tryska krew)\.$</string>
 											<string>^Zaciskasz mocniej palce na (?'weapon'.+?) i paskudnie (?'damage'ranisz) (?'target'.+?), trafiajac (?:go|ja) w (?'where'.*)\.$</string>
 											<string>^Zaciskasz mocniej palce na (?'weapon'.+?) i z naglego doskoku dopadasz do (?'target'.+?), trafiajac (?:go|ja) w (?'where'.*)\..*(?'damage'powazne) obrazenia\.$</string>
-											<string>^Zamierzasz sie na (?'target'.+?) sw(?:a|ym|ymi) (?'weapon'.+?), jednak on(|a) z latwoscia (?'damage'unika) twojego ciosu\.$</string>
+											<string>^Zamierzasz sie na (?'target'.+?) sw(?:a|ym|ymi) (?'weapon'.+?), jednak on(|a|o) z latwoscia (?'damage'unika) twojego ciosu\.$</string>
 											<string>^Zrecznym ruchem parujesz cios (?'target'.+?), rownoczesnie (?'damage'zachodzac) .*$</string>
 											<string>^Zwinnym, kocim ruchem (?'damage'przypadasz) do ziemi, by nagle doskoczyc do (?'target'.+?) i .*\.$</string>
 											<string>^Zwinnie uchylasz sie przed ciosem (?'target'.+?) i wykorzystujac jego chwilowo odwrocona uwage szybkim ruchem wyprowadzasz sw(?:a|ym|ymi) (?'weapon'.+?)pchniecie, celujac w (?'where'.+?) przeciwnika\. Bron celnie trafia, wytracajac przeciwnika z rownowagi i zadajac mu (?'damage'bardzo powazne) obrazenia\.$</string>

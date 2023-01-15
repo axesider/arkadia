@@ -1,4 +1,4 @@
--- Antyczny sztylet
+-- Antyczny zdobiony sztylet
 
 function trigger_func_skrypty_ui_gags_ciosy_antyczny_sztylet()
     local target = "moje_ciosy"
@@ -8,7 +8,8 @@ function trigger_func_skrypty_ui_gags_ciosy_antyczny_sztylet()
 
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "podluzna, niezbyt szeroka bruzde" then value = 1
+        if dmg == "zadnej" then value = 0
+    elseif dmg == "podluzna, niezbyt szeroka bruzde" then value = 1
     elseif dmg == "podluzna, dosyc szeroka bruzde" then value = 2
     elseif dmg == "poszarpana, dosyc szeroka bruzde" then value = 3
     elseif dmg == "poszarpana, bardzo gleboka bruzde" then value = 4
