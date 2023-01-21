@@ -3810,8 +3810,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Z cala sila jaka dysponujesz wykonujesz potezny zamach swym czarnoblekitnym pulsujacym morgensternem\. Od gory uderzasz (?P&lt;target&gt;.+?) trafiajac go prosto w (?P&lt;where&gt;.+?), a bron z latwoscia miazdzy czaszke przeciwnika, ktory pada martwy na ziemie\.$</string>
 												<string>^Wykonujesz potezne uderzenie swym czarnoblekitnym pulsujacym morgensternem i trafiasz centralnie w .+?\. W momencie uderzenia nastepuje oslepiajacy blysk swiatla polaczony z niesamowitym hukiem\. Czujesz smrod palonego ciala, a gdy po chwili spogladasz, widzisz jedynie zweglone cialo, ktore natychmiast upada na ziemie\.$</string>
 												<string>^(?P&lt;attacker&gt;.+?) wznosi ku gorze swoj czarnoblekitny pulsujacy morgenstern i z calej sily uderza (?P&lt;target&gt;.+?) prosto w glowe, miazdzac jego czaszke\. Zmasakarowana ofiara natychmiast pada martwa na ziemie\.$</string>
+												<string>^(?P&lt;attacker&gt;.+?) wykonuje potezne uderzenie swym czarnoblekitnym pulsujacym morgensternem i trafia centralnie w (?P&lt;where_target&gt;.+?)\. W momecie uderzenia nastepujeoslepiajaca eksplozja, a gdy po chwili spogladasz, widzisz jedynie zweglone cialo, ktore niemal natychmiast upada na ziemie\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -9353,7 +9355,7 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(value)
 											<regexCodeList>
 												<string>^(?:Jak gdyby kierowane wlasna wola, o|O)strze twojego antycznego zdobionego sztyletu trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?), pozostawiajac na je(?:go|j) ciele (?P&lt;damage&gt;.+)\.$</string>
 												<string>^(?:Jak gdyby kierowane wlasna wola, o|O)strze antycznego zdobionego sztyletu dzierzonego przez (?P&lt;attacker&gt;.+?) trafia (?P&lt;target&gt;.+?) w (?P&lt;where&gt;.+?) pozostawiajac na je(?:go|j) ciele (?P&lt;damage&gt;.+)\.$</string>
-												<string>^Ostrze twojego  antycznego zdobionego sztyletu trafia (?'target'.+?), nie czyniac (?:mu|jej) (?'damage'zadnej) krzywdy\.$</string>
+												<string>^Ostrze twojego antycznego zdobionego sztyletu trafia (?'target'.+?), nie czyniac (?:mu|jej) (?'damage'zadnej) krzywdy\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -9554,6 +9556,28 @@ trigger_func_skrypty_ui_gags_ciosy_arlekiny(value)
 												<string>^Trafiasz (?'target'.+?) tileanskim sprezynowym stilettem w (?'where'.+?), raniac (?:go|ja)\. Zwalniasz sprezyne, a potrojne .* (?'damage'.*)$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>szylkretowy_falisty_sztylet</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_szylkretowy_falisty_sztylet_moje()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Z (moca szkwalu|naporem spienionej fali|sila sztormu|szybkoscia zaglicy|potega wzburzonego morza|zajadloscia morskiego weza) wbijasz swoj szylkretowy falisty sztylet w (?'where_target'.+?), zostawiajac na ciele ofiary (?'damage'nieznaczne|nieduze|bolesne|potworne) obrazenia\.$</string>
+												<string>^Perla osadzona w glowicy szylkretowego falistego sztyletu wydaje sie na chwile blaknac, gdy jego ostrze (?'damage'mija) (?'target'.*)\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>

@@ -129,6 +129,25 @@ function trigger_func_skrypty_ui_gags_ciosy_stalowe_smocze_pazury_moje()
     scripts.gags:gag(value, 6, target)
 end
 
+-- Szylkretowy_falisty_sztylet
+function trigger_func_skrypty_ui_gags_ciosy_szylkretowy_falisty_sztylet_moje()
+    local target = "moje_ciosy"
+    local dmg = matches["damage"]
+    local value = -1
+    
+        if dmg == "mija"  then value = 0
+    elseif dmg == "nieznaczne"  then value = 1
+    elseif dmg == "nieduze"  then value = 2
+    elseif dmg == "znaczne" then value = 3
+    elseif dmg == "bolesne" then value = 4
+    elseif dmg == "potworne" then value = 5
+    elseif dmg == "" then value = 6
+    elseif dmg == "" then
+        return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
+    end
+    scripts.gags:gag(value, 6, target)
+end
+
 -- Tileanskie sprezynowe stiletto
 
 function trigger_func_skrypty_ui_gags_ciosy_tileanskie_sprezynowe_stiletto_moje()
