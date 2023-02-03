@@ -67,6 +67,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_lodowata_dluga_macz
     if matches["attacker"] then
         target = matches["target"] == "cie" and "innych_ciosy_we_mnie" or "innych_ciosy"
     end
+
     local dmg = matches["damage"]
     local value = -1
         if dmg == "ledwo muskajac" or dmg == "pozostawiajac lekkiego, zmrozonego siniaka" then value = 1
