@@ -95,7 +95,8 @@ function trigger_func_skrypty_ui_gags_ciosy_polyskujacy_zdobiony_sztylet_moje()
     scripts.gags:gag(value, 6, target)
 end
 
--- Snieznobialy lsniacy sztylet 
+-- Snieznobialy lsniacy sztylet
+
 function trigger_func_skrypty_ui_gags_ciosy_nieznobialy_lsniacy_sztylet_moje()
     local target = "moje_ciosy"
     local dmg = matches["damage"]
@@ -129,7 +130,8 @@ function trigger_func_skrypty_ui_gags_ciosy_stalowe_smocze_pazury_moje()
     scripts.gags:gag(value, 6, target)
 end
 
--- Szylkretowy_falisty_sztylet
+-- Szylkretowy falisty sztylet
+
 function trigger_func_skrypty_ui_gags_ciosy_szylkretowy_falisty_sztylet_moje()
     local target = "moje_ciosy"
     local dmg = matches["damage"]
@@ -140,9 +142,9 @@ function trigger_func_skrypty_ui_gags_ciosy_szylkretowy_falisty_sztylet_moje()
     elseif dmg == "nieduze"  then value = 2
     elseif dmg == "znaczne" then value = 3
     elseif dmg == "bolesne" then value = 4
-    elseif dmg == "potworne" then value = 5
-    elseif dmg == "" then value = 6
-    elseif dmg == "" then
+    elseif dmg == "powazne" then value = 5
+    elseif dmg == "bardzo rozlegle" then value = 6
+    elseif dmg == "potworne" then
         return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
     end
     scripts.gags:gag(value, 6, target)
