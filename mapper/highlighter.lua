@@ -70,7 +70,7 @@ function Highlight:refresh()
     self:off()
     self.enabled = status
     if self.enabled then
-        self.on()
+        self:on()
     end
 end
 
