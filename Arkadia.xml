@@ -408,8 +408,8 @@
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^W skrzyniach zauwazasz miedzy innymi (?'content'.*)\.$</string>
-							<string>^W .* (skrzyni|kufrze|skrzynce) zauwazasz miedzy innymi (?'content'.*)\.$</string>
-							<string>^Otwarty.* kosz(?:|yk) zawiera (?'content'.*)\.$</string>
+							<string>^W .+? (skrzyni|kufrze|skrzynce) zauwazasz miedzy innymi (?'content'.*)\.$</string>
+							<string>^Otwarty.+? kosz(?:|yk) zawiera (?'content'.*)\.$</string>
 							<string>^Na stojakach zauwazasz miedzy innymi (?'content'.*)\.$</string>
 							<string>^Debowy wysoki sekretarzyk zawiera (?'content'.*)\.$</string>
 							<string>.* (?:skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka|regal|szkatula|regal|szkatula)(?:| z okuciami| depozytowa) zawiera (?'content'.*)\.$</string>
@@ -417,8 +417,10 @@
 							<string>^Otwart[ay] [a-z ]+ (?:koszyk|szafa|sejf) zawiera (?'content'.*)\.$</string>
 							<string>^Narozna etazerka zawiera: (?'content'.*)\.$</string>
 							<string>^Dostrzegasz na (?:nim|niej) jeszcze (?'content'.*)\.$</string>
+							<string>^Drewniany okuty stelaz zawiera (?'content'.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -2518,7 +2520,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^[ &gt;]*Chwytasz .* reka za podkrzyze swego srebrnego wiedzminskiego miecza dwurecznego.*Cios trafia zaskoczonego przeciwnika, zaledwie go jednak muskajac\.$</string>
+											<string>^[ &gt;]*Chwytasz \w+ reka za podkrzyze swego srebrnego wiedzminskiego miecza dwurecznego, by wykonac nim blyskawiczne pchniecie, mierzac w (?'target'.+?)\. Cios trafia zaskoczon(?:a|ego) przeciwni(?:czke|ka), zaledwie (?:ja|go) jednak muskajac\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -2640,7 +2642,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^[ &gt;]*Dostrzegajac szanse na skuteczny atak na .*, chwytasz srebrny wiedzminski miecz dwureczny za podkrzyze i wykonujesz serie szybkich ciec i pchniec, z ktorych kazde rani i wyraznie meczy przeciwnika.*</string>
+											<string>^[ &gt;]*Dostrzegajac szanse na skuteczny atak na (?'target'.+?), chwytasz srebrny wiedzminski miecz dwureczny za podkrzyze i wykonujesz serie szybkich ciec i pchniec, z ktorych kazde rani i wyraznie meczy przeciwni</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -3700,8 +3702,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Trafiasz (?'target'.+?) w (?'where'.+?) swym czarnoblekitnym pulsujacym morgensternem, lekko (?:go|ja) raniac\.$</string>
 												<string>^Uderzasz (?'target'.+?) prosto w (?'where'.+?) swym czarnoblekitnym pulsujacym morgensternem\. Metalowa kula rozblyska ostrym blekitnym swiatlem, gdy nieznacznie zaglebia sie w cialo, zadajac bolesne obrazenia\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) uderza prosto w (?'where_target'.+?) swym czarnoblekitnym pulsujacym morgensternem\. Metalowa kula na koncu broni rozblyska ostrym blekitnym swiatlem, gdy nieznacznie zaglebia sie w cialo, zadajac bolesne obrazenia\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) lekko rani (?'target'.+?) uderzeniem swego czarnoblekitnego pulsujacego morgensterna\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -3748,8 +3752,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^Nagle z czarnoblekitnego pulsujacego morgensterna wylatuje blekitny strumien energii, przeszywajacy (?'target'.+?)\. Na je(?:go|j) twarzy pojawia sie grymas potwornego bolu\.$</string>
+												<string>^Nagle z czarnoblekitnego pulsujacego morgensterna wylatuje  blekitny strumien energii przeszywajacy (?'where_target'.+?)\. Widzisz jak na je(go|j) twarzy pojawia sie grymas potwornego bolu\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -3814,7 +3820,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Z cala sila jaka dysponujesz wykonujesz potezny zamach swym czarnoblekitnym pulsujacym morgensternem\. Od gory uderzasz (?'target'.+?) trafiajac go prosto w (?'where'.+?), a bron z latwoscia miazdzy czaszke przeciwnika, ktory pada martwy na ziemie\.$</string>
 												<string>^Wykonujesz potezne uderzenie swym czarnoblekitnym pulsujacym morgensternem i trafiasz centralnie w .+?\. W momencie uderzenia nastepuje oslepiajacy blysk swiatla polaczony z niesamowitym hukiem\. Czujesz smrod palonego ciala, a gdy po chwili spogladasz, widzisz jedynie zweglone cialo, ktore natychmiast upada na ziemie\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) wznosi ku gorze swoj czarnoblekitny pulsujacy morgenstern i z calej sily uderza (?'target'.+?) prosto w glowe, miazdzac jego czaszke\. Zmasakarowana ofiara natychmiast pada martwa na ziemie\.$</string>
-												<string>^(?'attacker'\w+(?: \w+){0,4}) wykonuje potezne uderzenie swym czarnoblekitnym pulsujacym morgensternem i trafia centralnie w (?'where_target'.+?)\. W momecie uderzenia nastepujeoslepiajaca eksplozja, a gdy po chwili spogladasz, widzisz jedynie zweglone cialo, ktore niemal natychmiast upada na ziemie\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) wykonuje potezne uderzenie swym czarnoblekitnym pulsujacym morgensternem i trafia centralnie w (?'where_target'.+?)\. W momecie uderzenia nastepuje oslepiajaca eksplozja, a gdy po chwili spogladasz, widzisz jedynie zweglone cialo, ktore niemal natychmiast upada na ziemie\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -4208,7 +4214,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>dwusegemntowa</name>
+											<name>dwusegmentowa</name>
 											<script>trigger_func_skrypty_ui_gags_color_color_moje_ciosy_dwusegmentowa()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
@@ -4288,8 +4294,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) miazdzy (?'target'.+) szponiasta dwusegmentowa maczuga, a stalowe ostrza jej masywnej glowicy rozdzieraja straszliwa rane, niemalze doszczetnie (?'damage'masakrujac) (?:jego|jej) slaniajace sie cialo\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) z wyraznym trudem wyprowadza niezgrabny zamach swa szponiasta dwusegmentowa maczuga, (?'damage'ledwie muskajac) (?'target'.+) w (?'where'.+)\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) celnie uderza szponiasta dwusegmentowa maczuga w (?'target'.+), z satysfakcja obserwujac (?'damage'widoczne obrazenia)\.$</string>
+												<string>^W sama pore (?'target'\w+(?: \w+){0,4}) zakleszcza cios (?'attacker'\w+(?: \w+){0,4}) pomiedzy stalowe ogniwa swej szponiastej dwusegmentowej maczugi, powstrzymujac ten niefortunny atak\.</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -6293,13 +6301,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string> jasniejacego zdobionego jatagana</string>
+											<string> jasniejacym zdobionym jataganem </string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>0</integer>
+											<integer>0</integer>
 										</regexCodePropertyList>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>jatagan_1</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(1)</script>
+											<name>jasniejacy_zdobiony_jatagan_inni</name>
+											<script>trigger_func_skrypty_ui_gags_jasniejacy_zdobiony_jatagan_inni()</script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -6311,15 +6321,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>ledwo muskasz</string>
+												<string>(?:Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze|Swietlista smuga przecina powietrze), gdy (?:dlugim cieciem|szybkim pchnieciem) swym jasniejacym zdobionym jataganem (?'attacker'\w+(?: \w+){0,4}?) (?'damage'ledwo muska|bardzo ciezko rani|powaznie rani|rani|masakruje) (?'target'.+?), trafiajac (?:go|ja) w (?'where'.*)\.</string>
 											</regexCodeList>
 											<regexCodePropertyList>
-												<integer>0</integer>
+												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>jatagan_2</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(2)</script>
+											<name>jasniejacy_zdobiony_jatagan_moje</name>
+											<script></script>
 											<triggerType>0</triggerType>
 											<conditonLineDelta>0</conditonLineDelta>
 											<mStayOpen>0</mStayOpen>
@@ -6331,91 +6341,131 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>lekko ranisz</string>
+												<string>return scripts.gags:is_type("combat.avatar")</string>
 											</regexCodeList>
 											<regexCodePropertyList>
-												<integer>0</integer>
+												<integer>4</integer>
 											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>jatagan_3</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(3)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>jatagana ranisz</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>0</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>jatagan_4</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(4)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>powaznie ranisz</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>0</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>jatagan_5</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(5)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>bardzo ciezko ranisz</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>0</integer>
-											</regexCodePropertyList>
-										</Trigger>
-										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-											<name>jatagan_6</name>
-											<script>trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(6)</script>
-											<triggerType>0</triggerType>
-											<conditonLineDelta>0</conditonLineDelta>
-											<mStayOpen>0</mStayOpen>
-											<mCommand></mCommand>
-											<packageName></packageName>
-											<mFgColor>#ff0000</mFgColor>
-											<mBgColor>#ffff00</mBgColor>
-											<mSoundFile></mSoundFile>
-											<colorTriggerFgColor>#000000</colorTriggerFgColor>
-											<colorTriggerBgColor>#000000</colorTriggerBgColor>
-											<regexCodeList>
-												<string>masakrujesz</string>
-											</regexCodeList>
-											<regexCodePropertyList>
-												<integer>0</integer>
-											</regexCodePropertyList>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>jatagan_1</name>
+												<script>trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(1)</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>ledwo muskasz</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>0</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>jatagan_2</name>
+												<script>trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(2)</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>lekko ranisz</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>0</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>jatagan_3</name>
+												<script>trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(3)</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>jatagana ranisz</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>0</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>jatagan_4</name>
+												<script>trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(4)</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>powaznie ranisz</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>0</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>jatagan_5</name>
+												<script>trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(5)</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>bardzo ciezko ranisz</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>0</integer>
+												</regexCodePropertyList>
+											</Trigger>
+											<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+												<name>jatagan_6</name>
+												<script>trigger_func_skrypty_ui_gags_moje_ciosy_jatagan(6)</script>
+												<triggerType>0</triggerType>
+												<conditonLineDelta>0</conditonLineDelta>
+												<mStayOpen>0</mStayOpen>
+												<mCommand></mCommand>
+												<packageName></packageName>
+												<mFgColor>#ff0000</mFgColor>
+												<mBgColor>#ffff00</mBgColor>
+												<mSoundFile></mSoundFile>
+												<colorTriggerFgColor>#000000</colorTriggerFgColor>
+												<colorTriggerBgColor>#000000</colorTriggerBgColor>
+												<regexCodeList>
+													<string>masakrujesz</string>
+												</regexCodeList>
+												<regexCodePropertyList>
+													<integer>0</integer>
+												</regexCodePropertyList>
+											</Trigger>
 										</Trigger>
 									</TriggerGroup>
 									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -6752,8 +6802,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>krwi i swadu palonego ciala</string>
+												<string>plonaca stala ogromnego ognistego trojzebu przebija</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>0</integer>
 												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -7546,8 +7598,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) wznosi drzewce czarnej smuklej glewii nad glowe i z poteznym zamachem wbija ostrze  w cialo (?'target'.+?) (?'damage'bardzo ciezko) (?:cie|go|ja) raniac\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) trafia (?'target'.+?) zdradzieckim cieciem wyprowadzonym od dolu\. Widzisz jak ostrze czarnej smuklej glewii ze straszliwym impetem (?'damage'rozdziera cialo) trafion(?:ego|ej) docierajac niemal do polowy (?:jego|jej) korpusu\. Ofiara z trudem cofa sie uwalniajac tkwiaca w niej bron\.$</string>
 												<string>^Celujac w (?'where_attacker'.+?) uderza cie czarna smukla glewia zadajac ci (?'damage'powierzchowna) rane sama koncowka ostrza\.$</string>
+												<string>^Ostrze czarnej smuklej glewii trzymanej przez (?'attacker'.+?) trafia (?'target'.+?) nie wyrzadzajac mu wiekszej krzywdy\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -9087,7 +9141,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 													<string>^Tniesz na odlew i trafiasz (?'target'.+?) czarnym smuklym kordelasem w (?'where'.+?) (?'damage'powaznie) (?:go|ja) raniac\.$</string>
 													<string>^Przyskakujesz do (?'target'.+?) i (?'damage'poteznie) uderzasz od dolu\. Cios, zbyt gwaltowny by ofiara mogla chociaz pomyslec o obronie, blyskawicznie dosiega ciala przeciwnika\. Widzisz jak masywne ostrze czarnego smuklego kordelasa bez najmniejszych problemow otwiera dluga, poszarpana bruzde\. Wykorzystujac szanse, z calej sily napierasz na bron, wbijajac ja coraz mocniej i glebiej\.\.\.$</string>
 													<string>^Wzmacniajac cios gwaltownym zamachem trafiasz (?'target'.+?) ostrzem czarnego smuklego kordelasa w (?'where'.+?) bardzo (?'damage'ciezko) (?:go|ja) raniac\.$</string>
-													<string>^Ostrze twojego czarnego smuklego kordelasa trafia (?'target'.+?), jednak (?'damage'nie wyrzadza) jej wiekszej krzywdy\.$</string>
+													<string>^Ostrze twojego czarnego smuklego kordelasa trafia (?'target'.+?), jednak (?'damage'nie wyrzadza) (?:jej|mu) wiekszej krzywdy\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
@@ -10654,7 +10708,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^Bierzesz ogromny zamach swoim gigantycznym granitowym mlotem i uderzasz nim w glowe (?'target'.+?)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie go zamroczylo\.$</string>
+											<string>^Bierzesz ogromny zamach swoim gigantycznym granitowym mlotem i uderzasz nim w glowe (?'target'.+?)\. Przeciwnik mruga oczami, nie bardzo wiedzac, co sie dzieje\. Porzadnie (?:go|ja) zamroczylo\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -16679,6 +16733,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>npc_spec</name>
+								<script>trigger_func_skrypty_ui_gags_color_color_innych_ciosy_ktos()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>^Nagle (?'attacker'\w+(?: \w+){0,4}) wykonuje zamaszysty cios (?'weapon'.+?), ktory (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target'.+?) w (?'where'.*)\.$</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
 						</TriggerGroup>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>color_other</name>
@@ -16750,9 +16824,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>(^[ &gt;]*Bol w (prawej|lewej) dloni staje sie mniej odczuwalny\.$)</string>
+									<string>Nagle czujesz,  jak dziwna sila opanowuje twe czlonki.  Nie jestes w stanie kontrolowac swojego zachowania!</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
+									<integer>0</integer>
 								</regexCodePropertyList>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -17837,6 +17913,66 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
+							</regexCodePropertyList>
+						</Trigger>
+					</TriggerGroup>
+					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>gadacz</name>
+						<script></script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>kruczoczarny misterny miecz mowi do</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>0</integer>
+						</regexCodePropertyList>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>moj_gadacz</name>
+							<script>trigger_func_skrypty_ui_misc_moj_gadacz()</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>Twoj kruczoczarny misterny miecz</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>2</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>innych_gadacz</name>
+							<script>trigger_func_skrypty_ui_misc_innych_gadacz()</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>Trzymany przez</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
 							</regexCodePropertyList>
 						</Trigger>
 					</TriggerGroup>
@@ -19327,7 +19463,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>przejdz_za_glazy</name>
-						<script>trigger_func_skrypty_ui_special_exits_follow("przejdz za glazy")</script>
+						<script>trigger_func_skrypty_ui_special_exits_follow("przecisnij sie za glazy")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
