@@ -5738,11 +5738,31 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>polyskliw\w+ smukl\w+ espado\w+</string>
+											<string>polyskliw\w+ smukl\w+ espadon</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
 										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>espadon_0</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_espadon(0)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Probujesz dosiegnac (?'target'\w+(?: \w+){0,4}) polyskliwym smuklym espadonem, jednak twoja bron nieznacznie chybia celu\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>espadon_1</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_espadon(1)</script>
@@ -6306,6 +6326,52 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</Trigger>
 										</Trigger>
 									</TriggerGroup>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>gorejacy_dlugi_talwar</name>
+										<script></script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>gorejac\w+ dlug\w+ talwar</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>gorejacy_dlugi_talwar_innych</name>
+											<script></script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Dostrzegajac slabosc (?'target'\w+(?: \w+){0,4}), (?'attacker'\w+(?: \w+ \w+|)) do nie(go|j), by wbic swoj gorejacy dlugi talwar w (?'where'.*)\.$</string>
+												<string>^Gdy (?'attacker'\w+(?: \w+ \w+|)) uderza (?'target'\w+(?: \w+){0,4}) gorejacym dlugim talwarem w (?'where'.+?), klinga je(?:go|j) miecza rozpala sie do czerwonosci, parzac (?:cie|przeciwni(?:czke|ka)) nieznacznie\.$</string>
+												<string>^Gdy z silnego zamachu (?'attacker'\w+(?: \w+ \w+|)) tnie (?'target'\w+(?: \w+){0,4}) w (?'where'.+?), brzeszczot je(?:go|j) gorejacego dlugiego talwara wybucha krwistoczerwonym jezorem ognia, mocno parzac (?:cie|przeciwni(?:czke|ka))\.$</string>
+												<string>^Widzac, ze na ostrzu gorejacego dlugiego talwara zaczynaja pelzac ogniste plomyki, (?'attacker'\w+(?: \w+ \w+|)) wykonuje szybki zamach, trafiajac (?'target'\w+(?: \w+){0,4}) w (?'where'.+?), pozostawiajac tam spore oparzenie\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+									</Trigger>
 									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>szamszir</name>
 										<script></script>
@@ -9287,13 +9353,15 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^(?'attacker'\w+(?: \w+){0,4}) uderza (?'target'.+?) czarnym smuklym kordelasem (?'damage'trafiajac) (?:go|ja) w (?'where'.+?)\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) uderza (?'target'.+?) czarnym smuklym kordelasem (?'damage'trafiajac) (?:go|ja) w (?'where'.*)\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) wykonuje krotki (?'damage'zamach) i rani (?'target'.+?) trafiajac (?:go|ja) w (?'where'.+?) ostrzem czarnego smuklego kordelasa\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) tnie na odlew i trafia (?'target'.+?) czarnym smuklym kordelasem w (?'where'.+?) (?'damage'powaznie) (?:go|ja) raniac\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) wzmacniajac cios gwaltownym zamachem trafia (?'target'.+?) czarnym smuklym kordelasem w (?'where'.+?) (?'damage'bardzo ciezko) (?:go|ja) raniac\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) naglym wypadem trafia (?'target'.+?) czarnym smuklym kordelasem w (?'where'.+?) lekko (?:go|ja|cie) (?'damage'raniac)\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) uderza czarnym smuklym kordelasem (?'damage'trafiajac) (?'target'cie) w (?'where'.*)\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -13261,7 +13329,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^(?'attacker'\w+(?: \w+ \w+|)) (?'damage'powol|oszczed|zgrab|plyn|blyskawicz)nym (?:wypadem do przodu atakuje|(?:polobrotem|ruchem) unika ciosu) (?'target'.+?)(?:,| korzystajac| i | dzgajac)</string>
+											<string>^(?'attacker'\w+(?: \w+ \w+|)) (?'damage'powol|oszczed|zgrab|plyn|blyskawicz)nym (?:wypadem do przodu atakuje|(?:polobrotem|ruchem) unika ciosu) (?'target'\w+(?: \w+){0,4})(?:,| korzystajac| i | dzgajac)</string>
 											<string>^(?'attacker'\w+(?: \w+ \w+|)) (?'damage'powol|oszczed|zgrab|plyn|blyskawicz)nym (?:polobrotem|ruchem) unika (?'target'twego) ciosu(?:,| korzystajac| i | dzgajac)</string>
 										</regexCodeList>
 										<regexCodePropertyList>

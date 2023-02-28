@@ -158,3 +158,7 @@ function trigger_func_skrypty_ui_gags_ciosy_waski_kunsztowny_sihill()
     end
     scripts.gags:gag(value, 6, target)
 end
+
+-- Gorejacy dlugi talwar
+function trigger_func_skrypty_ui_gags_ciosy_gorejacy_dlugi_talwar()
+end
