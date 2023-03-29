@@ -161,4 +161,38 @@ end
 
 -- Gorejacy dlugi talwar
 function trigger_func_skrypty_ui_gags_ciosy_gorejacy_dlugi_talwar()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = (matches["target"] == "cie" or matches["target"] == "ciebie") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "" then value = 0
+    elseif dmg == ""  then value = 1
+    elseif dmg == "" then value = 2
+    elseif dmg == "" then value = 4
+    elseif dmg == "" then value = 4
+    end
+    scripts.gags:gag(value, 6, target)
+end
+
+-- Rapier
+
+function trigger_func_skrypty_ui_gags_ciosy_rapier()
+    local target = "moje_ciosy"
+    if matches["attacker"] then
+        target = (matches["target"] == "cie" or matches["target"] == "ciebie") and "innych_ciosy_we_mnie" or "innych_ciosy"
+    end
+
+    local dmg = matches["damage"]
+    local value = -1
+        if dmg == "dluga" then value = 1
+    elseif dmg == "gleboka"  then value = 2
+    elseif dmg == "krwawiaca" then value = 3
+    elseif dmg == "poszarpana" then value = 4
+    elseif dmg == "poszarpana, krwawiaca" then value = 5
+    elseif dmg == "przebija" then value = 6
+    end
+    scripts.gags:gag(value, 6, target)
 end
