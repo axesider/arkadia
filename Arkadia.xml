@@ -2649,6 +2649,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<integer>0</integer>
 									</regexCodePropertyList>
 									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>jasniejacy_0</name>
+										<script>trigger_func_skrypty_ui_gags_ciosy_jasniejace_bronie(0)</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>Niecelny cios zdobion</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>2</integer>
+										</regexCodePropertyList>
+									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>jasniejacy_1</name>
 										<script>trigger_func_skrypty_ui_gags_ciosy_jasniejace_bronie(1)</script>
 										<triggerType>0</triggerType>
@@ -5514,8 +5534,12 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) trafia (?'target'.+?) w (?'where'.+?) obuchem swojego czarnego smuklego mlota (?'damage'miazdzac) (?:jego|jej) miesnie i rozrywajac skore\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) nadaje swojemu czarnemu smuklemu mlotowi ogromny impet i zadaje okrutny cios (?'target'.+?) w (?'where'.+?) (?'damage'powaznie) (?:go|ja) raniac\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) znajduje dogodna pozycje do ataku i czarnym smuklym mlotem zadaje (?'target'.+?) cios, ktory powoduje (?'damage'bardzo ciezkie) obrazenia\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) poteznie uderza (?'target'.+?) swoim czarnym smuklym mlotem w (?'where'.+?)\. Pod wplywem sily tego ciosu ('.+?) zwija sie z bolu\. Krew, ktora zauwazasz na glowicy mlota swiadczy o zadanych trafione(?:j|mu) powaznych, (?'damage'wewnetrznych obrazeniach)\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) nadaje swojemu czarnemu smuklemu mlotowi ogromny impet i zadaje ci okrutny cios w (?'where'.+?) (?'damage'powaznie) (?'target'cie) raniac\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -12580,9 +12604,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?:cie|go|ja|je) (?'target_weapon'.+?), trafiajac (?:cie|go|ja|je) w (?'where'.*)\.$</string>
+										<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target'cie) (?'weapon'.+?), trafiajac cie w (?'where'.*)\.$</string>
+										<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target_weapon'.+?), trafiajac (?:ja|go|je) w (?'where'.*)\.$</string>
 									</regexCodeList>
 									<regexCodePropertyList>
+										<integer>1</integer>
 										<integer>1</integer>
 									</regexCodePropertyList>
 								</Trigger>
