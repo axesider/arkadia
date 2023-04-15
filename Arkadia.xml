@@ -3634,8 +3634,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Celnym uderzeniem trafiasz (?'target'.+?) w (?'where'.+?)\. Czarnoblekitny pulsujacy morgenstern jarzac sie ostrym swiatlem bez trudu wnika w cialo, wypalajac olbrzymia rane\. Slyszysz skwierczacy syk i czujesz niesamowicie paskudny swad\.$</string>
 												<string>^Poteznym ciosem swojego czarnoblekitnego pulsujacego morgensterna trafiasz (?'target'.+?) w (?'where'.+), a sila uderzenia miazdzy je(?:j|go) cialo\.$</string>
 												<string>^Potezny cios zadany czarnoblekitnym pulsujacym morgensternem trzymanym przez (?'attacker'.+?) trafia (?'target'.+?) w (?'where'.+), miazdzac mu cialo\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) celnym uderzeniam trafia (?'target'.+?) w (?'where'.+?)\. Czarnoblekitny pulsujacy morgenstern jarzac sie ostrym swiatlem bez trudu wnika w cialo, wypalajac olbrzymia rane\. Slyszysz skwierczacy syk, a po chwili czujesz paskudny swad\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -3655,9 +3657,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Potezna kula niebieskiego ognia wylatuje z twego czarnoblekitnego pulsujacego morgensterna i trafia prosto w (?'target'.+?)\. Sila uderzenia rzuca ni(?:a|m) do tylu i widzisz, jak magiczna energia niemal doszczetnie go spala\.$</string>
+												<string>^Potezna kula niebieskiego ognia wylatuje z twego czarnoblekitnego pulsujacego morgensterna i trafia prosto w (?'target'.+?)\. Sila uderzenia rzuca ni(?:a|m) do tylu i widzisz, jak magiczna energia niemal doszczetnie (?:go|ja) spala\.$</string>
+												<string>^Potezna kula niebieskiego ognia wylatuja z czarnoblekitnego pulsujacego morgensterna trzymanego przez (?'attacker'.+?)\. Sila uderzenia rzuca (?'target'.+?) dotylu, i widzisz jak magiczna energia niemal doszczetnie (?:go|ja) spala\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -5001,6 +5005,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<regexCodePropertyList>
 											<integer>0</integer>
 										</regexCodePropertyList>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>runiczny_0</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_runiczny_mlot(0)</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) bierze potezny zamach wielkim runicznym mlotem wojennym mierzac w (?'target'.+?), t(?:a|en) jednak cudem unika ciosu, .*\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>runiczny_1</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_runiczny_mlot(1)</script>
@@ -6632,7 +6656,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) lekko (?'damage'kaleczy) (?'target'.+?) koncem czarnego smuklego miecza trafiajac (?:go|ja) w (?'where'.*)\.$</string>
-												<string>^(?'attacker'\w+(?: \w+){0,4}) trafia (?'target'.+?) czarnym smuklym mieczem w (?'where'.+?) (?'damage'lekko) (?:go|ja) raniac\.$</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) trafia (?'target'.+?) czarnym smuklym mieczem w (?'where'.+?) (?'damage'lekko) (?:cie|go|ja) raniac\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) trafia (?'target'.+?) czarnym smuklym mieczem w (?'where'.+?) (?'damage'raniac) (?:go|ja)\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) silnym uderzeniem czarnego smuklego miecza trafia (?'target'.+?) w (?'where'.+?) (?'damage'powaznie) (?:go|ja) raniac\.$</string>
 												<string>^(?'attacker'\w+(?: \w+){0,4}) wyprowadza znad glowy potezne uderzenie czarnym smuklym mieczem i trafia (?'target'.+?) w (?'where'.+?) (?'damage'bardzo ciezko) (?:go|ja) raniac\.$</string>
@@ -12605,7 +12629,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
 										<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target'cie) (?'weapon'.+?), trafiajac cie w (?'where'.*)\.$</string>
-										<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target_weapon'.+?), trafiajac (?:ja|go|je) w (?'where'.*)\.$</string>
+										<string>^(?'attacker'\w+(?: \w+){0,4}?) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target_weapon'.+?), trafiajac (?:ja|go|je) w (?'where'.*)\.$</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
@@ -13349,7 +13373,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^(?'attacker'\w+(?: \w+){0,4}) (?:(?:usmiecha sie przebiegle wyczuwajac zblizajace sie zwyciestwo|wykonuje szybki, szalony piruet|wykrzywia twarz w grymasie nienawisci|zaciska mocniej palce na rekojesci broni |krzywi wargi w pelnym satysfakcji usmiechu) i )?dostrzegajac luke w (?:twojej )?obronie(?:| przeciwni(?:ka|czki)) rzuca sie do ataku\. .* trafia (?'target'.+?) w (?'where'.+?) (?'damage'bardzo ciezko raniac|ledwo muskajac|lekko raniac|masakrujac|powaznie raniac|raniac) (?:go |)(?'weapon'.*)\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) (?:(?:usmiecha sie przebiegle wyczuwajac zblizajace sie zwyciestwo|wykonuje szybki, szalony piruet|wykrzywia twarz w grymasie nienawisci|zaciska mocniej palce na rekojesci broni|krzywi wargi w pelnym satysfakcji usmiechu) i )?dostrzegajac luke w (?:twojej )?obronie(?:| przeciwni(?:ka|czki)) rzuca sie do ataku\. .* trafia (?'target'.+?) w (?'where'.+?) (?'damage'bardzo ciezko raniac|ledwo muskajac|lekko raniac|masakrujac|powaznie raniac|raniac) (?:go |)(?'weapon'.*)\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -13983,7 +14007,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^[ &gt;]*Z pelnym wscieklosci rykiem (.*) blokuje zaslone (.*) i zadanym z rozmachu uderzeniem .* masakruje .*, blyskawicznie konczac walke\.$</string>
+											<string>^Z pelnym wscieklosci rykiem (?'attacker'.+?) blokuje (?:zaslone )?(?'bron_target'.+) i zadanym z rozmachu uderzeniem (?'bron'.+?) masakruje (?:jej|mu) (?'where'.+?), blyskawicznie konczac walke\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
