@@ -150,6 +150,26 @@ function trigger_func_skrypty_ui_gags_ciosy_szylkretowy_falisty_sztylet_moje()
     scripts.gags:gag(value, 6, target)
 end
 
+-- Tileanski matowy sztylet
+
+function trigger_func_skrypty_ui_gags_ciosy_tileanski_matowy_sztylet_moje()
+    local target = "moje_ciosy"
+    local dmg = matches["damage"]
+    local value = -1
+    
+        if dmg == ""  then value = 0
+    elseif dmg == "plytka" then value = 1
+    elseif dmg == "lekka"  then value = 2
+    elseif dmg == "gleboka"  then value = 3
+    elseif dmg == "brutalnie" then value = 4
+    elseif dmg == "fontanna" then value = 5
+    elseif dmg == "bardzo ciezko" then value = 6
+    elseif dmg == "" then
+        return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
+    end
+    scripts.gags:gag(value, 6, target)
+end
+
 -- Tileanskie sprezynowe stiletto
 
 function trigger_func_skrypty_ui_gags_ciosy_tileanskie_sprezynowe_stiletto_moje()

@@ -9698,6 +9698,36 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>tileanski_matowy_sztylet_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_tileanski_matowy_sztylet_moje()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Doskakujesz do (?'target'.+?), plynnym ruchem unikajac je(?:go|j) ciosu, po czym wyprowadzasz zdradzieckie pchniecie tileanskim matowym sztyletem, celnie trafiajac (?:go|ja) w (?'where'.+?)\. Matowe ostrze wchodzi bez oporu w cialo (.+?), zostawiajac po sobie (?'damage'gleboka) rane\.$</string>
+												<string>^Ostrzem tileanskiego matowego sztyletu trafiasz (?'target'.+?) w (?'where'.+?), pozostawiajac na je(?:go|j) ciele (?'damage'lekka) rane\.$</string>
+												<string>^Trafiasz (?'target'.+?) w (?'where'.+?) ostrzem swego tileanskiego matowego sztyletu, pozostawiajac na skorze (?'damage'plytka) rane\.$</string>
+												<string>^Wprowadzajac (?'target'.+?) w blad naglym skretem tulowia, wykorzystujesz je(?:go|j) dezorientacje zmniejszajac dzielacy was dystans paroma szybkimi krokami, by (?'damage'brutalnie) wbic tileanski matowy sztylet w je(?:go|j) (?'where'.+?)\.$</string>
+												<string>^Wykorzystujac oslabienie (?'target'.+?) skracasz szybko dzielacy was dystans\. Z ogromna sila wbijasz raz za razem tileanski matowy sztylet w (?'where'.+?) ofiary, a z powstalej rany tryska (?'damage'fontanna') krwi\.$</string>
+												<string>^Z kocia gracja zrywasz sie do przodu, a twoj tileanski matowy sztylet przecina powietrze wydajac nieprzyjemny dla uszu swist, by w koncu zaglebic sie w ciele (?'target'.+?), (?'damage'bardzo ciezko) (?:go|ja) raniac\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>zabkowany_zakrzywiony_sztylet_moje</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_zabkowany_zakrzywiony_sztylet()</script>
 											<triggerType>0</triggerType>
