@@ -3819,9 +3819,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>^Wykorzystujac slabosc w obronie (?'target'.+?), silnie uderzasz (go|ja) w (?'where'.+?) dlugim runicznym korbaczem, ciezko raniac\.$</string>
+												<string>^Wykorzystujac slabosc w obronie (?'target'.+?), silnie uderzasz (?:go|ja) w (?'where'.+?) dlugim runicznym korbaczem, ciezko raniac\.$</string>
+												<string>^Wykorzystujac slabosc w obronie (?'target'.+?), (?'attacker'.+?) silnie uderza (?:go|ja) w (?'where'.+?) dlugim runicznym korbaczem, ciezko raniac\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -9370,6 +9372,32 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<integer>1</integer>
 										</regexCodePropertyList>
 									</Trigger>
+									<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+										<name>masywny_dlugi_sztylet</name>
+										<script>trigger_func_skrypty_ui_gags_ciosy_masywny_dlugi_sztylet()</script>
+										<triggerType>0</triggerType>
+										<conditonLineDelta>0</conditonLineDelta>
+										<mStayOpen>0</mStayOpen>
+										<mCommand></mCommand>
+										<packageName></packageName>
+										<mFgColor>#ff0000</mFgColor>
+										<mBgColor>#ffff00</mBgColor>
+										<mSoundFile></mSoundFile>
+										<colorTriggerFgColor>#000000</colorTriggerFgColor>
+										<colorTriggerBgColor>#000000</colorTriggerBgColor>
+										<regexCodeList>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) blyskawicznym pchnieciem masywnego dlugiego sztyletu trafia (?'target'.+?) w (?'where'.+?)\. W ostatniej chwili przeciwnik cofa sie gwaltownie o krok, przez co ostrze nie wchodzi w jego cialo dosc gleboko\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) raptownym ciosem masywnego dlugiego sztyletu trafia (?'target'.+?) w (?'where'.+?) zostawiajac na (?:jego|jej|twojej) skorze plytka rane\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) wyprowadza gwaltowne pchniecie w (?'target'.+?), jednakze ostrze masywnego dlugiego sztyletu przecina tylko powietrze\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) blyskawicznie prostuje reke wyrzucajac przed siebie masywny dlugi sztylet i trafia (?'target'.+?) w (?'where'.+?)\. (?'damage'Krew) pokrywajaca ostrze swiadczy o celnosci tego uderzenia\.$</string>
+										</regexCodeList>
+										<regexCodePropertyList>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+											<integer>1</integer>
+										</regexCodePropertyList>
+									</Trigger>
 									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>czarny_smukly_kordelas</name>
 										<script></script>
@@ -9676,6 +9704,38 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>masywny_dlugi_sztylet_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_masywny_dlugi_sztylet_moje()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^Blyskawicznym pchnieciem masywnego dlugiego sztyletu trafiasz (?'target'.+?) w (?'where'.+?)\. W ostatniej chwili przeciwnik (?'damage'cofa) sie gwaltownie o krok, przez co ostrze nie wchodzi w je(?:go|j) cialo dosc gleboko\.$</string>
+												<string>^Raptownym ciosem masywnego dlugiego sztyletu trafiasz (?'target'.+?) w (?'where'.+?) zostawiajac na je(?:go|j) skorze (?'damage'plytka) rane\.$</string>
+												<string>^Raptownym ciosem masywnego dlugiego sztyletu dosiegasz (?'target'.+?) trafiajac go w (?'where'.+?)\. Ostrze bez trudu przecina skore pozostawiajac (?'damage'brzydka) rane\.$</string>
+												<string>^Wyprowadzasz gwaltowne pchniecie w (?'target'.+?), jednakze ostrze masywnego dlugiego sztyletu (?'damage'przecina) tylko powietrze\.$</string>
+												<string>^Zbijasz cios (?'target'.+?) i doskakujesz do swojego przeciwnika jednoczesnie (?'damage'wbijajac) w niego swoj masywny dlugi sztylet az po sama rekojesc\. Stojac tuz przy nim mozesz obserwowac, jak w jego oczach gasnie ostatnia iskra zycia\.$</string>
+												<string>^Dostrzegajac blad w zastawie przeciwnika w mgnieniu oka skracasz dystans i wyprowadzasz serie pchniec masywnym dlugim sztyletem w (?'where'.+?) zadajac (?'target'.+?)(?'damage'dotkliwe) obrazenia\.$</string>
+												<string>^Blyskawicznie prostujesz reke wyrzucajac przed siebie masywny dlugi sztylet i trafiasz (?'target'.+?) w (?'where'.+?)\. (?'damage'Krew) pokrywajaca ostrze swiadczy o celnosci tego uderzenia\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>szylkretowy_falisty_sztylet_moje</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_szylkretowy_falisty_sztylet_moje()</script>
 											<triggerType>0</triggerType>
@@ -9715,10 +9775,12 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Ostrzem tileanskiego matowego sztyletu trafiasz (?'target'.+?) w (?'where'.+?), pozostawiajac na je(?:go|j) ciele (?'damage'lekka) rane\.$</string>
 												<string>^Trafiasz (?'target'.+?) w (?'where'.+?) ostrzem swego tileanskiego matowego sztyletu, pozostawiajac na skorze (?'damage'plytka) rane\.$</string>
 												<string>^Wprowadzajac (?'target'.+?) w blad naglym skretem tulowia, wykorzystujesz je(?:go|j) dezorientacje zmniejszajac dzielacy was dystans paroma szybkimi krokami, by (?'damage'brutalnie) wbic tileanski matowy sztylet w je(?:go|j) (?'where'.+?)\.$</string>
-												<string>^Wykorzystujac oslabienie (?'target'.+?) skracasz szybko dzielacy was dystans\. Z ogromna sila wbijasz raz za razem tileanski matowy sztylet w (?'where'.+?) ofiary, a z powstalej rany tryska (?'damage'fontanna') krwi\.$</string>
+												<string>^Wykorzystujac oslabienie (?'target'.+?) skracasz szybko dzielacy was dystans\. Z ogromna sila wbijasz raz za razem tileanski matowy sztylet w (?'where'.+?) ofiary, a z powstalej rany tryska (?'damage'fontanna) krwi\.$</string>
 												<string>^Z kocia gracja zrywasz sie do przodu, a twoj tileanski matowy sztylet przecina powietrze wydajac nieprzyjemny dla uszu swist, by w koncu zaglebic sie w ciele (?'target'.+?), (?'damage'bardzo ciezko) (?:go|ja) raniac\.$</string>
+												<string>^Widzac jak (?'target'.+?) slania sie na nogach, szybkim ruchem palcow zmieniasz uchwyt na tileanskim matowym sztylecie i z naglego zrywu dopadasz do nie(?:go|j) wbijajac (?:jej|mu) sztylet w (?'where'.+?)\. Wyrwaniu ostrza z ciala towarzyszy (?'damage'fontanna) krwi buchajaca z je(?:go|j) zyl\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
 												<integer>1</integer>
@@ -9778,7 +9840,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Wykonujesz krotki zamach i (?'damage'ranisz) (?'target'.+?) ostrzem czarnego smuklego kordelasa trafiajac (?:go|ja) w (?'where'.*)\.$</string>
 												<string>^Zwijasz sie w polpiruecie i uderzasz (?'target'.+?) ostrzem czarnego smuklego kordelasa\. Widzisz, jak czubek sztyletu wbija sie w (?'where'.+?) przeciwnika otwierajac paskudna, (?'damage'poszarpana) rane\.$</string>
 												<string>^Tniesz na odlew i trafiasz (?'target'.+?) czarnym smuklym kordelasem w (?'where'.+?) (?'damage'powaznie) (?:go|ja) raniac\.$</string>
-												<string>^Przyskakujesz do (?'target'.+?) i (?'damage'poteznie) uderzasz od dolu\. Cios, zbyt gwaltowny by ofiara mogla chociaz pomyslec o obronie, blyskawicznie dosiega ciala przeciwnika\. Widzisz jak masywne ostrze czarnego smuklego kordelasa bez najmniejszych problemow otwiera dluga, poszarpana bruzde\. Wykorzystujac szanse, z calej sily napierasz na bron, wbijajac ja coraz mocniej i glebiej\.\.\.$</string>
+												<string>^Przyskakujesz do (?'target'.+?) i (?'damage'poteznie) uderzasz od dolu\. Cios, zbyt gwaltowny by ofiara mogla chociaz pomyslec o obronie, blyskawicznie dosiega ciala przeciwni(czki|ka)\. Widzisz jak masywne ostrze czarnego smuklego kordelasa bez najmniejszych problemow otwiera dluga, poszarpana bruzde\. Wykorzystujac szanse, z calej sily napierasz na bron, wbijajac ja coraz mocniej i glebiej\.\.\.$</string>
 												<string>^Wzmacniajac cios gwaltownym zamachem trafiasz (?'target'.+?) ostrzem czarnego smuklego kordelasa w (?'where'.+?) bardzo (?'damage'ciezko) (?:go|ja) raniac\.$</string>
 												<string>^Ostrze twojego czarnego smuklego kordelasa trafia (?'target'.+?), jednak (?'damage'nie wyrzadza) (?:jej|mu) wiekszej krzywdy\.$</string>
 											</regexCodeList>
@@ -12658,8 +12720,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<colorTriggerFgColor>#000000</colorTriggerFgColor>
 									<colorTriggerBgColor>#000000</colorTriggerBgColor>
 									<regexCodeList>
-										<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target'cie) (?'weapon'.+?), trafiajac cie w (?'where'.*)\.$</string>
-										<string>^(?'attacker'\w+(?: \w+){0,4}?) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target_weapon'.+?), trafiajac (?:ja|go|je) w (?'where'.*)\.$</string>
+										<string>^(?'attacker'\w+(?: \w+){0,4}?) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target'cie) (?'weapon'.+?), trafiajac cie w (?'where'.*)\.$</string>
+										<string>^(?'attacker'\w+(?: \w+){0,4}?) (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target_weapon'.+?), trafiajac (?:go|ja|je) w (?'where'.*)\.$</string>
 									</regexCodeList>
 									<regexCodePropertyList>
 										<integer>1</integer>
@@ -18945,7 +19007,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>(^Masz nowa poczte od [A-Za-z]+\.$)</string>
+								<string>^Masz nowa poczte od (?'sender'[A-Za-z]+)\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>

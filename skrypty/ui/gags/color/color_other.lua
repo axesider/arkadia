@@ -1,3 +1,72 @@
+two_word_mobs = {
+    "czarnego orka",
+    "elfiego egzekutora",
+    "elfiego tancerza wojny",
+    "krasnoluda chaosu",
+    "rycerza chaosu",
+    "smoka chaosu",
+    "smoczego ogra",
+    "trolla jaskiniowego",
+    "konia bojowego",
+    "szkielet goblina",
+    "szkielet krasnoluda",
+    "szkielet orka",
+    "zywiolaka wody",
+    "zywiolaka powietrza",
+    "zywiolaka ognia",
+    "zywiolaka ziemi"
+}
+
+function get_mob_types()
+    local sql_query = "select text from counter2_log"
+    local retrieved = db:fetch_sql(misc.counter2.db_log.counter2_log, sql_query)
+    types={}
+    lista = {}
+    for k, v in pairs(retrieved) do
+        t = v["text"]
+        t_lines = string.split(t, " ")
+        branch = types
+        for i=2, #t_lines do
+            s = t_lines[#t_lines-i+2]
+            if branch[s] then  else
+                branch[s] = {["cnt"]=0}
+            end
+            
+            branch = branch[s]
+            branch["cnt"] = branch["cnt"] + 1
+        end
+    end
+    for k, v in pairs(types) do
+        entry = k
+        lista[entry] = v.cnt
+        for k1, v1 in pairs(v) do
+            if k1 ~= "cnt" then
+                entry = k1 .." " .. k
+                lista[entry] = v1.cnt
+                for k2, v2 in pairs(v1) do
+                    if k2 ~= "cnt" then
+                        entry = k2 .. " " .. k1 .. " " ..k
+                        lista[entry] = v2.cnt
+                    end
+                end
+            end
+        end
+    end
+
+    local ids = {}
+    for id in pairs(lista) do
+        table.insert(ids, id)
+    end
+
+    table.sort(ids, function(a, b) return lista[a] > lista[b] end)
+    for i = 1, 20 do
+        local name = ids[i]
+        local entry = lista[name]
+        echo(i.." " .. entry.." " ..name.. "\n")
+    end
+    
+end
+
 function get_kill_count(linijka)
     local bestigory = {"poteznego","rogatego","gigantycznego","ogromnego","gargantuicznego","przerazajacego","muskularnego","umiesnionego"}
     local Oneadj_two_word_mobs = {"kamiennego trolla","lodowego trolla"}
