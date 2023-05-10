@@ -183,7 +183,7 @@ function trigger_func_skrypty_ui_gags_ciosy_tileanski_matowy_sztylet_moje()
     elseif dmg == "brutalnie" then value = 4
     elseif dmg == "fontanna" then value = 5
     elseif dmg == "bardzo ciezko" then value = 6
-    elseif dmg == "fontanna" then
+    elseif dmg == "Wyrwaniu" then
         return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
     end
     scripts.gags:gag(value, 6, target)

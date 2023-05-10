@@ -171,7 +171,7 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Zauwazasz, iz (.+?) jest przystosowan[yae] do chwytania (w dowolnej rece lub oburacz|w lewej rece lub oburacz|w prawej rece lub oburacz|w dowolnej rece|oburacz|w lewej rece|w prawej rece)\.$</string>
+							<string>^Zauwazasz, iz (.+?) (?:jest|sa) przystosowan[yae] do chwytania (w dowolnej rece lub oburacz|w lewej rece lub oburacz|w prawej rece lub oburacz|w dowolnej rece|oburacz|w lewej rece|w prawej rece)\.$</string>
 							<string>^Za (jego|jej|ich) pomoca mozna zadawac rany (.*)\.$</string>
 							<string>^Twoje doswiadczenie i umiejetnosci podpowiadaja ci, ze jak na (.+?) (jest|sa) (on|one|ono|ona) (.*) (wywazony|wywazona|wywazone) i (.*)\.$</string>
 						</regexCodeList>
@@ -8147,12 +8147,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<mSoundFile></mSoundFile>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
-										<regexCodeList>
-											<string>[Kk]unsztown\w+ mithrylow\w+</string>
-										</regexCodeList>
-										<regexCodePropertyList>
-											<integer>1</integer>
-										</regexCodePropertyList>
+										<regexCodeList />
+										<regexCodePropertyList />
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 											<name>mithrylowy</name>
 											<script>trigger_func_skrypty_ui_gags_ciosy_kunsztowny_mithrylowy_topor_bojowy()</script>
@@ -9777,7 +9773,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Wprowadzajac (?'target'.+?) w blad naglym skretem tulowia, wykorzystujesz je(?:go|j) dezorientacje zmniejszajac dzielacy was dystans paroma szybkimi krokami, by (?'damage'brutalnie) wbic tileanski matowy sztylet w je(?:go|j) (?'where'.+?)\.$</string>
 												<string>^Wykorzystujac oslabienie (?'target'.+?) skracasz szybko dzielacy was dystans\. Z ogromna sila wbijasz raz za razem tileanski matowy sztylet w (?'where'.+?) ofiary, a z powstalej rany tryska (?'damage'fontanna) krwi\.$</string>
 												<string>^Z kocia gracja zrywasz sie do przodu, a twoj tileanski matowy sztylet przecina powietrze wydajac nieprzyjemny dla uszu swist, by w koncu zaglebic sie w ciele (?'target'.+?), (?'damage'bardzo ciezko) (?:go|ja) raniac\.$</string>
-												<string>^Widzac jak (?'target'.+?) slania sie na nogach, szybkim ruchem palcow zmieniasz uchwyt na tileanskim matowym sztylecie i z naglego zrywu dopadasz do nie(?:go|j) wbijajac (?:jej|mu) sztylet w (?'where'.+?)\. Wyrwaniu ostrza z ciala towarzyszy (?'damage'fontanna) krwi buchajaca z je(?:go|j) zyl\.$</string>
+												<string>^Widzac jak (?'target'.+?) slania sie na nogach, szybkim ruchem palcow zmieniasz uchwyt na tileanskim matowym sztylecie i z naglego zrywu dopadasz do nie(?:go|j) wbijajac (?:jej|mu) sztylet w (?'where'.+?)\. (?'damage'Wyrwaniu) ostrza z ciala towarzyszy fontanna krwi buchajaca z je(?:go|j) zyl\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -9838,7 +9834,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Naglym wypadem trafiasz (?'target'.+?) czarnym smuklym kordelasem w (?'where'.+?) lekko (?:go|ja) (?'damage'raniac)\.$</string>
 												<string>^(?'damage'Uderzasz) (?'target'.+?) czarnym smuklym kordelasem trafiajac (?:go|ja) w (?'where'.*)\.$</string>
 												<string>^Wykonujesz krotki zamach i (?'damage'ranisz) (?'target'.+?) ostrzem czarnego smuklego kordelasa trafiajac (?:go|ja) w (?'where'.*)\.$</string>
-												<string>^Zwijasz sie w polpiruecie i uderzasz (?'target'.+?) ostrzem czarnego smuklego kordelasa\. Widzisz, jak czubek sztyletu wbija sie w (?'where'.+?) przeciwnika otwierajac paskudna, (?'damage'poszarpana) rane\.$</string>
+												<string>^Zwijasz sie w polpiruecie i uderzasz (?'target'.+?) ostrzem czarnego smuklego kordelasa\. Widzisz, jak czubek sztyletu wbija sie w (?'where'.+?) przeciwni(czki|ka) otwierajac paskudna, (?'damage'poszarpana) rane\.$</string>
 												<string>^Tniesz na odlew i trafiasz (?'target'.+?) czarnym smuklym kordelasem w (?'where'.+?) (?'damage'powaznie) (?:go|ja) raniac\.$</string>
 												<string>^Przyskakujesz do (?'target'.+?) i (?'damage'poteznie) uderzasz od dolu\. Cios, zbyt gwaltowny by ofiara mogla chociaz pomyslec o obronie, blyskawicznie dosiega ciala przeciwni(czki|ka)\. Widzisz jak masywne ostrze czarnego smuklego kordelasa bez najmniejszych problemow otwiera dluga, poszarpana bruzde\. Wykorzystujac szanse, z calej sily napierasz na bron, wbijajac ja coraz mocniej i glebiej\.\.\.$</string>
 												<string>^Wzmacniajac cios gwaltownym zamachem trafiasz (?'target'.+?) ostrzem czarnego smuklego kordelasa w (?'where'.+?) bardzo (?'damage'ciezko) (?:go|ja) raniac\.$</string>
@@ -18854,6 +18850,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<string>Czujesz nieokreslona pustke, gdy opuszczasz adamantytowy mlot bojowy.</string>
 								<string>Wraz z opuszczeniem zdobionego jasniejacego mlota zanika wypelniajace do tej pory twe serce uczucie niezlomnosci</string>
 								<string>Rozluzniasz chwyt na rezonujacym krysztalowym mlocie i przez chwile zmagasz sie ze zdretwialymi palcami.</string>
+								<string>Rozluzniasz swoj uchwyt na lodowym lsniacym sztylecie. Przez chwile czujesz ogromna, nieokreslona pustke. Swiecace runy na ostrzu sztyletu przygasaja.</string>
+								<string>Ostrza stalowych smoczych pazurow skrywaja sie w prowadnicach. Odpinasz bransolete i opuszczasz reke, pozwalajac aby opaska zsunela sie swobodnie z twego przedramienia.</string>
+								<string>Nie mogac zniesc natezenia tego dzwieku, opuszczasz bron zaslaniajac uszy.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -18870,6 +18869,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<integer>2</integer>
 								<integer>0</integer>
 								<integer>0</integer>
+								<integer>2</integer>
+								<integer>2</integer>
+								<integer>2</integer>
 								<integer>2</integer>
 							</regexCodePropertyList>
 						</Trigger>
