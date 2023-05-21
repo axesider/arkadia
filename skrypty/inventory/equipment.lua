@@ -71,22 +71,15 @@ function trigger_func_skrypty_inventory_equipment_ubranie_poziom_znoszenia()
     misc:wear_used_replace(matches[2])
 end
 
-function trigger_func_skrypty_inventory_equipment_zagladanie_plecaki_zamkniete()
-    local content = matches.content or matches[2]
-    scripts.inv.containers:display_contents(content)
-end
-
-function trigger_func_skrypty_inventory_equipment_zagladanie_plecaki_otwarte()
-    local content = matches.content or matches[4]
-    scripts.inv.containers:display_contents(content)
+function trigger_func_skrypty_inventory_equipment_zagladanie_plecaki()
+    scripts.inv.containers:display_contents(matches.content, matches.container)
 end
 
 function trigger_func_skrypty_inventory_equipment_zagladanie_skrzynie()
-    scripts.inv.containers:display_contents(matches.content)
+    scripts.inv.containers:display_contents(matches.content, matches.container)
 end
 
 function trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()
-    local content = matches.content or matches[2]
-    scripts.inv.containers:display_contents(content)
+    scripts.inv.containers:display_contents(matches.content, matches.container)
 end
 

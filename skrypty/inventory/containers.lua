@@ -4,9 +4,9 @@ scripts.inv.containers = scripts.inv.containers or {
     column_count = 1
 }
 
-function scripts.inv.containers:display_contents(content)
+function scripts.inv.containers:display_contents(content, container)
     if not scripts.inv.containers.disable_grouped_containers then
-        scripts.inv.pretty_containers:print(content, scripts.inv.containers.column_count, self.filter)
+        scripts.inv.pretty_containers:print(content, scripts.inv.containers.column_count, self.filter, container)
     else
         local container_elements = scripts.utils:extract_string_list(content)
         if self.filter then

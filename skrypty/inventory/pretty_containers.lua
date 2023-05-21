@@ -83,7 +83,15 @@ local count_name_transformer = function(item)
     return string.format("%s%s<reset>", count_prefix, name,  "<reset>")
 end
 
-function scripts.inv.pretty_containers:print(content, columns_count, filter)
+function test(container)
+    return function(item)
+        local hint = "wez "..item.." z " .. (container or "")
+        cechoLink("<light_slate_blue> * ", function() send(hint) end, hint, true)
+        return item
+    end
+end
+
+function scripts.inv.pretty_containers:print(content, columns_count, filter, container)
     local container_elements = scripts.utils:extract_string_list(content)
     if filter then
         container_elements = filter(container_elements)
@@ -128,7 +136,7 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter)
     table.insert(not_empty_result, {name = "inne", values = result["inne"]})
 
     local content_table = AutomaticTable:new(false)
-    content_table:set_title("P O J E M N I K")
+    content_table:set_title("P O J E M N I K" .. (container or ""))
     for i = 1, table.size(not_empty_result), columns_count do
         local current_columns = {}
         for j = 0, columns_count - 1 do
@@ -144,7 +152,7 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter)
             for _, name in pairs(current_columns) do
                 table.insert(contents, result[name] or {})
             end
-            content_table:add_row(contents)
+            content_table:add_row(contents, test(container))
         end
     end
     content_table:print()

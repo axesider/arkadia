@@ -350,8 +350,8 @@
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>zagladanie_plecaki_zamkniete</name>
-						<script>trigger_func_skrypty_inventory_equipment_zagladanie_plecaki_zamkniete()</script>
+						<name>zagladanie_plecaki</name>
+						<script>trigger_func_skrypty_inventory_equipment_zagladanie_plecaki()</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -363,31 +363,13 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Otwierasz na chwile .*, sprawdzajac zawartosc\. W srodku dostrzegasz (.*)\.$</string>
+							<string>^Otwart(?:y|a|e) (?'container'.* (plecak|torba|sakwa|sakiewka|worek))(?: z .*)? zawiera (?'content'.*)\.$</string>
+							<string>^Uwaznie ogladasz zawartosc (?'container'.+?)\. W srodku dostrzegasz (?'content'.*)\.$</string>
+							<string>^Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojej (?'container'.+? sakiewki).+?\. W srodku dostrzegasz (?'content'.*)\.$</string>
+							<string>^Otwierasz na chwile (?'container'.+?), sprawdzajac zawartosc\. W srodku dostrzegasz (?'content'.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>zagladanie_plecaki_otwarte</name>
-						<script>trigger_func_skrypty_inventory_equipment_zagladanie_plecaki_otwarte()</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^Otwart(y|a|e) .* (plecak|torba|sakwa|sakiewka|worek)(?: z .*)? zawiera (?'content'.*)\.$</string>
-							<string>(^[ &gt;]*(Uwaznie) ogladasz zawartosc .*\. W srodku dostrzegasz (?'content'.*)\.$)</string>
-							<string>^Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojej .* sakiewki.*\. ((W) srodku dostrzegasz (?'content'.*)\.$)</string>
-						</regexCodeList>
-						<regexCodePropertyList>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -407,17 +389,17 @@
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^W skrzyniach zauwazasz miedzy innymi (?'content'.*)\.$</string>
-							<string>^W .+? (skrzyni|kufrze|skrzynce) zauwazasz miedzy innymi (?'content'.*)\.$</string>
-							<string>^Otwarty.+? kosz(?:|yk) zawiera (?'content'.*)\.$</string>
-							<string>^Na stojakach zauwazasz miedzy innymi (?'content'.*)\.$</string>
-							<string>^Debowy wysoki sekretarzyk zawiera (?'content'.*)\.$</string>
-							<string>.* (?:skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka|regal|szkatula|regal|szkatula)(?:| z okuciami| depozytowa) zawiera (?'content'.*)\.$</string>
-							<string>^Wsrod pedantycznego porzadku w szafie zauwazasz miedzy innymi (?'content'.*)\.$</string>
-							<string>^Otwart[ay] [a-z ]+ (?:koszyk|szafa|sejf) zawiera (?'content'.*)\.$</string>
-							<string>^Narozna etazerka zawiera: (?'content'.*)\.$</string>
+							<string>^W (?'container'skrzyniach) zauwazasz miedzy innymi (?'content'.*)\.$</string>
+							<string>^W .+? (?'container'skrzyni|kufrze|skrzynce) zauwazasz miedzy innymi (?'content'.*)\.$</string>
+							<string>^Otwarty .+? (?'container'kosz(?:|yk)) zawiera (?'content'.*)\.$</string>
+							<string>^Na (?'container'stojakach) zauwazasz miedzy innymi (?'content'.*)\.$</string>
+							<string>^Debowy wysoki (?'container'sekretarzyk) zawiera (?'content'.*)\.$</string>
+							<string>^(?'container'.+? (?:skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka|regal|szkatula|regal|szkatula))(?:| z okuciami| depozytowa) zawiera (?'content'.*)\.$</string>
+							<string>^Wsrod pedantycznego porzadku w (?'container'szafie) zauwazasz miedzy innymi (?'content'.*)\.$</string>
+							<string>^Otwart[ay] (?'container'[a-z ]+ (?:koszyk|szafa|sejf)) zawiera (?'content'.*)\.$</string>
+							<string>^Narozna (?'container'etazerka) zawiera: (?'content'.*)\.$</string>
 							<string>^Dostrzegasz na (?:nim|niej) jeszcze (?'content'.*)\.$</string>
-							<string>^Drewniany okuty stelaz zawiera (?'content'.*)\.$</string>
+							<string>^Drewniany okuty (?'container'stelaz) zawiera (?'content'.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -448,7 +430,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Twoj depozyt zawiera (.*)\.$</string>
+							<string>Twoj (?'container'depozyt) zawiera (?'content'.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -22750,8 +22732,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[&gt; ]*Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojego[a-zA-Z -]*woreczka[a-z ]*\. W srodku dostrzegasz ([a-zA-Z0-9, -]+)\.$</string>
-						<string>^[&gt; ]*Uwaznie ogladasz zawartosc[a-zA-Z -]*woreczka[a-z ]*\. W srodku dostrzegasz ([a-zA-Z0-9, -]+)\.$</string>
+						<string>^[&gt; ]*Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojego[a-zA-Z -]*woreczka[a-z ]*\. W srodku dostrzegasz (?'content'[a-zA-Z0-9, -]+)\.$</string>
+						<string>^[&gt; ]*Uwaznie ogladasz zawartosc[a-zA-Z -]*woreczka[a-z ]*\. W srodku dostrzegasz (?'content'[a-zA-Z0-9, -]+)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
