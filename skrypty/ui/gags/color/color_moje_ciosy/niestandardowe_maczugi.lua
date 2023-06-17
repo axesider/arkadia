@@ -75,7 +75,7 @@ function trigger_func_skrypty_ui_gags_color_color_moje_ciosy_lodowata_dluga_macz
     elseif dmg == "raniac" or dmg == "mocno obijajac cialo" then value = 3
     elseif dmg == "ciezko raniac" or dmg == "pozostawiajac paskudnie wygladajaca rane" then value = 4
     elseif dmg == "niemalze zabijajac" then value = 5
-    elseif dmg == "masakrujac" or dmg == "masakrujac przeciwnika i zakanczajac ta walke" then
+    elseif dmg == "masakrujac" or dmg == "masakrujac przeciwnika i zakanczajac ta walke" or dmg == "mordercza" then
         trigger_func_skrypty_ui_gags_ciosy_bron_fin()
         return
     end

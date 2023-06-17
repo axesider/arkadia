@@ -1,5 +1,6 @@
 two_word_mobs = {
     "czarnego orka",
+    "dzikiego orka",
     "elfiego egzekutora",
     "elfiego tancerza wojny",
     "krasnoluda chaosu",

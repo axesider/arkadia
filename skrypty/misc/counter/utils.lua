@@ -2,6 +2,7 @@ misc.counter.utils = misc.counter.utils or {}
 
 misc.counter.utils.two_word_mobs = {
     "czarnego orka",
+    "dzikiego orka",
     "krasnoluda chaosu",
     "rycerza chaosu",
     "smoka chaosu",

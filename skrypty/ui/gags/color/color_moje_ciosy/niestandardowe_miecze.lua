@@ -155,6 +155,7 @@ function trigger_func_skrypty_ui_gags_ciosy_waski_kunsztowny_sihill()
     elseif dmg == "nieznaczne"  then value = 1
     elseif dmg == "lekko raniac" then value = 2
     elseif dmg == "wbija" then value = 4
+    elseif dmg == "bryzg" then return trigger_func_skrypty_ui_gags_ciosy_bron_fin()
     end
     scripts.gags:gag(value, 6, target)
 end
