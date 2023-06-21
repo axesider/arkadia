@@ -1,22 +1,4 @@
-two_word_mobs = {
-    "czarnego orka",
-    "dzikiego orka",
-    "elfiego egzekutora",
-    "elfiego tancerza wojny",
-    "krasnoluda chaosu",
-    "rycerza chaosu",
-    "smoka chaosu",
-    "smoczego ogra",
-    "trolla jaskiniowego",
-    "konia bojowego",
-    "szkielet goblina",
-    "szkielet krasnoluda",
-    "szkielet orka",
-    "zywiolaka wody",
-    "zywiolaka powietrza",
-    "zywiolaka ognia",
-    "zywiolaka ziemi"
-}
+two_word_mobs = misc.counter.utils.two_word_mobs
 
 function get_mob_types()
     local sql_query = "select text from counter2_log"
