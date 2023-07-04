@@ -170,10 +170,10 @@ function trigger_func_skrypty_ui_gags_ciosy_gorejacy_dlugi_talwar()
     local dmg = matches["damage"]
     local value = -1
         if dmg == "" then value = 0
-    elseif dmg == ""  then value = 1
-    elseif dmg == "" then value = 2
-    elseif dmg == "" then value = 4
-    elseif dmg == "" then value = 4
+    elseif dmg == "parzac"  then value = 1
+    elseif dmg == "spore" then value = 2
+    elseif dmg == "wybucha" then value = 3
+    elseif dmg == "olbrzymim" then trigger_func_skrypty_ui_gags_ciosy_bron_fin()
     end
     scripts.gags:gag(value, 6, target)
 end
