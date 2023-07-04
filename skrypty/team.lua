@@ -126,19 +126,20 @@ function trigger_func_skrypty_team_clear_absent()
                 local letter = ateam.team[old_id]
                 ateam.team[old_id] = nil
                 ateam.team[letter] = nil
-                raiseEvent("teamChanged")
             end
             if not table.contains(druzyna, ateam.objs[v]["desc"]) then
                 message = message .. ateam.objs[v]["desc"] .. " "
                 local letter = ateam.team[v]
                 ateam.team[v] = nil
                 ateam.team[letter] = nil
-                raiseEvent("teamChanged")
             end
             descs[ateam.objs[v]["desc"]] = v
         end
     end
-    if message ~= "" then scripts:print_log(message .. "nie jest juz w druzynie.", true) end
+    if message ~= "" then
+        raiseEvent("teamChanged")
+    	scripts:print_log(message .. "nie jest juz w druzynie.", true)
+    end
 end
 
 function trigger_func_skrypty_team_invite_bind()

@@ -34,6 +34,10 @@ function trigger_func_skrypty_ui_gags_color_color_innych_spece_gla_gl_3_mnie_4()
     scripts.gags:gag_spec("GLA", 2, 7, "innych_spece")
 end
 
+function trigger_func_skrypty_ui_gags_color_color_innych_spece_gla_gl_3_kogos(value)
+    scripts.gags:gag_spec("GLA", value, 7, "innych_spece")
+end
+
 function trigger_func_skrypty_ui_gags_color_color_innych_spece_gla_gl_3_kogos_1()
     scripts.gags:gag_spec("GLA", 0, 7, "innych_spece")
 end
