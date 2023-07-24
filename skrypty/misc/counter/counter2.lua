@@ -95,6 +95,77 @@ function misc.counter2:add_sum(item, year, month, day, type)
     end
 end
 
+misc.counter.utils.two_word_mobs = {
+    "czarnego orka",
+    "dzikiego orka",
+    "kamiennego trolla",
+    "konia bojowego",
+    "krasnoluda chaosu",
+    "lodowego trolla",
+    "rycerza chaosu",
+    "smoczego ogra",
+    "smoka chaosu",
+    "straznika wiezy",
+    "tancerza wojny",
+    "trolla gorskiego",
+    "trolla jaskiniowego",
+    "zjawe kobiety",
+    "zywiolaka ognia",
+    "zywiolaka powietrza",
+    "zywiolaka wody",
+    "zywiolaka ziemi"
+}
+
+
+local function ends_with(str, ending)
+   return str:sub(-#ending) == ending
+end
+
+--- Funckja zwraca rase
+-- @param text "Zabil[ae]s foo bar"
+function get_mob_race(text)
+    if ends_with(text, "ze skrzynia na grzbiecie") then text = text:sub(1,-26) end
+    result = {}
+    for _, mob in pairs(misc.counter.utils.two_word_mobs) do
+        if ends_with(text, mob) then
+            return mob
+        end
+    end
+    local l_keys = string.split(text, " ")
+    local last = table.size(l_keys)
+    local mob = l_keys[last]
+    if mob == "zwierzoczleka" then
+        local bestigory = {"poteznego","rogatego","gigantycznego","ogromnego","gargantuicznego","przerazajacego","muskularnego","umiesnionego"}
+        if table.contains(bestigory, l_keys[last-1]) or table.contains(bestigory, l_keys[last-2]) then
+            return "bestigora"
+        end
+    end
+    if l_keys[last-1] == "szkielet" then
+        return l_keys[last-1] .. " " .. mob
+    end
+    if last>4 then
+        debugc(mob.."|"..text.."|")
+    end
+    return mob
+end
+
+function misc.counter2:get_races_fromdb()
+    local sql_query = "SELECT count(text)as day, text FROM counter2_log WHERE character='" .. scripts.character_name .. "' group by text"
+    local retrieved = db:fetch_sql(misc.counter2.db_log.counter2_log, sql_query)
+    local result = {}
+    for k, v in pairs(retrieved) do
+        local mob = get_mob_race(v.text)
+        result[mob] = (result[mob] or 0) + v.day
+    end
+    return result
+end
+
+function misc.counter2:get_races()
+    if self.races == nil then
+        self.races = self:get_races_fromdb()
+    end
+    return self.races
+end
 
 function misc.counter2:show_short()
     if not scripts.character_name then
@@ -102,17 +173,14 @@ function misc.counter2:show_short()
         return
     end
 
-    local sql_query = "SELECT * FROM counter2_daysum WHERE character=\"" .. scripts.character_name .. "\" AND type!=\"all\" ORDER BY _row_id ASC"
-    local retrieved = db:fetch_sql(misc.counter2.db_daysum.counter2_daysum, sql_query)
+    local sql_query = "SELECT count(text)as day, text FROM counter2_log WHERE character='" .. scripts.character_name .. "' group by text"
+    local retrieved = db:fetch_sql(misc.counter2.db_log.counter2_log, sql_query)
 
+    
     local count_dict = {}
-
     for k, v in pairs(retrieved) do
-        if not count_dict[v["type"]] then
-            count_dict[v["type"]] = 0
-        end
-
-        count_dict[v["type"]] = count_dict[v["type"]] + tonumber(v["amount"])
+        local mob = get_mob_type(v.text)
+        count_dict[mob] = (count_dict[mob] or 0) + v.day
     end
 
     cecho("<grey>+---------------------------------------------------------+\n")
@@ -125,10 +193,13 @@ function misc.counter2:show_short()
 
     for k, v in spairs(count_dict) do
         local name = string.sub(k .. "<grey> ......................", 1, 29)
-        local color = misc.counter.utils:is_rare(name) and "<orange>" or "<LawnGreen>"
-        local amount = string.sub(tostring(v) .. "       ", 1, 7)
-        sum = sum + tonumber(v)
-        local line = "<grey>|  " .. color .. name .. " <grey>" .. amount .. "                        <grey>|\n"
+        local color = misc.counter.utils:is_rare(k) and "<orange>" or "<LawnGreen>"
+        local amount = v
+        local amount_str = tostring(amount)
+        local l = string.len(amount_str)
+        amount_str = string.rep(".", 7-l) .. " " .. amount_str
+        sum = sum + amount
+        local line = "<grey>|  " .. color .. name .. amount_str .. "                        |\n"
         cecho(line)
     end
 

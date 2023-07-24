@@ -396,12 +396,14 @@
 							<string>^Debowy wysoki (?'container'sekretarzyk) zawiera (?'content'.*)\.$</string>
 							<string>^(?'container'.+? (?:skrzynia|kufer|komoda|stojak|biblioteczka|kuferek|skrzynka|regal|szkatula|regal|szkatula))(?:| z okuciami| depozytowa) zawiera (?'content'.*)\.$</string>
 							<string>^Wsrod pedantycznego porzadku w (?'container'szafie) zauwazasz miedzy innymi (?'content'.*)\.$</string>
-							<string>^Otwart[ay] (?'container'[a-z ]+ (?:koszyk|szafa|sejf)) zawiera (?'content'.*)\.$</string>
+							<string>^Otwart[ay] (?'container'[a-z- ]+ (?:koszyk|szafa|sejf|misa|sarkofag)) zawiera (?'content'.*)\.$</string>
 							<string>^Narozna (?'container'etazerka) zawiera: (?'content'.*)\.$</string>
 							<string>^Dostrzegasz na (?:nim|niej) jeszcze (?'content'.*)\.$</string>
 							<string>^Drewniany okuty (?'container'stelaz) zawiera (?'content'.*)\.$</string>
+							<string>^Dwukonny czerwony (?'container'powoz) porzucony na poboczu zawiera (?'content'.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -941,7 +943,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>Wyglada na to, ze mogl(?:a|o|)by ci jeszcze ([\w\s]*) sluzyc\.</string>
+						<string>^Wyglada na to, ze mogl(?:a|o|y|)by ci jeszcze ([\w\s]*) sluzyc\.$</string>
 						<string>\(posluzy ([\w\s]*)(?:, .*)?\)</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -1760,11 +1762,9 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Jest w przyblizeniu [a-zA-Z, ]+pory ([a-zA-Z]+) wedlug rachuby czasu Starszego Ludu\.$</string>
-							<string>^Jest w przyblizeniu [a-zA-Z ]+, ([a-zA-Z]+).*wedlug rachuby czasu Starszego Ludu\.$</string>
+							<string>^Jest w przyblizeniu (?'hour'\w+)(?: (?:(?:|w|po|przed|nad|poznym) |)(?'daytime'dzien|nocy|poludniu|poludniem|poludnie|rano|ranem|wieczorem)|),(.*,)? ((?'holiday'(noc \w+|[A-Z].+?))|(?'day'.+?) dzien pory (?'month'\w+)) wedlug rachuby czasu Starszego Ludu\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -1782,7 +1782,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Jest w przyblizeniu .*(?: miesiaca)? ([a-zA-Z]+) wedlug Kalendarza Imperialnego\.$</string>
+							<string>^Jest w przyblizeniu (?'hour'\w+) (?:|w|po|przed|nad|poznym)\s*(?'daytime'dzien|nocy|poludniu|poludniem|poludnie|rano|ranem|wieczorem).*, ((?:dzien|noc) (?'holiday'\w+)|(?'day'.+?) dzien miesiaca (?'month'\w+)) wedlug Kalendarza Imperialnego\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -4369,11 +4369,9 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>Gdy (?'attacker'\w+(?: \w+){0,4}) wykonuje zamach swoja iskrzaca zdobiona bulawa, swist broni wydaje sie brzmiec jak wicher niosacy burze\. Mierzony cios trafia (?'target'.+?) w(?'where'.+?) powaznie  (?:go|ja) raniac\.$</string>
-												<string>^(?'attacker'\w+(?: \w+){0,4}) unosi swoja bron, a po iskrzacej zdobionej bulawie zaczynaja pelzac biale blyskawice\. Skierowawszy huczaca glowice ku (?'target'.+?), .+? pozwala szalejacej niej wewnatrz burzy znalezc ujscie\. Wsrod ogluszajacego huku blyskawic, miedzy bronia a ofiara przeskakuje oslepiajaco bialy luk splecionych piorunow, ktory zabija cel na miejscu\.$</string>
+												<string>^Gdy (?'attacker'\w+(?: \w+){0,4}) wykonuje zamach swoja iskrzaca zdobiona bulawa, swist broni wydaje sie brzmiec jak wicher niosacy burze\. Mierzony cios trafia (?'target'.+?) w(?'where'.+?) (?'damage'powaznie)  (?:go|ja) raniac\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
-												<integer>1</integer>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -7119,9 +7117,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<string>^(?'attacker'\w+(?: \w+){0,4}) wykonuje zamaszysty cios waskim kunsztownym sihillem, z przenikliwym sykiem przecinajac powietrze tuz (?'damage'obok) (?'target'\w+(?: \w+){0,4})\.$</string>
 											<string>^(?'attacker'\w+(?: \w+){0,4}) precyzyjnym i mocnym sztychem waskiego kunsztownego sihilla dosiega (?'where_target'.+?) gleboko (?:go|ja) (?'damage'raniac)\.$</string>
 											<string>^(?'attacker'\w+(?: \w+){0,4}) (?'damage'niezgrabnym) ruchem probuje zaskoczyc (?'target'\w+(?: \w+){0,4}), ale jego wyrzucony przed siebie waski kunsztowny sihill dzga tylko powietrze\.$</string>
-											<string>^(?'attacker'\w+(?: \w+){0,4}) atakuje waskim kunsztownym sihillem z niemozliwie wygietego przegubu dloni, zadajac zaskoczone(j|mu) (?'target'\w+(?: \w+){0,4}) ogromne obrazenia\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) atakuje waskim kunsztownym sihillem z niemozliwie wygietego przegubu dloni, zadajac zaskoczone(j|mu) (?'target'\w+(?: \w+){0,4}) (?'damage'ogromne) obrazenia\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) blyskawicznie kontruje atak (?'target'\w+(?: \w+){0,4}), (?'damage'tnac) (?:go|ja) w (?'where'.+?) waskim kunsztownym sihillem\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
@@ -13161,8 +13161,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<string>^(?'attacker'\w+(?: \w+){0,4}) wykorzystujac brak broni u przeciwnika, wyprowadza cios .+? mierzac w (?'target'.+?) i prawie traci rownowage po je(?:go|j) zrecznym uniku\.$</string>
 											<string>^(?'attacker'\w+(?: \w+){0,4}) slamazarnym wymachem .+? probuje wytracic .+? z (rak|reki)\. Przeciwnik nie daje sie jednak zaskoczyc, (?:zbijajac uderzenie na bok|cofajac sie w pore)\.$</string>
 											<string>^(?'attacker'\w+(?: \w+){0,4}) wykorzystujac brak broni u przeciwnika, (?:blyskawicznie|w mgnieniu oka|z wyuczona wprawa) wyprowadza cios .+? mierzac w (?'target'.+?)\. Wypracowane uderzenie zostaje jednak sparowane przez (?:jej|niego) .*\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) slamazarnym wymachem (?'weapon'.+?) probuje wytracic tobie .+? z (?:rak|reki)\. Nie dajesz sie jednak zaskoczyc swojemu przeciwnikowi, zbijajac je(?:go|j) uderzenie na bok\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
+											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
 											<integer>1</integer>
@@ -14420,7 +14422,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^[ &gt;]*(?'attacker'\w+(?: \w+ \w+|)) blokuje atak (?'target_shield'.+?) i zadanym z pelnego sily obrotu ciosem (?'weapon'.+?) (|bardzo )ciezko rani (go|ja) w (?'where'.+?), rozpylajac deszcz krwi\.$</string>
+											<string>^[ &gt;]*(?'attacker'\w+(?: \w+ \w+|)) blokuje atak (?'target_shield'.+?) i zadanym z pelnego sily obrotu ciosem (?'weapon'.+?) (|bardzo )ciezko rani (go|ja) w (?'where'.+?)(?:, rozpylajac deszcz krwi)?\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -16193,7 +16195,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>lecz</string>
+												<string> lecz</string>
 												<string>unik</string>
 											</regexCodeList>
 											<regexCodePropertyList>
@@ -17815,8 +17817,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 									<string>(^[ &gt;]*(?!Na rozkaz)([a-zA-Z (),!]+)(?: zrecznie)? zaslania ([a-zA-Z (),!]+) przed ciosami ([a-zA-Z (),!]+)\.$)</string>
 									<string>(^[ &gt;]*([\[a-zA-Z (),!\]]+) z wprawa staje pomiedzy toba .*, przyjmujac na siebie nadchodzace ciosy\.$)</string>
 									<string>(^[ &gt;]*([a-zA-Z (),!]+) zrecznie zaslania ([a-zA-Z (),!]+) przed twoimi ciosami\.$)</string>
-									<string>(^[ &gt;]*([\[a-zA-Z (),!\]]+) staje u .*boku, gotow w kazdej chwili zaslonic .* przed nadchodzacym niebezpieczenstwem\.$)</string>
-									<string>(^[ &gt;]*([a-zA-Z (),!]+) z wprawa staje pomiedzy .* a .*, przyjmujac na siebie nadchodzace ciosy\.$)</string>
+									<string>(^[ &gt;]*([\[a-zA-Z (),!\]]+) staje u .*boku, gotow w kazdej chwili zaslonic .+? przed nadchodzacym niebezpieczenstwem\.$)</string>
+									<string>(^[ &gt;]*([a-zA-Z (),!]+) z wprawa staje pomiedzy .+? a .+?, przyjmujac na siebie nadchodzace ciosy\.$)</string>
 									<string>(^[ &gt;]*[\[a-zA-Z (),!\]]+ z mrozacym krew w zylach spojrzeniem zdecydowanym krokiem wysuwa sie przed [\[a-zA-Z (),!\]]+ i opierajac dlon na trzonku [a-z ]+, daje do zrozumienia, ze kazdy kto zechce sie do (niej|niego) zblizyc, uczyni to jedynie po (jego|jej) trupie\.$)</string>
 								</regexCodeList>
 								<regexCodePropertyList>
@@ -17942,8 +17944,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 								<regexCodeList>
 									<string>(^[ &gt;]*([a-zA-Z (),!]+) probuje zaslonic ([a-zA-Z (),!]+) przed ciosami ([a-zA-Z (),!]+), jednak nie jest w stanie tego uczynic\.$)</string>
 									<string>(^[ &gt;]*([a-zA-Z (),!]+) probuje zaslonic .* przed twoimi ciosami, jednak nie jest w stanie tego uczynic\.$)</string>
+									<string>(\w+(?: \w+){0,4}?) unosi swoja .+? i szybko przesuwa sie w (twoja strone|strone .+?), bezskutecznie probujac skryc sie za toba przed atakami .*\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
@@ -17962,9 +17966,11 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>[ &gt;]*Unosisz swoja .* i przesuwasz sie w strone .*, bezskutecznie probujac</string>
+									<string>[ &gt;]*Unosisz swoja .+? i przesuwasz sie w strone .+?, bezskutecznie probujac</string>
+									<string>(\w+(?: \w+){0,4}?) unosi swoja .+? i szybko przesuwa sie w (twoja strone|strone .+?), bezskutecznie probujac skryc sie za (nia|nim|toba) przed atakami .*\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
+									<integer>1</integer>
 									<integer>1</integer>
 								</regexCodePropertyList>
 							</Trigger>
@@ -19174,6 +19180,48 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<integer>2</integer>
 							</regexCodePropertyList>
 						</Trigger>
+						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Chwytasz...</name>
+							<script></script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>Chwytasz</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>2</integer>
+							</regexCodePropertyList>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>Chwytasz</name>
+								<script>trigger_func_skrypty_ui_footer_elements_weapon_on()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>^Chwytasz .* (lewa|prawa) reka\.$</string>
+									<string>^Chwytasz oburacz .*\.$</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>1</integer>
+									<integer>1</integer>
+								</regexCodePropertyList>
+							</Trigger>
+						</TriggerGroup>
 					</TriggerGroup>
 					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>weapon_off</name>

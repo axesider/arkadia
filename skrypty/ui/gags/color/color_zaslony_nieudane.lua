@@ -3,7 +3,7 @@ function trigger_func_skrypty_ui_gags_color_color_zaslony_nieudane_nie_zaslanias
         return
     end
 
-    creplaceLine("\n<" .. scripts.gag_colors["zaslony_nieudane"] .. ">[N ZASLANIASZ] " .. matches[2] .. "\n")
+    creplaceLine("\n<" .. scripts.gag_colors["zaslony_nieudane"] .. ">[N ZASLANIASZ] " .. matches[1] .. "\n")
     resetFormat()
 end
 
@@ -12,7 +12,7 @@ function trigger_func_skrypty_ui_gags_color_color_zaslony_nieudane_nie_zaslania_
         return
     end
     
-    creplaceLine("\n<" .. scripts.gag_colors["zaslony_nieudane"] .. ">[ N ZASLANIA ] " .. matches[2] .. "\n")
+    creplaceLine("\n<" .. scripts.gag_colors["zaslony_nieudane"] .. ">[ N ZASLANIA ] " .. matches[1] .. "\n")
     resetFormat()
 end
 

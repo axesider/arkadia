@@ -5,8 +5,8 @@ scripts.inv.containers = scripts.inv.containers or {
 }
 
 function scripts.inv.containers:display_contents(content, container)
-    if container == "depozyt" and scripts.boxes.valid_banks[amap.curr.id] then
-	scripts.boxes.update_box = scripts.boxes.valid_banks[amap.curr.id]
+    if scripts.boxes.current_box == nil and scripts.boxes.valid_banks[amap.curr.id] and container == "depozyt" then
+	    scripts.boxes.current_box = scripts.boxes.valid_banks[amap.curr.id]
         scripts.boxes:update_box(content)
     end
     if not scripts.inv.containers.disable_grouped_containers then
