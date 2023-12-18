@@ -21,6 +21,13 @@ function trigger_func_mapper_directions_ui_wyjscia()
     amap.directions_ui:handle_exits(dirs)
 end
 
+function trigger_func_mapper_directions_ui_wyjscia_miasto(non_standard, standard)
+    local dirs_standard = amap:parse_trigger_exits(standard)
+    local dirs_all = amap:parse_trigger_exits2(non_standard, dirs_standard)
+    amap.directions_ui:handle_exits(dirs_all)
+end
+
+
 function trigger_func_mapper_directions_ui_wyjscia_all()
     local dirs = { ["n"] = true, ["nw"] = true, ["w"] = true, ["sw"] = true, ["s"] = true, ["se"] = true, ["e"] = true, ["ne"] = true }
     amap.directions_ui:handle_exits(dirs)
