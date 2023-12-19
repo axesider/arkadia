@@ -49,7 +49,7 @@ function scripts.gags:gag_prefix(gag_prefix, kind)
             local i = 2
             local hint = ""
             repeat
-       	        local dbFunc = debug.getinfo(i)
+                local dbFunc = debug.getinfo(i)
                 hint = hint .. (dbFunc.name or dbFunc.short_src or dbFunc.short or "") .. " "
                 i = i + 1
             until i > 4
