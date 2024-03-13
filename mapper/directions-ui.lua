@@ -12,12 +12,12 @@ function amap.directions_ui:handle_exits(dirs, any_direction)
         creplaceLine("<" .. color .. ">" .. str)
     end
 
-
+    amap.curr.dirs = dirs
     amap_ui_set_dirs_trigger(dirs)
 end
 
 function trigger_func_mapper_directions_ui_wyjscia()
-    local dirs = amap:parse_trigger_exits(matches[6])
+    local dirs = amap:parse_trigger_exits(matches[2])
     amap.directions_ui:handle_exits(dirs)
 end
 

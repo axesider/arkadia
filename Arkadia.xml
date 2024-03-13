@@ -6316,6 +6316,44 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
+										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+											<name>smukly_miecz_moje</name>
+											<script>trigger_func_skrypty_ui_gags_ciosy_smukly_miecz()</script>
+											<triggerType>0</triggerType>
+											<conditonLineDelta>0</conditonLineDelta>
+											<mStayOpen>0</mStayOpen>
+											<mCommand></mCommand>
+											<packageName></packageName>
+											<mFgColor>#ff0000</mFgColor>
+											<mBgColor>#ffff00</mBgColor>
+											<mSoundFile></mSoundFile>
+											<colorTriggerFgColor>#000000</colorTriggerFgColor>
+											<colorTriggerBgColor>#000000</colorTriggerBgColor>
+											<regexCodeList>
+												<string>^W dzikim, nieokielznanym tancu ruszasz do ataku na (?'target'.+?), by szerokim cieciem smuklego (?:demonicznego|zmiennoksztaltnego) miecza (?'damage'ledwo musnac) (?:go|ja) w (?'where'.*)\.$</string>
+												<string>^Poruszajac sie niczym duch, podbiegasz do (?'target'.+?) i podcinasz (?:go|ja) noga, by (?'damage'lekko zaciac) smuklym (?:demonicznym|zmiennoksztaltnym) mieczem w (?'where'.*)\.$</string>
+												<string>^Wykonujesz szybki krok do przodu, ktory zupelnie zaskakuje (?:tw(?:ego|a) przeciwni(?:czke|ka))\. Wykorzystujac powstala okazje blyskawicznym wypadem trafiasz (?'target'.+?) smuklym (?:demonicznym|zmiennoksztaltnym) mieczem w (?'where'.+?) tak (?'damage'mocno), ze za ostrzem ciagnie sie krwawa smuga\.$</string>
+												<string>^Z dzikim blyskiem w oku nurkujesz pod ciosem (?'target'.+?) i odpychasz (?:go|ja) barkiem do tylu\. Gdy przeciwni(?:czka|k) traci rownowage, tniesz (?:go|ja) smuklym (?:demonicznym|zmiennoksztaltnym) mieczem w (?'where'.+?), pozostawiajac (?'damage'krwawiaca) rane\.$</string>
+												<string>^Unosisz smukly (?:demoniczny|zmiennoksztaltny) miecz nad glowe i wykonujesz nim potezne ciecie z gory, ktore (?'damage'ciezko rani) (?'target'.+?) w (?'where'.*)\.$</string>
+												<string>^Markujesz kilka uderzen swymi smuklymi mieczami, zmuszajac (?'target'.+?) do odsloniecia sie\. Wykorzystujac powstala okazje jednym, silnym ruchem wbijasz smukly (?:demoniczny|zmiennoksztaltny) miecz w cialo przeciwni(?:czki|ka) az po rekojesc, (?'damage'zakanczajac) tym walke\.$</string>
+												<string>^Zamierzasz sie smuklym (?:demonicznym|zmiennoksztaltnym) mieczem na (?'target'.+?), lecz udaje sie (?:jej|mu) (?'damage'sparowac) twoj .*\.$</string>
+												<string>^Bez trudu unikasz uderzenia (?'target'.+?) i odskakujesz od nie(?:go|j) ze smiechem\. Obserwujac uwaznie jak przeciwni(?:czka|k) ponawia probe ataku, z niezwykla zrecznoscia nurkujesz pod ciosem, by wbic swoj smukly (?:demoniczny|zmiennoksztaltny) miecz w je(?:go|j) (?'where'.+?), pozostawiajac (?'damage'rozlegla) rane\.$</string>
+												<string>^Usmiechajac sie szyderczo, rzucasz sie do ataku na (?'target'.+?), by (?'damage'uderzyc) z calej sily smuklym (?:demonicznym|zmiennoksztaltnym) mieczem\. Twoj cios trafia przeciwni(?:czke|ka) w .+?, wywolujac fontanne iskier\.$</string>
+												<string>^Bez zbednych gestow i krokow (?'probujesz') ciac (?'target'.+?) od boku swym smuklym (?:demonicznym|zmiennoksztaltnym) mieczem, lecz twa bron nie dosiega celu\.$</string>
+											</regexCodeList>
+											<regexCodePropertyList>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+												<integer>1</integer>
+											</regexCodePropertyList>
+										</Trigger>
 									</TriggerGroup>
 									<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 										<name>poszczerbiony_miecz</name>
@@ -7663,8 +7701,10 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
 												<string>krwawa rane</string>
+												<string>do krwi ostrzem</string>
 											</regexCodeList>
 											<regexCodePropertyList>
+												<integer>0</integer>
 												<integer>0</integer>
 											</regexCodePropertyList>
 										</Trigger>
@@ -13297,7 +13337,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
 											<string>^(?'attacker'\w+(?: \w+){0,4}) wykorzystujac brak broni u przeciwnika, (?:blyskawicznie|w mgnieniu oka|z wyuczona wprawa) wyprowadza cios .+? mierzac w (?'target'.+?)\. Wypracowanym uderzeniem trafia (?:go|ja) w .+?, (?'damage'.*)\.$</string>
-											<string>^(?'attacker'\w+(?: \w+){0,4}) wykorzystujac twoj brak broni, w mgnieniu oka wyprowadza cios (?'weapon'.+?) mierzac w (?'target'ciebie)\. Wypracowane uderzenie trafia cie w (?'where'.+?), (?'damage'.*)\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) wykorzystujac twoj brak broni, (?:blyskawicznie|w mgnieniu oka|z wyuczona wprawa) wyprowadza cios (?'weapon'.+?) mierzac w (?'target'ciebie)\. Wypracowane uderzenie trafia cie w (?'where'.+?), (?'damage'.*)\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>
@@ -24398,28 +24438,36 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^((Jest|Sa) tutaj .* widoczn(e|ych) wyjsc(|ia|ie):) (.*)\.$</string>
-							<string>^((Korytarze?) (jaskini) ciagn(a|ie) sie na) (.*)\.$</string>
-							<string>(([tT]rakt) (rozgalezia) (sie)) na (.*)\.$</string>
-							<string>^((Szlak|Sciezka) (prowadzi) (tutaj)) w .* kieru.*: (.*)\.$</string>
-							<string>^((Linia) (brzegowa) (ciagnie)) sie na (.*)\.$</string>
-							<string>^((Wedrowke) (skrajem lasu|po karczowisku|po lesie)) mozesz kontynuowac (udajac sie na) (.*)\.$</string>
-							<string>^((Wedrowke) (przez) rozlegle laki mozesz kontynuowac (udajac sie na) (.*))\.$</string>
-							<string>^((Wijaca) (sie) (miedzy)) skalami, gorska sciezka prowadzi na (.*)\.$</string>
-							<string>^((Wydeptane) (w) (kukurydzy)) sciezki prowadza na (.*)\.$</string>
-							<string>^((Wyjscia) (prowadza) (tutaj)) w .* kierunkach: (.*)\.$</string>
-							<string>^((Wykopany) (w) (ziemi)) tunel rozgalezia sie tutaj, zas jego odnogi wioda na (.*)\.$</string>
-							<string>^((Wykopany) (w) (ziemi)) tunel wiedzie w dwoch kierunkach: (.*)\.$</string>
-							<string>^((Mozesz) (sie) (stad)) udac na (.*)\.$</string>
-							<string>^((Mozesz) (skierowac) (lodz)) na (.*)\.$</string>
-							<string>^((Mozesz) (stad) (poplynac)) na (.*)\.$</string>
-							<string>^((W) (mroku) (nocy)) dostrzegasz .* widoczne wyjsci.: (.*)\.</string>
-							<string>^((Tunel) (ciagnie) (sie)) na (.*)\.</string>
-							<string>^((Jaskinie) (ciagna) (sie)) na (.*)\.</string>
-							<string>^((Tunele) (ciagna) (sie)) na (.*)\.</string>
-							<string>^((Rozpadlina) (ciagnie) (sie)) na (.*)\.</string>
+							<string>^(?:Jest|Sa) tutaj .* widoczn(?:e|ych) wyjsc(?:|ia|ie): (.*)\.$</string>
+							<string>^W gestych ciemnosciach dostrzegasz .* (?:wiodacy|rozwidlajacy sie) na (.*)\.$</string>
+							<string>^Korytarze jaskini ciagna sie na (.*)\.$</string>
+							<string>^Trakt wiedzie na ([^.]+)\.$</string>
+							<string>[tT]rakt rozgalezia sie na (.*)\.$</string>
+							<string>^(?:Szlak|Sciezka) prowadzi tutaj w .* kieru.*: (.*)\.$</string>
+							<string>^Linia brzegowa ciagnie sie na (.*)\.$</string>
+							<string>^Wedrowke (?:skrajem lasu|po karczowisku|po lesie|przez rozlegle laki) mozesz kontynuowac udajac sie na (.*)\.$</string>
+							<string>^Wijaca sie miedzy skalami, gorska sciezka prowadzi na (.*)\.$</string>
+							<string>^Wydeptane w kukurydzy sciezki prowadza na (.*)\.$</string>
+							<string>^Wyjscia prowadza tutaj w .* kierunkach: (.*)\.$</string>
+							<string>^Wykopany w ziemi tunel rozgalezia sie tutaj, zas jego odnogi wioda na (.*)\.$</string>
+							<string>^Wykopany w ziemi tunel wiedzie w dwoch kierunkach: (.*)\.$</string>
+							<string>^Mozesz sie stad udac na (.*)\.$</string>
+							<string>^Mozesz skierowac lodz na (.*)\.$</string>
+							<string>^Trakt jest zasypany glazami i mozna podazac nim tylko w jednym kierunku, na (.*)\.$</string>
+							<string>^Mozesz podazac traktem na (.*), w strone fortu\.$</string>
+							<string>^Mozesz stad poplynac na (.*)\.$</string>
+							<string>^W mroku nocy dostrzegasz .* widoczne wyjsci.: (.*)\.$</string>
+							<string>^Tunel ciagnie sie na (.*)\.$</string>
+							<string>^Jaskinie ciagna sie na (.*)\.$</string>
+							<string>^Tunele ciagna sie na (.*)\.$</string>
+							<string>^Rozpadlina ciagnie sie na (.*)\.$</string>
+							<string>^W gestych ciemnosciach dostrzegasz sciezke wiodaca na (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -24456,10 +24504,12 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
+							<string>^Mozesz podazac traktem na (.*)\. Natomiast (aby|jesli chcesz) zejsc z wytyczonej drogi (wystarczy|musisz|mozesz) udac sie w dowolnym innym kierunku\.</string>
 							<string>Wedrowke przez rozlegle laki mozesz kontynuowac w dowolnie wybranym kierunku.</string>
 							<string>Mozesz stad wyruszyc w dowolnie wybranym kierunku.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>2</integer>
 							<integer>2</integer>
 						</regexCodePropertyList>
@@ -26676,10 +26726,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>Intrygujacy dlugowlosy mezczyzna krzyczy: Doplynelismy! Mozna wysiadac!</string>
+									<string>Intrygujacy dlugowlosy mezczyzna krzyczy: Doplynelismy do przystani na Wyspie Milosci! Mozna wysiadac!</string>
 								</regexCodeList>
 								<regexCodePropertyList>
-									<integer>1</integer>
+									<integer>2</integer>
 								</regexCodePropertyList>
 							</Trigger>
 						</TriggerGroup>
@@ -28420,6 +28470,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Probujesz przecisnac sie przez otwor na dach, ale ze wzgledu na brak miejsca, zmuszony jestes wrocic na dol.</string>
 						<string>Straznik ignoruje twoja prosbe.</string>
 						<string>Nie mozesz tam przejsc, gdy stoi tu obsada statku.</string>
+						<string>do ciebie: Nikt z bronia nie wejdzie na teren gornej twierdzy. Prosze zostawic ja na stojaku.</string>
+						<string>Przejscie w tym kierunku jest zablokowane przez</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -28456,6 +28508,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
+						<integer>2</integer>
+						<integer>0</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -30662,6 +30716,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/ikona (.*)</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>skrypty_ui_mode6_pomoc</name>
+					<script>alias_func_skrypty_ui_mode6()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/mode6(| ([0-9]+))$</regex>
 				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
