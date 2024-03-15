@@ -14,6 +14,7 @@ misc.counter2["db_log"] = db:create("counter2_log", {
         hour = "",
         text = "",
         character = "",
+        roomId = 0,
         changed = db:Timestamp("CURRENT_TIMESTAMP")
     }
 })
