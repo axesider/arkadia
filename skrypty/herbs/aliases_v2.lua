@@ -8,11 +8,11 @@ end
 
 function herbs:use_herbs(entries)
     if herbs.pre_use then misc:run_separeted_command(herbs.pre_use) end
-
+    local reuse =""
     for herb_id, entry in pairs(entries) do
-        herbs:perform_herb_use(herb_id, entry.action, entry.amount)
+        reuse = herbs:perform_herb_use(herb_id, entry.action, entry.amount)
+        scripts.utils.bind_functional(reuse)
     end
-
     if herbs.post_use then misc:run_separeted_command(herbs.post_use) end
 end
 
@@ -21,6 +21,7 @@ function herbs:perform_herb_use(herb_id, herb_action, herb_amount)
     local use_herb_command = herb_action
     use_herb_command = use_herb_command .. " " .. herb_amount .. " " .. herbs:get_case(herb_id, herb_amount)
     send(use_herb_command)
+    return use_herb_command
 end
 
 function herbs:give_herbs_teammate(teammate_name, herb_id, herb_amount)
