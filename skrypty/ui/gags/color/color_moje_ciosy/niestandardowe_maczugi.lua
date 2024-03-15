@@ -159,12 +159,13 @@ function trigger_func_skrypty_ui_gags_ciosy_ciezka_okretowa_kotwica_moje()
     local target = "moje_ciosy"
     local dmg = matches["damage"]
     local value = -1
-        if dmg == "przecina" then value = 0
-    elseif dmg == "cofa" then value = 1
-    elseif dmg == "plytka"  then value = 2
-    elseif dmg == "brzydka"  then value = 3
-    elseif dmg == "dotkliwe" then value = 5
-    elseif dmg == "wbijajac" then
+        if dmg == "unik" or dmg == "nie siega" or dmg == "wyparowany" then value = 0
+    elseif dmg == "ledwie zahaczajac" then value = 1
+    elseif dmg == "nieznacznie raniac"  then value = 2
+    elseif dmg == "bolesnie obijajac" then value = 3
+    elseif dmg == "bardzo ciezko tlukac" then value = 5
+    elseif dmg == "broczaca" or dmg == "dotkliwie lomoczac" then value = 6
+    elseif dmg == "uderzasz" then
         return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
     end
     scripts.gags:gag(value, 6, target)
