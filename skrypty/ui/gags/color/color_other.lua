@@ -1,3 +1,4 @@
+--Pablo start
 two_word_mobs = misc.counter.utils.two_word_mobs
 
 function get_mob_types()
@@ -59,6 +60,7 @@ function misc_counter_add_total_killed(linijka)
     races[race] = races[race] +1
     return races[race]
 end
+--Pablo end
 
 function trigger_func_skrypty_ui_gags_color_color_other_zabiles_color()
     local counter = 1
@@ -66,10 +68,12 @@ function trigger_func_skrypty_ui_gags_color_color_other_zabiles_color()
         counter = misc.counter.killed_amount["JA"]
     end
     local counter_str = "<tomato> (" .. tostring(counter) .. " / " .. tostring(misc.counter.all_kills) .. ")"
+--Pablo
     local counter_str = counter_str.." <green>["..(misc_counter_add_total_killed(matches[4])).."]"
     selectCurrentLine()
     creplaceLine("\n\n<tomato>[  " .. matches[3]:upper() .. "  ] <grey>" .. matches[2] .. counter_str .. "\n\n")
     scripts.inv.collect:killed_action()
+--Pablo
     raiseEvent("killed_action", matches[4])
     resetFormat()
 end

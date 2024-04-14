@@ -58,6 +58,8 @@ function misc.improve:add_improvee2(val, id)
     if not ret then
         scripts:print_log("Cos poszlo nie tak z zapisem do globalnych postepow")
     else
+        -- Pablo
+        scripts.sound_player:play("bell.wav")
         scripts:print_log("Ok, dodane " .. tostring(val) .. " postepow do globalnego licznika")
     end
 end

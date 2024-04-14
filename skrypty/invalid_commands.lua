@@ -5,6 +5,7 @@ function scripts.invalid_commands:init()
 end
 
 function scripts.invalid_commands:deny_invalid_send(command)
+--Pablo start
     local s = command:find("/")
     if s and s > 1 then
         if scripts.last_send ~= command then
@@ -16,6 +17,7 @@ function scripts.invalid_commands:deny_invalid_send(command)
     end
     scripts.last_send = command
     if string.sub(command,1,1) == "/" and string.sub(command,2,2) ~= " " then
+--Pablo end
         denyCurrentSend()
         scripts:print_log("Nieprawidlowy alias")
     end

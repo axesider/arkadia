@@ -20,14 +20,16 @@ function trigger_func_skrypty_ui_footer_elements_mail_masz_poczte()
     raiseEvent("playBeep")
     tempTimer(1, function() raiseEvent("playBeep") end)
     tempTimer(2, function() raiseEvent("playBeep") end)
-
+--Pablo
     creplaceLine("<tomato>\n[  POCZTA   ] " .. matches['sender'] .. "\n")
     resetFormat()
 
     if not scripts.ui.footer_info_mail_mode or scripts.ui.footer_info_mail_mode == "" then
+--Pablo
         scripts.ui:info_mail_update(matches['sender'])
         scripts.ui.footer_info_mail_mode = "new"
     else
+--Pablo
         scripts.ui:info_mail_update(matches['sender'].."+")
         scripts.ui.footer_info_mail_mode = "new+"
     end

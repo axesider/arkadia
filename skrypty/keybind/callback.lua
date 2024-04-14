@@ -1,11 +1,14 @@
 function callback_fight_support()
     send(ateam.support_command)
 
+--Pablo start
     local count = 0
     for _, v in pairs(ateam.team) do if type(v) == "number" then count = count + 1 end end
-
+--Pablo end
     if ateam.to_support then
+--Pablo start
         if count > 2 then send(ateam.support_command .. " " .. "ob_" .. ateam.to_support) end
+--Pablo end
         ateam.to_support = nil
     end
 end
