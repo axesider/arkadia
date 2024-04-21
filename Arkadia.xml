@@ -2125,8 +2125,29 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>start_reading_library</name>
+						<script>scripts.misc.knowledge:start_reading_library(matches[2])</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Zaczynasz zglebiac tutejsze zasoby, probujac dowiedziec sie czegos wiecej o (.*)\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>finished_reading_book</name>
-						<script>scripts.misc.knowledge:stop_reading_book()</script>
+						<script>scripts.misc.knowledge:stop_reading_book()
+scripts.misc.knowledge:stop_reading_library()</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -2146,7 +2167,8 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>cant_get_more_knowledge_from_book</name>
-						<script>scripts.misc.knowledge:cant_get_more_from_book()</script>
+						<script>scripts.misc.knowledge:cant_get_more_from_book()
+</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -2159,6 +2181,26 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^Masz wrazenie, ze z .*nie dowiesz sie juz niczego wiecej o.*\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>cant_get_more_from_library</name>
+						<script>scripts.misc.knowledge:cant_get_more_from_library()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Masz wrazenie, ze tutaj nie dowiesz sie juz niczego wiecej o .*\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -3944,7 +3986,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 												<string>^Szybkim zamachem dlugiego runicznego korbacza udaje ci sie trafic (?'target'.+?) w .+?, jednakze cala sila uderzenia wyparowana zostaje przez.+?, nie zadajac (jej|mu) zadnych obrazen\.$</string>
 												<string>^Wykonujesz silny zamach dlugim runicznym korbaczem, mierzac w (?'target'.+?), lecz (ta|ten) umiejetnie przyjmuje twa bron na .*\.$</string>
 												<string>^Niezdarnym zamachnieciem dlugiego runicznego korbacza nie udaje ci sie trafic (?'target'.*)\.$</string>
-												<string>^Czujesz jak runy na rekojesci dlugiego runicznego korbacza zaczynaja pulsowac, zas jego glowica zapala sie krwistoczerwonym ogniem\. Wykorzystujac te sytuacje,bierzesz obszerny zamach nad glowa, usilujac trafic (?'target'.+?), lecz twojemu przeciwnikowi udaje sie uniknac tego uderzenia\.$</string>
+												<string>^Czujesz jak runy na rekojesci dlugiego runicznego korbacza zaczynaja pulsowac, zas jego glowica zapala sie krwistoczerwonym ogniem\. Wykorzystujac te sytuacje,bierzesz obszerny zamach nad glowa, usilujac trafic (?'target'.+?), lecz twojemu przeciwni(?:czce|kowi) udaje sie uniknac tego uderzenia\.$</string>
 												<string>^Widzac, ze glowica twego dlugiego runicznego korbacza rozjatrza sie plomieniem, wykonujesz szybki zamach bronia w kierunku (?'target'.+?), jednak udaje (?:jej|mu) sie zbic twe uderzenie .*\.$</string>
 												<string>^Czujesz jak runy na rekojesci dlugiego runicznego korbacza zaczynaja pulsowac, zas jego glowica zapala sie krwistoczerwonym ogniem\. Wykorzystujac te sytuacje, bierzesz obszerny zamach nad glowa, usilujac trafic (?'target'.+?), lecz twojemu przeciwnikowi udaje sie uniknac tego uderzenia\.$</string>
 											</regexCodeList>
@@ -30712,18 +30754,39 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<regex>^(wiedza)$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
-						<name>wiedza_stats</name>
-						<script>scripts.misc.knowledge:show_book_stats()</script>
+						<name>wiedza_help</name>
+						<script>scripts.misc.knowledge:show_help()</script>
 						<command></command>
 						<packageName></packageName>
 						<regex>^/wiedza$</regex>
 					</Alias>
 					<Alias isActive="yes" isFolder="no">
-						<name>wiedza_all</name>
+						<name>ksiazki</name>
+						<script>scripts.misc.knowledge:show_book_stats()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/ksiazki$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>ksiazki_all</name>
 						<script>scripts.misc.knowledge:show_book_stats(true)</script>
 						<command></command>
 						<packageName></packageName>
-						<regex>^/wiedza\!$</regex>
+						<regex>^/ksiazki\!$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>biblioteka_show</name>
+						<script>scripts.misc.knowledge:show_library_stats()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/biblioteki$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>biblioteki_show_all</name>
+						<script>scripts.misc.knowledge:show_library_stats(true)</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^/biblioteki\!$</regex>
 					</Alias>
 				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">
