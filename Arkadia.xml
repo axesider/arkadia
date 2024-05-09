@@ -9481,8 +9481,8 @@ scripts.misc.knowledge:stop_reading_library()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^Poteznym ciosem opalizujacego runicznego topora obosiecznego trafiasz (?'target'.+?) prosto w (?'where'.+?)\. Krew zalewa mu niewidzace juz nic oczy\. Przeciwnik pada martwy\.$</string>
-													<string>^Poteznym cieciem opalizujacego runicznego topora obosiecznego dosiegasz swego przeciwnika\. Ostrze zaglebia sie w jego (?'where'.+?), przecinajac miesnie i gruchoczac kosci\. Biale, oslepiajace swiatlo ktore bije od runow zdaje sie dodatkowo ranic\. (?'target'.+?) zamiera, jego krew bryzga z rozcietego korpusu na wszystkie strony, a po chwili pada na ziemie, dygoczac chwile, po czym nieruchomieje\.$</string>
+													<string>^Poteznym ciosem opalizujacego runicznego topora obosiecznego trafiasz (?'target'.+?) prosto w (?'where'.+?)\. Krew zalewa (jej|mu) niewidzace juz nic oczy\. Przeciwnik pada martwy\.$</string>
+													<string>^Poteznym cieciem opalizujacego runicznego topora obosiecznego dosiegasz swego przeciwnika\. Ostrze zaglebia sie w jego (?'where'.+?), przecinajac miesnie i gruchoczac kosci\. Biale, oslepiajace swiatlo ktore bije od runow zdaje sie dodatkowo (?:go|ja) ranic\. (?'target'.+?) zamiera, .* na ziemie, dygoczac przez chwile, po czym nieruchomieje\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
@@ -9541,7 +9541,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 												<colorTriggerFgColor>#000000</colorTriggerFgColor>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
-													<string>^(?'attacker'\w+(?: \w+){0,4}) trafia (?'target'.+) w (?'where'.+?) zamaszystym ciosem opalizujacego runicznego topora obosiecznego, kaleczac (?:go|ja)\.$</string>
+													<string>^(?'attacker'\w+(?: \w+){0,4}) trafia (?'target'.+) w (?'where'.+?) zamaszystym ciosem opalizujacego runicznego topora obosiecznego, kaleczac (?:cie|go|ja)\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
@@ -17956,7 +17956,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>^Nagle (?'attacker'\w+(?: \w+){0,4}) wykonuje zamaszysty cios (?'weapon'.+?), ktory (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|smiertelnie rani) (?'target'.+?) w (?'where'.*)\.$</string>
+									<string>^Nagle (?'attacker'\w+(?: \w+){0,4}) wykonuje zamaszysty cios (?'weapon'.+?), ktory (?'damage'ledwo muska|lekko rani|bardzo ciezko rani|powaznie rani|rani|masakruje|niemal smiertelnie rani|smiertelnie rani) (?'target'.+?) w (?'where'.*)\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -24465,11 +24465,11 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^[ &gt;]*Probujesz otworzyc .* wrota.*</string>
-						<string>^[ &gt;]*Probujesz otworzyc .* drzwiczki.*</string>
-						<string>^[ &gt;]*Probujesz otworzyc .* krate.*</string>
-						<string>^[ &gt;]*Probujesz otworzyc .* brame.*</string>
-						<string>^[ &gt;]*Probujesz otworzyc niewielka furtke.*</string>
+						<string>^Probujesz otworzyc .*wrota.*</string>
+						<string>^Probujesz otworzyc .*drzwiczki.*</string>
+						<string>^Probujesz otworzyc .*krate.*</string>
+						<string>^Probujesz otworzyc .*brame.*</string>
+						<string>^Probujesz otworzyc niewielka furtke.*</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -24796,6 +24796,106 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
+					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>wyjscia_miasto</name>
+						<script></script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Na</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>2</integer>
+						</regexCodePropertyList>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>wyjscia_miasto_1</name>
+							<script>trigger_func_mapper_directions_ui_wyjscia_miasto(matches[2], matches[3])</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^Na (.+?) znajduje sie .*?\. (?:Ulica|Droga|Sciezka) biegnie na (.*)\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>wyjscia_miasto_2</name>
+							<script>trigger_func_mapper_directions_ui_wyjscia_miasto(matches[2] .. "|" .. matches[3], matches[4])</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^Na (.+?) znajduje sie .*, (?:|a )na (.+?) .*?\. (?:Ulica|Droga|Sciezka|Rynek) (?:biegnie|ciagnie sie|rozciaga sie) na (.*)\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>wyjscia_miasto_3</name>
+							<script>trigger_func_mapper_directions_ui_wyjscia_miasto(matches[2] .. "|" .. matches[3] .. "|" .. matches[4], matches[5])</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^Na (.+?) znajduje sie .*?, na (.+?) .*?, na (.+?) .*?\. (?:Ulica|Droga|Sciezka) biegnie na (.*)\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>wyjscia_miasto_4</name>
+							<script>trigger_func_mapper_directions_ui_wyjscia_miasto(matches[2] .. "|" .. matches[3] .. "|" .. matches[4] .. "|" .. matches[5], matches[6])</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^Na (.+?) znajduje sie .*?, na (.+?) .*?, na (.+?) .*?, a na (.+?) .*?\. (?:Ulica|Droga|Sciezka) biegnie na (.*)\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+					</TriggerGroup>
 				</TriggerGroup>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>neg_wyjscia-2</name>
@@ -28722,6 +28822,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Nie mozesz tam przejsc, gdy stoi tu obsada statku.</string>
 						<string>do ciebie: Nikt z bronia nie wejdzie na teren gornej twierdzy. Prosze zostawic ja na stojaku.</string>
 						<string>Przejscie w tym kierunku jest zablokowane przez</string>
+						<string>Przejscie w tym kierunku jest dla ciebie zbyt waskie, nie potrafisz przecisnac sie przez przeswit.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -28760,6 +28861,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>0</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -29464,21 +29566,21 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<script>alias_config_set_var_index()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cset(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}=(true|false|[0-9\.]+)$</regex>
+					<regex>^/cset(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z\._]+)[\]\}]{1}=(true|false|[0-9\.]+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>set_var_index_str</name>
 					<script>alias_config_set_var_index()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cset(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}=(".*")$</regex>
+					<regex>^/cset(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z\._]+)[\]\}]{1}=(".*")$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>del_var_index_key</name>
 					<script>alias_config_del_var_index_key()</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^/cdel(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z]+)[\]\}]{1}$</regex>
+					<regex>^/cdel(|\!|\!\!) ([a-zA-Z0-9\._]+)[\[\{]{1}(["0-9a-zA-Z\._]+)[\]\}]{1}$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>del_var_index_value</name>
