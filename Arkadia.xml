@@ -2269,7 +2269,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 						<integer>2</integer>
 					</regexCodePropertyList>
 				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>gonienie</name>
 					<script>trigger_func_skrypty_misc_gonienie()</script>
 					<triggerType>0</triggerType>
@@ -2291,7 +2291,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>gonienie-panika</name>
 					<script>trigger_func_skrypty_misc_gonienie_panika()</script>
 					<triggerType>0</triggerType>
@@ -6788,7 +6788,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 											<colorTriggerFgColor>#000000</colorTriggerFgColor>
 											<colorTriggerBgColor>#000000</colorTriggerBgColor>
 											<regexCodeList>
-												<string>(?:Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze|Swietlista smuga przecina powietrze), gdy (?:dlugim cieciem|szybkim pchnieciem) swym jasniejacym zdobionym jataganem (?'attacker'\w+(?: \w+){0,4}?) (?'damage'ledwo muska|bardzo ciezko rani|powaznie rani|rani|masakruje) (?'target'.+?), trafiajac (?:go|ja) w (?'where'.*)\.</string>
+												<string>(?:Nagle cale otoczenie rozswietla sie|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze|Swietlista smuga przecina powietrze), gdy (?:dlugim cieciem|szybkim pchnieciem) swym jasniejacym zdobionym jataganem (?'attacker'\w+(?: \w+){0,4}?) (?'damage'ledwo muska|bardzo ciezko rani|powaznie rani|rani|masakruje) (?'target'.+?), trafiajac (?:go|ja) w (?'where'.*)\.</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>1</integer>
@@ -9482,7 +9482,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
 													<string>^Poteznym ciosem opalizujacego runicznego topora obosiecznego trafiasz (?'target'.+?) prosto w (?'where'.+?)\. Krew zalewa (jej|mu) niewidzace juz nic oczy\. Przeciwnik pada martwy\.$</string>
-													<string>^Poteznym cieciem opalizujacego runicznego topora obosiecznego dosiegasz swego przeciwnika\. Ostrze zaglebia sie w jego (?'where'.+?), przecinajac miesnie i gruchoczac kosci\. Biale, oslepiajace swiatlo ktore bije od runow zdaje sie dodatkowo (?:go|ja) ranic\. (?'target'.+?) zamiera, .* na ziemie, dygoczac przez chwile, po czym nieruchomieje\.$</string>
+													<string>^Poteznym cieciem opalizujacego runicznego topora obosiecznego dosiegasz swego przeciwnika\. Ostrze zaglebia sie w jego (?'where'.+?), przecinajac miesnie i gruchoczac kosci\. Biale, oslepiajace swiatlo ktore bije od runow zdaje sie dodatkowo (?:go |ja |)ranic\. (?'target'.+?) zamiera, .* na ziemie, dygoczac przez chwile, po czym nieruchomieje\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
