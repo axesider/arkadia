@@ -9482,7 +9482,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 												<colorTriggerBgColor>#000000</colorTriggerBgColor>
 												<regexCodeList>
 													<string>^Poteznym ciosem opalizujacego runicznego topora obosiecznego trafiasz (?'target'.+?) prosto w (?'where'.+?)\. Krew zalewa (jej|mu) niewidzace juz nic oczy\. Przeciwnik pada martwy\.$</string>
-													<string>^Poteznym cieciem opalizujacego runicznego topora obosiecznego dosiegasz swego przeciwnika\. Ostrze zaglebia sie w jego (?'where'.+?), przecinajac miesnie i gruchoczac kosci\. Biale, oslepiajace swiatlo ktore bije od runow zdaje sie dodatkowo (?:go |ja |)ranic\. (?'target'.+?) zamiera, .* na ziemie, dygoczac przez chwile, po czym nieruchomieje\.$</string>
+													<string>^Poteznym cieciem opalizujacego runicznego topora obosiecznego dosiegasz swego przeciwnika\. Ostrze zaglebia sie w jego (?'where'.+?), przecinajac miesnie i gruchoczac kosci\. Biale, oslepiajace swiatlo ktore bije od runow zdaje sie dodatkowo (?:go |ja |)ranic\. (?'target'.+?) zamiera, .* na ziemie, dygoczac chwile, po czym nieruchomieje\.$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>
@@ -14072,7 +14072,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 										<colorTriggerFgColor>#000000</colorTriggerFgColor>
 										<colorTriggerBgColor>#000000</colorTriggerBgColor>
 										<regexCodeList>
-											<string>^(?'attacker'\w+(?: \w+){0,4}) (?:(?:usmiecha sie przebiegle wyczuwajac zblizajace sie zwyciestwo|wykonuje szybki, szalony piruet|wykrzywia twarz w grymasie nienawisci|zaciska mocniej palce na rekojesci broni|krzywi wargi w pelnym satysfakcji usmiechu) i )?dostrzegajac luke w (?:twojej )?obronie(?:| przeciwni(?:ka|czki)) rzuca sie do ataku\. .* trafia (?'target'.+?) w (?'where'.+?) (?'damage'bardzo ciezko raniac|ledwo muskajac|lekko raniac|masakrujac|powaznie raniac|raniac) (?:go |)(?'weapon'.*)\.$</string>
+											<string>^(?'attacker'\w+(?: \w+){0,4}) (?:(?:usmiecha sie przebiegle wyczuwajac zblizajace sie zwyciestwo|usmiecha sie czujac rozkosz zblizajacego sie zwyciestwa|wykonuje szybki, szalony piruet|wykrzywia twarz w grymasie nienawisci|zaciska mocniej palce na rekojesci broni|krzywi wargi w pelnym satysfakcji usmiechu) i )?dostrzegajac luke w (?:twojej )?obronie(?:| przeciwni(?:ka|czki)) rzuca sie do ataku\. .* trafia (?'target'.+?) w (?'where'.+?) (?'damage'bardzo ciezko raniac|ledwo muskajac|lekko raniac|masakrujac|powaznie raniac|raniac) (?:go |)(?'weapon'.*)\.$</string>
 										</regexCodeList>
 										<regexCodePropertyList>
 											<integer>1</integer>

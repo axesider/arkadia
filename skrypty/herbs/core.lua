@@ -72,7 +72,8 @@ function herbs:extract_herbs(herbs_arr)
         end
         if item["name"] == nil then
             scripts:print_log("nierozpoznane ziolo: " .. tostring(v), true)
-            error("nierozpoznane ziolo: " .. tostring(v))
+            --error("nierozpoznane ziolo: " .. tostring(v))
+            item["name"] = "machorka"
         end
         extracted[item.name] = item
     end
