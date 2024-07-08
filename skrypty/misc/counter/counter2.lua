@@ -96,28 +96,6 @@ function misc.counter2:add_sum(item, year, month, day, type)
     end
 end
 
-misc.counter.utils.two_word_mobs = {
-    "czarnego orka",
-    "dzikiego orka",
-    "kamiennego trolla",
-    "konia bojowego",
-    "krasnoluda chaosu",
-    "lodowego trolla",
-    "rycerza chaosu",
-    "smoczego ogra",
-    "smoka chaosu",
-    "straznika wiezy",
-    "tancerza wojny",
-    "trolla gorskiego",
-    "trolla jaskiniowego",
-    "zjawe kobiety",
-    "zywiolaka ognia",
-    "zywiolaka powietrza",
-    "zywiolaka wody",
-    "zywiolaka ziemi"
-}
-
-
 local function ends_with(str, ending)
    return str:sub(-#ending) == ending
 end
