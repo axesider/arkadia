@@ -56,4 +56,3 @@ function trigger_func_process_kill_for_teammate()
         scripts.ui:info_killed_update()
     end
 end
-

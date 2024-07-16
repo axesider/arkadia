@@ -6472,10 +6472,12 @@ scripts.misc.knowledge:stop_reading_library()</script>
 											<regexCodeList>
 												<string>potwornej rany</string>
 												<string>Ostrze masakruje</string>
+												<string>^(?'attacker'\w+(?: \w+){0,4}) przerzuca swoj polyskliwy smukly espadon na wysokosc ramion i robiac gwaltowny wypad do przodu lewa stopa, piorunujacym uderzeniem tnie po skosie (?'target'.+?) w (?'where'.+?)\. Mordercze ostrze przeleciawszy lukiem, pociaga za soba smuge ciemno-czerwonej krwi, ktora z powstalej rany momentalnie wyplywa szerokim strumieniem\.$</string>
 											</regexCodeList>
 											<regexCodePropertyList>
 												<integer>0</integer>
 												<integer>0</integer>
+												<integer>1</integer>
 											</regexCodePropertyList>
 										</Trigger>
 										<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -8919,7 +8921,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 												<regexCodeList>
 													<string>^Druzgoczacym atakiem misternego obosiecznego topora brutalnie rozcinasz (?'where'.+?) (?'target'.+?), zatrzymujac ped swej morderczej broni dopiero wtedy, kiedy zbrukane posoka ostrze grzeznie pomiedzy koscmi ofiary\.$</string>
 													<string>^Ostrze twego misternego obosiecznego topora rozblyskuje w szalonym pedzie gdy biorac potezny zamach uderzasz nim w (?'where'.+?) (?'target'.+?)\.$</string>
-													<string>^Zdradliwe pchniecie ozdobiona siedmiocalowym kolcem rekojescia twego misternego obosiecznego topora zupelnie zaskakuje (?'target'.+?), pozwalajac ci (tym ciosem praktycznie wygrac walke|przebic je(?:go|j) (?'where'.+?) prawie na wylot!)$</string>
+													<string>^Zdradliwe pchniecie ozdobiona siedmiocalowym kolcem rekojescia twego misternego obosiecznego topora zupelnie zaskakuje (?'target'.+?), pozwalajac ci (tym ciosem praktycznie wygrac walke!|przebic je(?:go|j) (?'where'.+?) prawie na wylot!)$</string>
 												</regexCodeList>
 												<regexCodePropertyList>
 													<integer>1</integer>

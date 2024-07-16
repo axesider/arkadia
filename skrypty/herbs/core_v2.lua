@@ -257,7 +257,7 @@ function herbs:get_clickable_teammate_data(teammate_name)
     local teammate_actions = { "" }
     local teammate_hints = { teammate_name }
     for _, herb_id in pairs(herbs.sorted_herb_ids) do
-        local herb_count = herbs.counts[herb_id]
+        local herb_count = herbs.counts[herb_id] or 0 -- Pablo
 
         for k, v in pairs(herbs.settings.get_herb_counts) do
             if v <= herb_count then

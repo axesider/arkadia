@@ -71,8 +71,8 @@ function scripts.inv.weapons:lower_weapons()
         for i = #scripts.inv.weapons.main_weapons_action, 1, -1 do
             scripts.inv.weapons:lower_weapon(scripts.inv.weapons.main_weapons_action[i])
         end
-    else
-        send("opusc wszystkie bronie", true)
+    else	
+        --send("opusc wszystkie bronie", true)
     end
 end
 

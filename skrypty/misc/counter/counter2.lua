@@ -51,13 +51,11 @@ function misc.counter2:add_sum(item, year, month, day, type)
         if not ret then
             scripts:print_log("Cos poszlo nie tak z zapisem do globalnych zabitych", true)
         end
-
     elseif table.size(retrieved) == 1 then
         local update_item = retrieved[1]
         local count = tonumber(update_item["amount"])
         update_item["amount"] = count + 1
         db:update(misc.counter2.db_daysum.counter2_daysum, update_item)
-
     else
         scripts:print_log("Cos poszlo nie tak z zapisem do globalnych zabitych", true)
         return
@@ -197,7 +195,8 @@ function misc.counter2:show_long()
         return
     end
 
-    local sql_query = "SELECT * FROM counter2_daysum WHERE character=\"" .. scripts.character_name .. "\" AND type!=\"all\" ORDER BY _row_id ASC"
+    local sql_query = "SELECT * FROM counter2_daysum WHERE character=\"" ..
+    scripts.character_name .. "\" AND type!=\"all\" ORDER BY _row_id ASC"
     local retrieved = db:fetch_sql(misc.counter2.db_daysum.counter2_daysum, sql_query)
 
     cecho("<grey>+---------------------------------------------------------+\n")
@@ -255,15 +254,15 @@ function misc.counter2:show_logs(year, month, day)
         return
     end
 
-    if( (year == '' or year == nil) and (month == '' or month == nil) and (day == '' or day == nil)) then
+    if ((year == '' or year == nil) and (month == '' or month == nil) and (day == '' or day == nil)) then
         misc.counter2:show_short()
         return
     end
 
-    local date = ""..year
+    local date = "" .. year
     local sql_query = "SELECT * FROM counter2_log WHERE character=\"" .. scripts.character_name ..
-             "\" AND year=\"" .. year .. "\" "
-             
+        "\" AND year=\"" .. year .. "\" "
+
     if month ~= nil then
         date = date .. "/" .. month;
         sql_query = sql_query .. " AND month=\"" .. month .. "\" "
@@ -291,7 +290,7 @@ function misc.counter2:show_logs(year, month, day)
 
     for k, v in pairs(retrieved) do
         local text = string.sub(v["text"] .. "                                                       ", 1, 46)
-        
+
         local kill_date = "";
         if month == nil or day == nil then
             kill_date = v["month"] .. "/" .. v["day"] .. " " .. v["hour"]
@@ -301,7 +300,7 @@ function misc.counter2:show_logs(year, month, day)
 
         local kill_date_str = string.sub(kill_date .. "            ", 1, 14)
 
-        
+
         cecho("<grey>|<orange>  " .. kill_date_str .. " <grey>" .. text .. "<grey>|\n")
         sum = sum + 1
     end
@@ -323,11 +322,12 @@ function misc.counter2:reset()
         scripts:print_log("Probujesz wykasowac cala baze zabitych, od tego nie ma odwrotu. Aby wykonac, powtorz komende")
         misc.counter2.retried = true
     else
-        db:delete(misc.counter2.db_log.counter2_log, db:eq(misc.counter2.db_log.counter2_log.character, scripts.character_name))
-        db:delete(misc.counter2.db_daysum.counter2_daysum, db:eq(misc.counter2.db_daysum.counter2_daysum.character, scripts.character_name))
+        db:delete(misc.counter2.db_log.counter2_log,
+            db:eq(misc.counter2.db_log.counter2_log.character, scripts.character_name))
+        db:delete(misc.counter2.db_daysum.counter2_daysum,
+            db:eq(misc.counter2.db_daysum.counter2_daysum.character, scripts.character_name))
         scripts:print_log("Ok")
     end
 
     tempTimer(5, function() misc.counter2.retried = nil end)
 end
-
