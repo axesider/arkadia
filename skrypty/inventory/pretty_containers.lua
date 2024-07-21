@@ -113,10 +113,10 @@ scripts.inv.pretty_containers.name_transformers = {
             return "<" .. scripts.inv.magic_keys_color .. ">" .. name
         end
     },
-    ["mithryl"] = { check = function(name) return rex.find(name, "mithryl\\w* monet") end, transform = AutomaticTable.color_transformer("pale_turquoise") },
-    ["gold"] = { check = function(name) return rex.find(name, "zlot\\w* monet") end, transform = AutomaticTable.color_transformer("gold") },
-    ["silver"] = { check = function(name) return rex.find(name, "srebrn\\w* monet") end, transform = AutomaticTable.color_transformer("white") },
-    ["copper"] = { check = function(name) return rex.find(name, "miedzian\\w* monet") end, transform = AutomaticTable.color_transformer("SaddleBrown") },
+    ["mithryl"] = { check = function(name) return rex.find(name, "mithryl\\w+ monet") end, transform = AutomaticTable.color_transformer("pale_turquoise") },
+    ["gold"] = { check = function(name) return rex.find(name, "zlot\\w+ monet") end, transform = AutomaticTable.color_transformer("gold") },
+    ["silver"] = { check = function(name) return rex.find(name, "srebrn\\w+ monet") end, transform = AutomaticTable.color_transformer("white") },
+    ["copper"] = { check = function(name) return rex.find(name, "miedzian\\w+ monet") end, transform = AutomaticTable.color_transformer("SaddleBrown") },
 }
 
 local count_name_transformer = function(item)
@@ -133,7 +133,6 @@ end
 
 function scripts.inv.pretty_containers:print(content, columns_count, filter, container)
     local container_elements = scripts.utils:extract_string_list(content)
-
     local event_data = {}
     for name, container_data in pairs(container_elements) do
         event_data[name] = container_data.amount
@@ -153,8 +152,9 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter, con
         local in_fixed_group = false
         for pattern, fixed_group in pairs(self.fixed_groups) do
             if rex.find(element.name, pattern) then
-                table.insert(result[fixed_group], count_name_transformer(element))
+                table.insert(result[fixed_group], element)
                 in_fixed_group = true
+                break
             end
         end
         if not in_fixed_group then
@@ -162,17 +162,16 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter, con
             for _, group in ipairs(scripts.inv.pretty_containers.group_definitions) do
                 added = false
                 if group.filter(element) then
-                    table.insert(result[group.name], count_name_transformer(element))
+                    table.insert(result[group.name], element)
                     added = true
                     break
                 end
             end
             if not added then
-                table.insert(result["inne"], count_name_transformer(element))
+                table.insert(result["inne"], element)
             end
         end
     end
-
     local not_empty_result = {}
     for k, v in pairs(scripts.inv.pretty_containers.group_definitions) do
         if result[v.name] and not table.is_empty(result[v.name]) then
@@ -182,7 +181,36 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter, con
     table.insert(not_empty_result, { name = "inne", values = result["inne"] })
 
     local content_table = AutomaticTable:new(false)
-    content_table:set_title("P O J E M N I K")
+    if 1==1 then
+    content_table.width = 80
+    echo("\n")
+    content_table:set_title(container or "P O J E M N I K")
+    content_table:print_title()
+    content_table:print_header()
+    for cat, items in pairs(result) do
+        if not table.is_empty(items)then
+            local m = string.len(cat)
+            local r = content_table.width/2-m - 1
+            local l = content_table.width - r - m -2
+            cecho("|"..string.rep(" ", l) .. "<slate_blue>"..cat.. "<reset>"..string.rep(" ", r).."|\n")
+            for _, item in pairs(items) do
+                cecho("|")
+                if item.amount == 1 then
+                    local asd = container or "ze skrzyni"
+                    local cmd = "wez "..item.name .. " z " .. asd
+                    cechoLink("<white>X", function() end, cmd)
+                else
+                    cecho(" ")
+                end
+                cecho(count_name_transformer(item) .. string.rep(" ", content_table.width-10-string.len(item.name)))
+                cecho("|\n")
+            end
+        end
+    end
+    content_table:print_border()
+    
+else
+
     for i = 1, table.size(not_empty_result), columns_count do
         local current_columns = {}
         for j = 0, columns_count - 1 do
@@ -201,6 +229,7 @@ function scripts.inv.pretty_containers:print(content, columns_count, filter, con
             content_table:add_row(contents)
         end
     end
-    raiseEvent("containerParsed", event_data)
     content_table:print()
+end
+    raiseEvent("containerParsed", event_data)
 end

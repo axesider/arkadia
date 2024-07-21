@@ -1794,14 +1794,6 @@
       ]
     },
     {
-      "name": "scripts.keybind.configuration.fight_support.keys",
-      "default_value": [],
-      "field_type": "list",
-      "macros_on_modify": [
-        "_keybind"
-      ]
-    },
-    {
       "name": "scripts.keybind.configuration.fight_support.active",
       "default_value": true,
       "field_type": "boolean",

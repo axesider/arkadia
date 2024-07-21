@@ -70,12 +70,10 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Przewodzisz druzynie, w ktorej oprocz ciebie (?:jest|sa) jeszcze(?:\:|) (.*)\.$</string>
-						<string>^Druzyne prowadzi (.*) i oprocz ciebie (?:jest|sa) w niej jeszcze(?:\:|) (.*)\.$</string>
-						<string>^Druzyne prowadzi (.*)\, zas ty jestes jej jedynym czlonkiem\.$</string>
+						<string>^Przewodzisz druzynie, w ktorej oprocz ciebie (?:jest|sa) jeszcze(?:\:|) (?'team'.*)\.$</string>
+						<string>^Druzyne prowadzi (?'leader'.+?)(?:, zas ty jestes jej jedynym czlonkiem| i oprocz ciebie (?:jest|sa) w niej jeszcze:? (?'team'.*))\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
@@ -94,7 +92,7 @@
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>\[?([A-Z][a-z ]+?)\]? zaprasza cie do swojej druzyny\.$</string>
+						<string>^\[?([A-Z][a-z ]+?)\]? zaprasza cie do swojej druzyny\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -116,12 +114,10 @@
 					<regexCodeList>
 						<string>Nie jestes w zadnej druzynie.</string>
 						<string>^\[?([A-Z][a-z ]+?)\]? rozwiazuje druzyne\.$</string>
-						<string>^Porzucasz swoja druzyne\.$</string>
-						<string>^Porzucasz druzyne, ktorej przewodzil[ea]s\.$</string>
+						<string>^Porzucasz (?:swoja druzyne|druzyne, ktorej przewodzil[ea]s)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>3</integer>
-						<integer>1</integer>
+						<integer>2</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
@@ -372,6 +368,26 @@
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>zagladanie-plecaki-puste</name>
+						<script>raiseEvent("containerParsed", {})</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^.*(plecak|torba|sakwa|sakiewka|worek) jest pust(a|y)\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
