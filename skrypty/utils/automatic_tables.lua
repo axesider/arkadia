@@ -2,7 +2,7 @@ AutomaticTable = AutomaticTable or {}
 
 function AutomaticTable.color_transformer(color)
     return function(item)
-        return "<" .. color .. ">" .. item .. "<reset>"
+        return "<" .. color .. ">" .. item
     end
 end
 
