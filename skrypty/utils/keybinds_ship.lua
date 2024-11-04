@@ -1,7 +1,8 @@
 function scripts.utils.bind_ship(command, if_locate, silent)
+    if scripts.utils.ship_key == command then return end
     scripts.utils.ship_key = command
 
-    scripts.utils.echobind(command, nil, command, "enter_ship", 2)
+    scripts.utils.echobind(command, nil, command, "enter_ship", 1)
 
     if not silent then
         raiseEvent("playBeep")

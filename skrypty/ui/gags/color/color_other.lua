@@ -1,6 +1,4 @@
 --Pablo start
-two_word_mobs = misc.counter.utils.two_word_mobs
-
 function get_mob_types()
     local sql_query = "select distinct text from counter2_log"
     local retrieved = db:fetch_sql(misc.counter2.db_log.counter2_log, sql_query)
@@ -55,9 +53,9 @@ function misc_counter_add_total_killed(linijka)
     local races = misc.counter2:get_races()   
     local race = get_mob_race(linijka)
     if races[race] == nil then
-        races[race] = -1
+        races[race] = 0
     end
-    races[race] = races[race] +1
+    races[race] = races[race] + 1
     return races[race]
 end
 --Pablo end

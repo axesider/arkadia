@@ -94,10 +94,7 @@ function misc.counter2:add_sum(item, year, month, day, type)
     end
 end
 
-local function ends_with(str, ending)
-   return str:sub(-#ending) == ending
-end
-
+--Pablo begin
 --- Funckja zwraca rase
 -- @param text "Zabil[ae]s foo bar"
 function get_mob_race(text)
