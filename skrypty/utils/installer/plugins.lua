@@ -20,15 +20,10 @@ function scripts.plugins_installer:install_from_url(url)
         file_name = repo .. "." .. format
         extension = "." .. format
     else
-        file_name = url:match("/([^/]+)$")
-	-- Remove any query parameters if present
-	file_name = file_name:gsub("?.*", "")
+        file_name = url:match("([^/]+)%?") or url:match("([^/]+)$")
     end
 
     plugin_name, extension = file_name:gmatch("(.+)%.(.+)$")()
-
-echo(plugin_name ..  " " .. file_name .. " " ..  extension .. "\n")
-if true then return end
 
     if extension == nil then
         extension = "zip"
