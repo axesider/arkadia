@@ -264,7 +264,8 @@ function trigger_func_skrypty_ui_gags_ciosy_ciezka_okretowa_kotwica_moje()
     elseif dmg == "broczaca" then
         value = 5
     elseif dmg == "uderzasz" then
-        return scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
+        scripts.gags:gag_prefix(scripts.gags.fin_prefix, target)
+        return
     end
     scripts.gags:gag(value, 6, target)
 end
