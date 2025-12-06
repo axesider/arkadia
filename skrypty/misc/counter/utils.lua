@@ -1,5 +1,24 @@
 misc.counter.utils = misc.counter.utils or {}
 
+misc.counter.utils.two_word_mobs_mia = {
+    "czarny ork",
+    "dziki ork",
+    "elfi egzekutor",
+    "kamienny troll",
+    "konia bojowego",
+    "krasnolud chaosu",
+    "lodowy troll",
+    "pajak sieciarz",
+    "pomiot chaosu",
+    "rumak bojowy",
+    "rycerz chaosu",
+    "smoczy ogr",
+    "smok chaosu",
+    "straznik wiezy",
+    "tancerz wojny",
+    "troll gorski",
+    "troll jaskiniowy",
+}
 misc.counter.utils.two_word_mobs = {
     "czarnego orka",
     "dzikiego orka",

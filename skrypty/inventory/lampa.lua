@@ -52,6 +52,7 @@ function trigger_func_skrypty_inventory_lampa_lampa_timery_off()
         disableTimer("lamp_info_timer")
         scripts.inv.lamp.working = false
         disableTrigger("lampa_timery_dopelnienie")
+        scripts.utils.bind_functional_call(function() take_bottle()  end, "wez butelke do reki i napelnij lampe", false)
     end
 
     selectCurrentLine()

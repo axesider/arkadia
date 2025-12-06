@@ -94,14 +94,18 @@ function misc.counter2:add_sum(item, year, month, day, type)
     end
 end
 
+function string.ends_with(str, ending)
+    return str:sub(-#ending) == ending
+end
+
 --Pablo begin
 --- Funckja zwraca rase
 -- @param text "Zabil[ae]s foo bar"
 function get_mob_race(text)
-    if ends_with(text, "ze skrzynia na grzbiecie") then text = text:sub(1,-26) end
+    if text:ends_with("ze skrzynia na grzbiecie") then text = text:sub(1,-26) end
     result = {}
     for _, mob in pairs(misc.counter.utils.two_word_mobs) do
-        if ends_with(text, mob) then
+        if text:ends_with(mob) then
             return mob
         end
     end

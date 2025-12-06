@@ -6,7 +6,7 @@ function bind_attack_gmcp()
         for k, v in pairs(scripts.people.bind_attack_objs) do
             if gmcp.objects.data[tostring(v)] and gmcp.objects.data[tostring(v)]["desc"] then
                 if scripts.people.show_binds_setting > 1 then
-                    _show_bind_msg(k, gmcp.objects.data[tostring(v)]["desc"])
+                    _show_bind_msg(k, gmcp.objects.data[tostring(v)]["desc"].. "X")
                 end
                 already_seen[v] = true
             end
@@ -30,7 +30,7 @@ function bind_attack_gmcp()
             if scripts.people.bind_attack_objs and id <= table.size(scripts.people.bind_attack_objs) and already_seen[tonumber(k)] ~= true then
                 scripts.people.bind_attack_objs[id] = tonumber(k)
                 if scripts.people.show_binds_setting > 0 then
-                    _show_bind_msg(id, v["desc"])
+                    _show_bind_msg(id, v["desc"].. "Y")
                 end
                 id = id + 1
             end

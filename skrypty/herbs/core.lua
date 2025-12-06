@@ -3,6 +3,7 @@ function herbs:init_herbs()
         herbs:create_triggers()
     end
     herbs:v2_init_data()
+    herbs:init_smart_application()
     herbs.window:create()
 end
 
@@ -122,7 +123,7 @@ function herbs:process_trigger(herb_match, herb_name)
         moveCursor(0, ln)
         if selectString(herb_name, 1) > -1 then
             creplace("<blanched_almond>" ..
-                herb_name .. "<reset> " .. herbs.herbs_details[herb_name]["details"] .. "<reset>")
+                herb_name .. "<reset> 🌿🌼" .. herbs.herbs_details[herb_name]["details"] .. "<reset>")
         end
         moveCursorEnd()
     end, herbs.herbs_details[herb_name]["details"])

@@ -500,11 +500,13 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 							<string>^Fachowym okiem osoby, ktora z doswiadczenia wie, jak wazna</string>
 							<string>^Przygladasz sie krytycznie .*, sprawdzajac palcem .* stan\.$</string>
 							<string>^Przejezdzajac palcem po ostrzu .*, sprawdzasz .* stan\.$</string>
+							<string>^Uderzasz kontrolnie .* o .*, oceniajac stan swojego oreza\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>2</integer>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -869,7 +871,7 @@ trigger_func_skrypty_inventory_equipment_zagladanie_depozyt()</script>
 							<string>^Gasisz(|[a-z ]+) lampe</string>
 							<string>nie jest zapalona\.$</string>
 							<string>[ &gt;]*Probujesz zapalic [a-z ]+ jest wyczerpana\.$</string>
-							<string>(?&lt;!fajka) wypala sie i gasnie\.$</string>
+							<string>^(?!.*fajka).* wypala sie i gasnie\.$</string>
 							<string>^Woda szybko gasi .* lampe\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
@@ -2452,8 +2454,10 @@ scripts.misc.knowledge:stop_reading_library()</script>
 						<string>(.*) atakuje cie!</string>
 						<string>(.*) atakuje cie nie dajac ci czasu na skontrowanie swojego ataku!</string>
 						<string>^Ku twojemu zdumieniu, (.*) pojawil sie nagle tuz obok ciebie!</string>
+						<string>^Oczy (.*) zachodza woalem rytualnego transu, gdy jak blyskawica rzuca sie on na ciebie, rozniecajac burze Tanca Smierci!</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
@@ -18998,7 +19002,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^[ &gt;]*(.*) wskazuje na dol\.$</string>
+							<string>^[ &gt;]*\[?(.*)\]? wskazuje na dol\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -19850,7 +19854,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>^[ &gt;]*Zrecznie zaslaniasz ([\[a-zA-Z (),!\]]+) przed ciosami ([a-zA-Z (),!\]]+)\.$</string>
 							<string>^[ &gt;]*Z wprawa stajesz pomiedzy ([\[a-zA-Z (),!\]]+) a ([\[a-zA-Z (),!\]]+), przyjmujac na siebie nadchodzace ciosy\.$</string>
 							<string>^[ &gt;]*Stajesz u boku ([a-zA-Z (),!\]]+), gotow w kazdej chwili zaslonic .* przed nadchodzacym niebezpieczenstwem\.$</string>
-							<string>^[ &gt;]*Unosisz swoja .+? i szybko przesuwasz sie za .+?, kryjac sie przed atakami</string>
+							<string>^[ &gt;]*Unosisz swoja .+? i (?:szybko )?przesuwasz sie za .+?, kryjac sie przed atakami</string>
 							<string>^[ &gt;]*Zdecydowanym krokiem wysuwasz sie przed [\[a-zA-Z (),!\]]+, zimnym spojrzeniem dajac wszystkim do zrozumienia, ze moga sie do (niego|niej) zblizyc jedynie po twoim trupie\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
@@ -24729,8 +24733,8 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Wraz z .* pomagacie .* przeniesc .* na (.*)\.$</string>
-						<string>^Pomagasz .* przeniesc .* na (.*)\.$</string>
+						<string>^Wraz z .* pomagacie .* przeniesc .* (?:na|do) (.*)\.$</string>
+						<string>^Pomagasz .* przeniesc .* (?:na|do) (.*)\.$</string>
 						<string>.* kieruje lodz na (.*)\.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -24816,8 +24820,10 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<string>^Ulica prowadzi na (.*)\.$</string>
 							<string>^Wykop konczy sie tutaj, zas jedyne widoczne przejscie prowadzi na (.*)\.$</string>
 							<string>^Wykopany w ziemi tunel rozgalezia sie tutaj, zas jego odnogi wioda na (.*)\.$</string>
+							<string>^Krete, widmowe drozki prowadza na (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -26106,7 +26112,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</Trigger>
 						</TriggerGroup>
 						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>quenelles-merceaux</name>
+							<name>quenelles-parravon</name>
 							<script></script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -26122,7 +26128,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							<regexCodePropertyList />
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps_quenelles</name>
-								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_merceaux_gps_quenelles()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_parravon_gps_quenelles()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -26142,7 +26148,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps_montlac</name>
-								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_merceaux_gps_montlac()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_parravon_gps_montlac()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -26162,7 +26168,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 							</Trigger>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>gps_merceaux</name>
-								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_merceaux_gps_merceaux()</script>
+								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_parravon_gps_merceaux()</script>
 								<triggerType>0</triggerType>
 								<conditonLineDelta>0</conditonLineDelta>
 								<mStayOpen>0</mStayOpen>
@@ -26175,6 +26181,26 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>Postoj, w wiosce Merceaux-Descloux</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>0</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>gps_parravon</name>
+								<script>trigger_func_mapper_localizers_ships_buses_buses_quenelles_parravon_gps_parravon()</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>Z zewnatrz dochodzi stlumiony glos woznicy: Postoj, plac przed zajazdem.</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>0</integer>
@@ -28778,6 +28804,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Najpierw trzeba otworzyc klape.</string>
 						<string>Podchodzisz pod drzwi na polnocy,</string>
 						<string>Probujesz znalezc dogodne przejscie przez strumien, lecz woda jest w tym miejscu zbyt gleboka.</string>
+						<string>Probujesz rozpaczliwie wspiac sie na gore, ale zeslizgujesz sie po mokrych kamieniach.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -28808,6 +28835,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>1</integer>
 						<integer>2</integer>
 						<integer>1</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
@@ -28914,7 +28942,7 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>do ciebie: Nikt z bronia nie wejdzie na teren Uniwersytetu. Prosze zostawic ja na stojaku.</string>
-						<string>Wspinasz sie po pionowej scianie skalnej, jednak w polowie drogi twoja noga zeslizguje sie, a ty, nie mogac zlapac sie niczego mogacego powstrzymac twe obsuniecie, spadasz spowrotem na dol.</string>
+						<string>Wspinasz sie po pionowej scianie skalnej, jednak w polowie drogi twoja noga zeslizguje sie, a ty, nie mogac zlapac sie niczego mogacego powstrzymac twe obsuniecie, spadasz z powrotem na dol.</string>
 						<string>Wrota stajni sa zamkniete na noc.</string>
 						<string>Wszystkie stragany sa juz uprzatniete.</string>
 						<string>^[ &gt;]*Droge na .* blokuje nieprzebyty masyw skalny\.$</string>
@@ -29064,9 +29092,13 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>Przestajesz wioslowac.</string>
 						<string>Nie mozesz sie tam udac, gdyz wielki pustynny robak lapie cie jednym ze szczekoczulkow i przyciaga do siebie.</string>
 						<string>Lawa nie pozwala isc dalej w tym kierunku. Mozesz jednak sprobowac ja przeskoczyc.</string>
-						<string>Nie mozesz sie tam udac, gdyz walczysz wlasnie z ryba. Jesli chcesz, mozesz , ale licz sie z mozliwoscia uszkodzenia wedki.</string>
+						<string>Nie mozesz sie tam udac, gdyz walczysz wlasnie z ryba. Jesli chcesz, mozesz</string>
+						<string>Nie masz sil plynac.</string>
+						<string>Plot jest za wysoki dla ciebie.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>2</integer>
+						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
 						<integer>2</integer>
@@ -30570,6 +30602,48 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^/ziola_odloz_woreczek ([0-9]+)</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>show_grouped_herbs</name>
+					<script>alias_func_skrypty_herbs_show_herbs(false)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zshow$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>show_grouped_herbs_all</name>
+					<script>alias_func_skrypty_herbs_show_herbs(true)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zshow\!$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>show_grouped_herbs_category</name>
+					<script>alias_func_skrypty_herbs_show_herbs(false, matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zshow (zme|kon|man|odt|wzm|poz)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>smart_apply_herbs</name>
+					<script>alias_func_skrypty_herbs_smart_apply(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zapl (kon|man|zme)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>smart_apply_herbs_reset</name>
+					<script>alias_func_skrypty_herbs_smart_apply_reset(matches[2])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zapl\! (kon|man|zme)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>smart_apply_herbs_show</name>
+					<script>alias_func_skrypty_herbs_smart_apply_show_status()</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^/zapl$</regex>
 				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">

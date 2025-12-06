@@ -19,17 +19,16 @@ herbs["use_herb_triggers"] = false
 herbs["herb_trigg_ids"] = {}
 
 function trigger_func_skrypty_herbs_rozwiaz_rzemyk()
-    local content = matches['content']
     if herbs.current_bag_looking then
-        if content then
+        if matches[2] then
             -- this is actually hit. segregate and add to the db
-            local segregated = herbs:check_single_bag(content)
+            local segregated = herbs:check_single_bag(matches[2])
             herbs:add_to_db(segregated, herbs.current_bag_looking)
         end
 
         coroutine.resume(herbs["build_db_coroutine_id"])
     else
-        local segregated = herbs:check_single_bag(content)
+        local segregated = herbs:check_single_bag(matches[2])
         herbs:v2_print_single(segregated)
     end
 end
@@ -120,4 +119,8 @@ function alias_func_skrypty_herbs_ziola_odloz_woreczek()
     herbs:do_pre_actions()
     herbs:put_herb_bag_down(matches[2])
     herbs:do_post_actions()
+end
+
+function alias_func_skrypty_herbs_show_herbs(full, one_category)
+    herbs:show_summary(full, one_category)
 end

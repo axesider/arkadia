@@ -4,16 +4,14 @@ Rzeczownik.__index = Rzeczownik
 function Rzeczownik:new(gender, singular_forms, plural_forms)
     local obj = {
         gender = gender,
-        declensions = {
-            singular = singular_forms or {},
-            plural = plural_forms or {}
-        }
+        singular = singular_forms,
+        plural = plural_forms
     }
     setmetatable(obj, self)
 
     -- Validate declensions
     if not obj:validate_declensions() then
-        error("Invalid declensions for noun: " .. (singular_forms[1] or "unknown"))
+        error("Nieprawidlowa odmiana rzeczownika: " .. (singular_forms[1] or "?"))
     end
 
     return obj
@@ -21,34 +19,37 @@ end
 
 function Rzeczownik:validate_declensions()
     local cases = Grammar.CASES
-    if #self.declensions.singular ~= #cases then
+    if #self.singular ~= #cases then
         return false
     end
-    -- Add more validation as needed
+    if self.plural and #self.plural ~= #cases then
+        return false
+    end
     return true
 end
 
 function Rzeczownik:get_form(case, number)
-    local forms = number and self.declensions.plural or self.declensions.singular
-    return forms and forms[case] or self.declensions.singular[1]
+    local forms = number and self.plural or self.singular
+    return forms[case]
 end
 
 function Rzeczownik:get_base_form()
-    return self.declensions.singular[1]
+    return self.singular[1]
 end
 
 function Rzeczownik:create_compound(modifiers)
     local new_singular = {}
-    local new_plural = {}
+    local new_plural = nil
     local modifier_string = " " .. table.concat(modifiers, " ")
 
     for i = 1, #Grammar.CASES do
-        new_singular[i] = self.declensions.singular[i] .. modifier_string
+        new_singular[i] = self.singular[i] .. modifier_string
     end
 
-    if new_plural[1] ~= "" then
+    if self.plural ~= nil then
+        new_plural = {}
         for i = 1, #Grammar.CASES do
-            new_plural[i] = self.declensions.plural[i] .. modifier_string
+            new_plural[i] = self.plural[i] .. modifier_string
         end
     end
 
@@ -101,13 +102,13 @@ end
 
 Grammar = Grammar or {
     CASES = {"mianownik", "dopelniacz", "celownik", "biernik", "narzednik", "miejscownik"},
-    GENDERS = {"meski_osobowy", "meski_nieosobowy_zywotny", "meski_nieosobowy_niezywotny", 
-               "zenski", "nijaki_osobowy", "nijaki_nieosobowy"},
+    GENDERS = {"meski_osobowy", "meski_nieosobowy_zywotny", "meski_nieosobowy_niezywotny",
+               "zenski", "nijaki_osobowy", "nijaki_nieosobowy","niemeskoosobowy"},
 
     -- Constants
     MIA = 1, DOP = 2, CEL = 3, BIE = 4, NAR = 5, MIE = 6,
     MESKI_OS = 1, MESKI_NOS_ZYW = 2, MESKI_NOS_NZYW = 3,
-    ZENSKI = 4, NIJAKI_OS = 5, NIJAKI_NOS = 6,
+    ZENSKI = 4, NIJAKI_OS = 5, NIJAKI_NOS = 6, MESKI_NOS = 7,
 
     -- Common prepositions that start post-noun phrases
     PREPOSITIONS = {"z", "ze", "w", "na", "o", "do", "od", "dla", "bez", 
@@ -166,7 +167,7 @@ function AdjectiveRules:get_endings(case, gender, number, rule_type)
             },
             plural = {
                 [Grammar.MESKI_OS] = {"i", "ych", "ym", "ych", "ymi", "ych"},
-                ["non_masculine_personal"] = {"e", "ych", "ym", "e", "ymi", "ych"}
+                [Grammar.MESKI_NOS] = {"e", "ych", "ym", "e", "ymi", "ych"}
             }
         },
         soft = {
@@ -180,35 +181,46 @@ function AdjectiveRules:get_endings(case, gender, number, rule_type)
             },
             plural = {
                 [Grammar.MESKI_OS] = {"i", "ich", "im", "ich", "imi", "ich"},
-                ["non_masculine_personal"] = {"ie", "ich", "im", "ie", "imi", "ich"}
+                [Grammar.MESKI_NOS] = {"ie", "ich", "im", "ie", "imi", "ich"}
             }
         }
     }
 
     local pattern_set = patterns[rule_type] or patterns.hard
     local number_set = number and pattern_set.plural or pattern_set.singular
-    local gender_set = number_set[gender] or number_set["non_masculine_personal"] or number_set[Grammar.MESKI_OS]
+    local gender_set = number_set[gender] or number_set[Grammar.MESKI_NOS] or number_set[Grammar.MESKI_OS]
 
     return gender_set and gender_set[case] or ""
 end
 
-function AdjectiveRules:convert_to_base_form(inflected_form, current_gender)
-    -- Simple heuristic to convert inflected adjective back to base masculine form
-    -- This is a simplified version - in reality, this would need more sophisticated rules
-    local last_char = inflected_form:sub(-1)
-    local base = inflected_form
+function AdjectiveRules:convert_to_base_form(inflected_form, current_case, current_gender, current_count)
+    -- Determine declension type (hard or soft) based on the inflected form
+    local rule_type = self:get_rules(inflected_form)
     
-    if current_gender == Grammar.ZENSKI then
-        if last_char == "a" then
-            base = inflected_form:sub(1, -2) .. "y"
+    -- Get the expected ending for the given case, gender, and number
+    local expected_ending = self:get_endings(current_case, current_gender, current_count, rule_type)
+    
+    -- Verify the inflected form ends with the expected ending
+    if not inflected_form:match(expected_ending .. "$") then
+        -- Fallback to simple heuristic if ending doesn't match
+        local last_char = inflected_form:sub(-1)
+        if current_gender == Grammar.ZENSKI and last_char == "a" then
+            return Przymiotnik:new(inflected_form:sub(1, -2) .. "y")
+        elseif (current_gender == Grammar.NIJAKI_OS or current_gender == Grammar.NIJAKI_NOS) and last_char == "e" then
+            return Przymiotnik:new(inflected_form:sub(1, -2) .. "y")
         end
-    elseif current_gender == Grammar.NIJAKI_OS or current_gender == Grammar.NIJAKI_NOS then
-        if last_char == "e" then
-            base = inflected_form:sub(1, -2) .. "y"
-        end
+        return Przymiotnik:new(inflected_form) -- Return as-is if no match
     end
     
-    return base
+    -- Remove the expected ending to get the stem
+    local stem = inflected_form:sub(1, -(#expected_ending + 1))
+    
+    -- Construct base form (masculine singular nominative)
+    local base_ending = (rule_type == "soft") and "i" or "y"
+    local base_form = stem .. base_ending
+    
+    -- Create and return a new Przymiotnik object
+    return Przymiotnik:new(base_form)
 end
 
 -- =====================================================
@@ -225,15 +237,20 @@ Dictionary = Dictionary or {
     }
 }
 
+-- Add a noun to the dictionary
+-- singular_forms: table of singular forms (e.g., {"kot", "kota", "kotowi", "kota", "kotem", "kocie"})
+-- var1: either a table of plural forms or gender number
+-- var2: gender number (optional)
 function Dictionary:add_noun(singular_forms, var1, var2)
     if type(singular_forms) ~= "table" or #singular_forms ~= Grammar.MIE then
-        if scripts and scripts.print_log then
-            scripts:print_log("Nieprawidlowy parametr <singular_forms>.")
-        end
-        return 
+        scripts:print_log("Nieprawidlowy parametr <singular_forms>.")
+        display(singular_forms)
+        display(var1)
+        display(var2)
+        return
     end
     
-    local plural_forms = {"","","","","",""}
+    local plural_forms = nil
     local gender = Grammar.MESKI_OS
     
     if type(var1) == "table" then
@@ -241,7 +258,7 @@ function Dictionary:add_noun(singular_forms, var1, var2)
         gender = var2 or Grammar.MESKI_OS
     elseif type(var1) == "number" then
         gender = var1
-        plural_forms = var2 or {"","","","","",""}
+        plural_forms = var2
     end
 
     local noun = Rzeczownik:new(gender, singular_forms, plural_forms)
@@ -257,47 +274,64 @@ function Dictionary:index_noun_forms(noun)
         local singular_form = noun:get_form(case, false)
         local plural_form = noun:get_form(case, true)
         
-        if not self.cache.noun_lookups[singular_form] then
-            self.cache.noun_lookups[singular_form] = {}
-        end
-        table.insert(self.cache.noun_lookups[singular_form], {noun = noun, case = case, number = false})
+        -- Direct mapping to noun - much simpler
+        self.cache.noun_lookups[singular_form] = noun
         
         if plural_form ~= "" then
-            if not self.cache.noun_lookups[plural_form] then
-                self.cache.noun_lookups[plural_form] = {}
-            end
-            table.insert(self.cache.noun_lookups[plural_form], {noun = noun, case = case, number = true})
+            self.cache.noun_lookups[plural_form] = noun
         end
     end
 end
 
-function Dictionary:find_noun(form, case_hint)
-    -- Fast lookup using indexed forms
-    local candidates = self.cache.noun_lookups[form]
-    if not candidates then return nil end
-    
-    if case_hint then
-        for _, candidate in ipairs(candidates) do
-            if candidate.case == case_hint then
-                return candidate.noun, candidate.case, candidate.number
-            end
-        end
-    end
-    
-    return candidates[1].noun, candidates[1].case, candidates[1].number
+function Dictionary:find_noun(form, case)
+    -- Simple direct lookup - returns just the noun
+    return self.cache.noun_lookups[form]
 end
 
 function Dictionary:create_compound_noun(base_noun, modifiers)
     local compound = base_noun:create_compound(modifiers)
     local compound_key = compound:get_base_form()
-    
+
     if not self.compounds[compound_key] then
         self.compounds[compound_key] = compound
         self:index_noun_forms(compound)
-        print("Auto-created compound noun: " .. compound_key)
+        debugc("Auto-created compound noun: " .. compound_key)
     end
-    
+
     return self.compounds[compound_key]
+end
+
+function Dictionary:load_from_file()
+    local filename = getMudletHomeDir() .. "/dict.json"
+    local file = io.open(filename, "r")
+    if not file then
+        scripts:print_log("Nie można otworzyć pliku do odczytu: " .. filename)
+        return false
+    end
+
+    -- Read entire file content
+    local content = file:read("*all")
+    file:close()
+
+    local data = yajl.to_value(content)
+    if not data then
+        scripts:print_log("Nieprawidłowy format JSON w pliku.")
+        return false
+    end
+    self.nouns = {}
+    self.cache.noun_lookups = {}
+
+    for _, entry in ipairs(data) do
+        if type(entry) == "table" and (#entry == 2 or #entry == 3) then
+            if #entry == 2 then
+                self:add_noun(entry[1], entry[2])
+            else
+                self:add_noun(entry[1], entry[2], entry[3])
+            end
+        end
+    end
+
+    return true
 end
 
 -- =====================================================
@@ -308,58 +342,70 @@ PhraseParser = PhraseParser or {
     dictionary = Dictionary
 }
 
-function PhraseParser:parse(phrase, case_hint, number_hint)
+function PhraseParser:parse(phrase, case, number_hint)
     local result = {
+        phrase = phrase,
         adjectives = {},
         noun = nil,
         post_phrase = ""
     }
-
+    
     if not phrase or phrase:match("^%s*$") then
         return result
     end
-
+    
     local words = self:tokenize(phrase)
-
+    
     -- Extract post-noun phrase
     words, result.post_phrase = self:extract_post_phrase(words)
-
+    
     if #words == 0 then return result end
-
+    
     -- Find the base noun (rightmost known noun)
-    local noun, noun_start_idx = self:find_base_noun(words, case_hint)
-
+    local noun, noun_start_idx = self:find_base_noun(words, case)
+    
     if noun and noun_start_idx then
         -- Check if we need to create compound noun
         if noun_start_idx < #words then
             local modifiers = {unpack(words, noun_start_idx + 1, #words)}
             noun = self.dictionary:create_compound_noun(noun, modifiers)
         end
-
+        
         result.noun = noun
-
-        -- Parse adjectives
+        
+        -- Parse adjectives - now we can determine correct case from the noun form
         for i = 1, noun_start_idx - 1 do
-            local adj_base = AdjectiveRules:convert_to_base_form(words[i], noun.gender)
-            table.insert(result.adjectives, adj_base)
+            local przym = AdjectiveRules:convert_to_base_form(words[i], case, noun.gender, number_hint)
+            table.insert(result.adjectives, przym)
         end
     else
         -- Fallback: assume last word is unknown noun
-        result.noun = words[#words]
-        for i = 1, #words - 1 do
-            table.insert(result.adjectives, words[i])
-        end
+        --result.noun = words[#words]
+        --for i = 1, #words - 1 do
+        --   local przym = Przymiotnik:new(words[i])
+        --    table.insert(result.adjectives, przym)
+        --end
     end
+    
+    return result
+end
 
+
+function PhraseParser:get_form(phrase, case, number_hint)
+    number_hint = number_hint or false
+    local result = ""
+    for _, adj in ipairs(phrase.adjectives) do
+        result = result .. adj:decline(case, phrase.noun.gender, number_hint) .. " "
+    end
+    result = result .. phrase.noun:get_form(case, number_hint)
+    if phrase.post_phrase ~= "" then
+        result = result .. " " .. phrase.post_phrase
+    end
     return result
 end
 
 function PhraseParser:tokenize(phrase)
-    local words = {}
-    for word in phrase:gmatch("[^ ]+") do
-        table.insert(words, word)
-    end
-    return words
+    return string.split(phrase, " ")
 end
 
 function PhraseParser:extract_post_phrase(words)
@@ -380,9 +426,9 @@ function PhraseParser:is_preposition(word)
     return false
 end
 
-function PhraseParser:find_base_noun(words, case_hint)
+function PhraseParser:find_base_noun(words, case)
     for i = #words, 1, -1 do
-        local noun, found_case, number = self.dictionary:find_noun(words[i], case_hint)
+        local noun = self.dictionary:find_noun(words[i], case)
         if noun then
             return noun, i
         end
@@ -390,46 +436,59 @@ function PhraseParser:find_base_noun(words, case_hint)
     return nil, nil
 end
 
--- =====================================================
--- MAIN SLOWNIK CLASS (FACADE)
--- =====================================================
-
-Slownik = Slownik or {
-    dictionary = Dictionary,
-    parser = PhraseParser,
-    version = "2.0"
-}
-
--- Compatibility methods
-function Slownik:add_noun(gender, singular_forms, plural_forms)
-    return self.dictionary:add_noun(singular_forms, plural_forms, gender)
-end
-
-function Slownik:split_short(phrase, case_hint, number_hint)
-    local parsed = self.parser:parse(phrase, case_hint, number_hint)
-
-    return {
-        przym = parsed.adjectives,
-        rzecz = parsed.noun and (type(parsed.noun) == "table" and parsed.noun:get_base_form() or parsed.noun) or phrase,
-        post = parsed.post_phrase
-    }
-end
-
-function Slownik:decline_adjective(adjective, case, gender, number)
-    local adj = Przymiotnik:new(adjective)
-    return adj:decline(case, gender, number)
-end
-
-function Slownik:decline_phrase(adjectives, noun, case, number)
-    local noun_obj = self.dictionary.nouns[noun]
-    if not noun_obj then return nil end
-
-    local result = {}
-    for _, adj in ipairs(adjectives) do
-        local adj_obj = Przymiotnik:new(adj)
-        table.insert(result, adj_obj:decline(case, noun_obj.gender, number))
+function PhraseParser:check_trigger()
+    local short = multimatches[1]['mia']
+    local entry = PhraseParser:parse(short, Grammar.MIA)
+    local odmiana = entry.noun
+    
+    if odmiana == nil then
+        -- Extract the noun part (last word before post-phrase)
+        local words = self:tokenize(short)
+        words, _ = self:extract_post_phrase(words)
+        local noun_word = words[#words] or short
+        
+        -- Build the add_noun command string
+        local msg = "[["
+        local gender = Grammar.MESKI_OS -- default gender
+        
+        -- Add all case forms and determine gender from nominative
+        for i = 1, Grammar.MIE do
+            local case_form = multimatches[i] and multimatches[i][2] or ""
+            -- Extract just the noun part from the full phrase
+            local case_words = self:tokenize(case_form)
+            case_words, _ = self:extract_post_phrase(case_words)
+            local noun_form = case_words[#case_words] or case_form
+            
+            -- Determine gender from nominative form
+            if i == Grammar.MIA then
+                local last_char = noun_form:sub(-1)
+                if last_char == "a" then 
+                    gender = Grammar.ZENSKI
+                elseif last_char == "e" or last_char == "o" then
+                    gender = Grammar.NIJAKI_NOS
+                else
+                    gender = Grammar.MESKI_OS
+                end
+            end
+            
+            msg = msg .. '"' .. noun_form .. '"'
+            if i < Grammar.MIE then
+                msg = msg .. ','
+            end
+        end
+        
+        msg = msg .. "]," .. gender .. "],"
+        scripts:print_log(msg)
+        return
     end
-
-    table.insert(result, noun_obj:get_form(case, number))
-    return table.concat(result, " ")
+    
+    -- Check existing declensions
+    for i = Grammar.DOP, Grammar.MIE do
+        local opis = PhraseParser:get_form(entry, i)
+        if opis ~= multimatches[i][2] then
+            scripts:print_log(Grammar.CASES[i] .. " " .. opis .. " ~= " .. multimatches[i][2])
+        end
+    end
 end
+
+Dictionary:load_from_file()
