@@ -18376,7 +18376,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>^[ &gt;]*.* unosi swoja .* i szybko przesuwa sie za ciebie, kryjac.*</string>
+									<string>^[ &gt;]*.* (unosi|zastawia sie) swoja .* i szybko przesuwa sie za ciebie, kryjac.*</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -18396,7 +18396,7 @@ scripts.misc.knowledge:stop_reading_library()</script>
 								<colorTriggerFgColor>#000000</colorTriggerFgColor>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
-									<string>[ &gt;]*Unosisz swoja .* i szybko przesuwasz sie za .*, kryjac sie przed atakami</string>
+									<string>[ &gt;]*Unosisz swoja .* i (?:szybko )?przesuwasz sie za .*, kryjac sie przed atakami</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -28979,6 +28979,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<string>do ciebie: Nikt z bronia nie wejdzie na teren gornej twierdzy. Prosze zostawic ja na stojaku.</string>
 						<string>Przejscie w tym kierunku jest zablokowane przez</string>
 						<string>Przejscie w tym kierunku jest dla ciebie zbyt waskie, nie potrafisz przecisnac sie przez przeswit.</string>
+						<string>mowi do ciebie: Na terenie palacu zbroja nie bedzie wam potrzebna.</string>
+						<string>Nie mozesz sie tam udac, gdyz ktos lapie cie kurczowo za</string>
+						<string>^Ruszasz na .*, ale zaraz wchodzisz w gesta platanine galezi i lisci zywoplotow\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
@@ -29019,6 +29022,9 @@ trigger_func_skrypty_ui_misc_ptakopodobny_inkantuje()</script>
 						<integer>0</integer>
 						<integer>2</integer>
 						<integer>2</integer>
+						<integer>0</integer>
+						<integer>2</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
